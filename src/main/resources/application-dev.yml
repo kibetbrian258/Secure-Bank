@@ -53,11 +53,8 @@ spring:
   # Swagger OpenAPI configuration for Spring Boot 3
   springdoc:
     api-docs:
+      enabled: true
       path: /api-docs
     swagger-ui:
       path: /swagger-ui.html
-      operationsSorter: method
-      tagsSorter: alpha
-      disable-swagger-default-url: true
-    show-actuator: true
-    packages-to-scan: com.securebank.controller
+    packages-to-scan: com.application.secureBank

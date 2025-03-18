@@ -12,10 +12,12 @@ spring:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false
     time-zone: UTC
+  main:
+    allow-circular-references: true
 
-#  jwt:
-#    secret: b2sBUh1/GpSZrRfvxsZY0od6YrqW/iNVYEKylFIQhEtDJ0hgxjGAc5eU48k3ZomX
-#    expiration: 86400
+jwt:
+  secret: b2sBUh1/GpSZrRfvxsZY0od6YrqW/iNVYEKylFIQhEtDJ0hgxjGAc5eU48k3ZomX
+  expiration: 86400
 
 server:
   port: 8080
