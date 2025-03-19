@@ -15,6 +15,21 @@ spring:
   main:
     allow-circular-references: true
 
+# Global SpringDoc configuration for all environments
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    tryItOutEnabled: true
+    filter: true
+    disable-swagger-default-url: true
+  paths-to-match: /api/**
+  packages-to-scan: com.application.secureBank.Controllers
+
 jwt:
   secret: b2sBUh1/GpSZrRfvxsZY0od6YrqW/iNVYEKylFIQhEtDJ0hgxjGAc5eU48k3ZomX
   expiration: 86400
