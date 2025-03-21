@@ -3,14 +3,18 @@ package com.application.secureBank.Services;
 import com.application.secureBank.DTOs.DepositRequest;
 import com.application.secureBank.DTOs.TransactionResponse;
 import com.application.secureBank.DTOs.TransferRequest;
+import com.application.secureBank.DTOs.WithdrawRequest;
+import com.application.secureBank.DTOs.TransactionSearchRequest;
 import com.application.secureBank.Repositories.AccountRepository;
 import com.application.secureBank.Repositories.TransactionRepository;
 import com.application.secureBank.models.Account;
 import com.application.secureBank.models.Customer;
 import com.application.secureBank.models.Transaction;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import com.application.secureBank.DTOs.WithdrawRequest;
-import com.application.secureBank.DTOs.TransactionSearchRequest;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
@@ -34,15 +38,15 @@ public class TransactionService {
         this.accountRepository = accountRepository;
         this.customerService = customerService;
     }
-/*
-    Deposit money to an account
- */
+
+    /*
+     * Deposit money to an account
+     */
     public TransactionResponse deposit(String customerId, DepositRequest request) {
         Customer customer = customerService.findByCustomerId(customerId);
 
-        Optional<Account> accountOpt = customer.getAccounts().stream()
-                .filter(acc -> acc.getAccountNumber().equals(request.getAccountNumber()))
-                .findFirst();
+        // Direct repository lookup instead of filtering customer accounts
+        Optional<Account> accountOpt = accountRepository.findByAccountNumber(request.getAccountNumber());
 
         if (accountOpt.isEmpty()) {
             throw new IllegalArgumentException("Account Not Found");
@@ -50,17 +54,22 @@ public class TransactionService {
 
         Account account = accountOpt.get();
 
-        //Validate amount
+        // Security check: verify the account belongs to the customer
+        if (!account.getCustomer().getCustomerId().equals(customerId)) {
+            throw new IllegalArgumentException("Account does not belong to this customer");
+        }
+
+        // Validate amount
         if (request.getAmount().compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Deposit amount must be greater than zero");
         }
 
-        //update account balance
+        // Update account balance
         BigDecimal newBalance = account.getBalance().add(request.getAmount());
         account.setBalance(newBalance);
         accountRepository.save(account);
 
-        //create transaction record
+        // Create transaction record
         Transaction transaction = Transaction.builder()
                 .transactionId(generateTransactionId())
                 .account(account)
@@ -83,22 +92,27 @@ public class TransactionService {
                 .status(transaction.getStatus())
                 .build();
     }
-/*
-    Withdraw money from account
- */
+
+    /*
+     * Withdraw money from account
+     */
     @Transactional
     public TransactionResponse withdraw(String customerId, WithdrawRequest request) {
         Customer customer = customerService.findByCustomerId(customerId);
 
-        Optional<Account> accountOpt = customer.getAccounts().stream()
-                .filter(acc -> acc.getAccountNumber().equals(request.getAccountNumber()))
-                .findFirst();
+        // Direct repository lookup
+        Optional<Account> accountOpt = accountRepository.findByAccountNumber(request.getAccountNumber());
 
         if (accountOpt.isEmpty()) {
             throw new IllegalArgumentException("Account not found");
         }
 
         Account account = accountOpt.get();
+
+        // Security check: verify account belongs to customer
+        if (!account.getCustomer().getCustomerId().equals(customerId)) {
+            throw new IllegalArgumentException("Account does not belong to this customer");
+        }
 
         // Validate amount
         if (request.getAmount().compareTo(BigDecimal.ZERO) <= 0) {
@@ -145,18 +159,16 @@ public class TransactionService {
                 .build();
     }
 
-/*
-Transfer money between accounts
-*/
-
+    /*
+     * Transfer money between accounts
+     */
     @Transactional
     public TransactionResponse transfer(String customerId, TransferRequest request) {
         Customer customer = customerService.findByCustomerId(customerId);
 
-        // Find source account
-        Optional<Account> sourceAccountOpt = customer.getAccounts().stream()
-                .filter(acc -> acc.getAccountNumber().equals(request.getSourceAccountNumber()))
-                .findFirst();
+        // Find source account using direct repository query
+        Optional<Account> sourceAccountOpt = accountRepository.findByAccountNumber(
+                request.getSourceAccountNumber());
 
         if (sourceAccountOpt.isEmpty()) {
             throw new IllegalArgumentException("Source account not found");
@@ -164,15 +176,20 @@ Transfer money between accounts
 
         Account sourceAccount = sourceAccountOpt.get();
 
-        // Find destination account
-        List<Account> destinationAccounts = accountRepository.findByAccountNumber(
+        // Security check: verify source account belongs to customer
+        if (!sourceAccount.getCustomer().getCustomerId().equals(customerId)) {
+            throw new IllegalArgumentException("Source account does not belong to this customer");
+        }
+
+        // Find destination account using direct repository query
+        Optional<Account> destinationAccountOpt = accountRepository.findByAccountNumber(
                 request.getDestinationAccountNumber());
 
-        if (destinationAccounts.isEmpty()) {
+        if (destinationAccountOpt.isEmpty()) {
             throw new IllegalArgumentException("Destination account not found");
         }
 
-        Account destinationAccount = destinationAccounts.get(0);
+        Account destinationAccount = destinationAccountOpt.get();
 
         // Validate amount
         if (request.getAmount().compareTo(BigDecimal.ZERO) <= 0) {
@@ -240,21 +257,24 @@ Transfer money between accounts
     }
 
     /*
-    Get the last 10 transactions
-    */
-
+     * Get the last 10 transactions
+     */
     public List<TransactionResponse> getLastTenTransactions(String customerId, String accountNumber) {
         Customer customer = customerService.findByCustomerId(customerId);
 
-        Optional<Account> accountOpt = customer.getAccounts().stream()
-                .filter(acc -> acc.getAccountNumber().equals(accountNumber))
-                .findFirst();
+        // Direct repository lookup
+        Optional<Account> accountOpt = accountRepository.findByAccountNumber(accountNumber);
 
         if (accountOpt.isEmpty()) {
             throw new IllegalArgumentException("Account not found");
         }
 
         Account account = accountOpt.get();
+
+        // Security check: verify account belongs to customer
+        if (!account.getCustomer().getCustomerId().equals(customerId)) {
+            throw new IllegalArgumentException("Account does not belong to this customer");
+        }
 
         List<Transaction> transactions = transactionRepository
                 .findTop10ByAccountOrderByTransactionDateTimeDesc(account.getId());
@@ -265,86 +285,60 @@ Transfer money between accounts
     }
 
     /*
-    search transaction by criteria
+     * Search transactions by criteria
      */
-
     public List<TransactionResponse> searchTransactions(
             String customerId,
             TransactionSearchRequest searchRequest) {
 
         Customer customer = customerService.findByCustomerId(customerId);
 
-        // Get all customer accounts
-        List<Account> accounts = accountRepository.findByCustomer(customer);
+        // Use the repository method that does all filtering in the database
+        List<Transaction> transactions = transactionRepository.searchTransactions(
+                customer.getId(),
+                searchRequest.getAccountNumber(),
+                searchRequest.getType(),
+                searchRequest.getStartDate(),
+                searchRequest.getEndDate(),
+                searchRequest.getMinAmount(),
+                searchRequest.getMaxAmount());
 
-        if (accounts.isEmpty()) {
-            throw new IllegalArgumentException("No accounts found for customer");
-        }
-
-        // Build search criteria based on input
-        List<Transaction> transactions = transactionRepository.findAll();
-
-        // Filter by account if specified
-        if (searchRequest.getAccountNumber() != null && !searchRequest.getAccountNumber().isEmpty()) {
-            String accountNumber = searchRequest.getAccountNumber();
-            transactions = transactions.stream()
-                    .filter(t -> t.getAccount().getAccountNumber().equals(accountNumber))
-                    .collect(Collectors.toList());
-        } else {
-            // Otherwise filter for any account owned by this customer
-            List<Long> accountIds = accounts.stream()
-                    .map(Account::getId)
-                    .collect(Collectors.toList());
-
-            transactions = transactions.stream()
-                    .filter(t -> accountIds.contains(t.getAccount().getId()))
-                    .collect(Collectors.toList());
-        }
-
-        // Filter by transaction type if specified
-        if (searchRequest.getType() != null && !searchRequest.getType().isEmpty()) {
-            String type = searchRequest.getType();
-            transactions = transactions.stream()
-                    .filter(t -> t.getType().equalsIgnoreCase(type))
-                    .collect(Collectors.toList());
-        }
-
-        // Filter by date range if specified
-        if (searchRequest.getStartDate() != null) {
-            LocalDateTime startDate = searchRequest.getStartDate();
-            transactions = transactions.stream()
-                    .filter(t -> t.getTransactionDateTime().isAfter(startDate) ||
-                            t.getTransactionDateTime().isEqual(startDate))
-                    .collect(Collectors.toList());
-        }
-
-        if (searchRequest.getEndDate() != null) {
-            LocalDateTime endDate = searchRequest.getEndDate();
-            transactions = transactions.stream()
-                    .filter(t -> t.getTransactionDateTime().isBefore(endDate) ||
-                            t.getTransactionDateTime().isEqual(endDate))
-                    .collect(Collectors.toList());
-        }
-
-        // Filter by amount range if specified
-        if (searchRequest.getMinAmount() != null) {
-            BigDecimal minAmount = searchRequest.getMinAmount();
-            transactions = transactions.stream()
-                    .filter(t -> t.getAmount().compareTo(minAmount) >= 0)
-                    .collect(Collectors.toList());
-        }
-
-        if (searchRequest.getMaxAmount() != null) {
-            BigDecimal maxAmount = searchRequest.getMaxAmount();
-            transactions = transactions.stream()
-                    .filter(t -> t.getAmount().compareTo(maxAmount) <= 0)
-                    .collect(Collectors.toList());
-        }
-
-        // Map to DTOs and return
+        // Map the results to DTOs
         return transactions.stream()
                 .map(this::mapToTransactionResponse)
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Paginated version of the transaction search
+     */
+    public Page<TransactionResponse> searchTransactionsPaginated(
+            String customerId,
+            TransactionSearchRequest searchRequest,
+            int page,
+            int size) {
+
+        Customer customer = customerService.findByCustomerId(customerId);
+
+        // Create a pageable request with sorting
+        Pageable pageable = PageRequest.of(
+                page,
+                size,
+                Sort.by(Sort.Direction.DESC, "transactionDateTime"));
+
+        // Use the paginated repository method
+        Page<Transaction> transactionsPage = transactionRepository.searchTransactionsPaginated(
+                customer.getId(),
+                searchRequest.getAccountNumber(),
+                searchRequest.getType(),
+                searchRequest.getStartDate(),
+                searchRequest.getEndDate(),
+                searchRequest.getMinAmount(),
+                searchRequest.getMaxAmount(),
+                pageable);
+
+        // Map the results to DTOs
+        return transactionsPage.map(this::mapToTransactionResponse);
     }
 
     /**

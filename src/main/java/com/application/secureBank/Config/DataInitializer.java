@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Optional;
 import java.util.Random;
 
 @Configuration
@@ -31,7 +32,7 @@ public class DataInitializer {
             // Generate a test customer
             if (customerRepository.count() == 0) {
                 Customer customer = Customer.builder()
-                        .customerId("CU12783354")
+                        .customerId("RD4090")
                         .fullName("John Doe")
                         .email("john.doe@example.com")
                         .pin(passwordEncoder.encode("1234"))
@@ -55,7 +56,7 @@ public class DataInitializer {
                         .onlineBanking(true)
                         .mobileBanking(true)
                         .monthlyFee(BigDecimal.ZERO)
-                        .minimumBalance(new BigDecimal("200.00"))
+                        .minimumBalance(new BigDecimal("100.00"))
                         .withdrawalLimit(new BigDecimal("10000.00"))
                         .transferLimit(new BigDecimal("10000.00"))
                         .build();
@@ -99,7 +100,7 @@ public class DataInitializer {
                         .onlineBanking(true)
                         .mobileBanking(true)
                         .monthlyFee(BigDecimal.ZERO)
-                        .minimumBalance(new BigDecimal("200.00"))
+                        .minimumBalance(new BigDecimal("100.00"))
                         .withdrawalLimit(new BigDecimal("10000.00"))
                         .transferLimit(new BigDecimal("10000.00"))
                         .build();

@@ -33,19 +33,25 @@ public class AccountService {
                 .collect(Collectors.toList());
     }
 
-    //Get details of a specific account
+    // Get details of a specific account - FIXED to use direct repository lookup
     public AccountResponse getAccountDetails(String customerId, String accountNumber) {
         Customer customer = customerService.findByCustomerId(customerId);
 
-        Optional<Account> accountOpt = customer.getAccounts().stream()
-                .filter(acc -> acc.getAccountNumber().equals(accountNumber))
-                .findFirst();
+        // Direct repository lookup instead of filtering customer.getAccounts()
+        Optional<Account> accountOpt = accountRepository.findByAccountNumber(accountNumber);
 
         if (accountOpt.isEmpty()) {
             throw new IllegalArgumentException("Account not found");
         }
 
-        return mapToAccountResponse(accountOpt.get());
+        Account account = accountOpt.get();
+
+        // Security check: verify account belongs to customer
+        if (!account.getCustomer().getId().equals(customer.getId())) {
+            throw new IllegalArgumentException("Account does not belong to this customer");
+        }
+
+        return mapToAccountResponse(account);
     }
 
     private AccountResponse mapToAccountResponse(Account account) {
@@ -66,5 +72,4 @@ public class AccountService {
                 .transferLimit(account.getTransferLimit())
                 .build();
     }
-
 }

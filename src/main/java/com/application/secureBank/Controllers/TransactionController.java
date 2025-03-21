@@ -13,6 +13,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -218,5 +219,61 @@ public class TransactionController {
 
         List<TransactionResponse> transactions = transactionService.searchTransactions(customerId, searchRequest);
         return ResponseEntity.ok(transactions);
+    }
+
+    @PostMapping("/search/paged")
+    @Operation(
+            summary = "Search transactions with pagination",
+            description = "Search transactions with pagination support for better performance with large result sets"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Paginated search results retrieved successfully",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = PagedResponse.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Invalid search criteria or pagination parameters",
+                    content = @Content(mediaType = "application/json")
+            ),
+            @ApiResponse(
+                    responseCode = "401",
+                    description = "Unauthorized - Invalid or missing JWT token",
+                    content = @Content
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Account not found or doesn't belong to the customer",
+                    content = @Content
+            )
+    })
+    public ResponseEntity<PagedResponse<TransactionResponse>> searchTransactionsPaginated(
+            @Valid @RequestBody TransactionSearchRequest searchRequest,
+            @Parameter(description = "Page number (0-based)", required = true)
+            @RequestParam(defaultValue = "0") int page,
+            @Parameter(description = "Number of results per page", required = true)
+            @RequestParam(defaultValue = "10") int size) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String customerId = authentication.getName();
+
+        Page<TransactionResponse> transactionsPage =
+                transactionService.searchTransactionsPaginated(customerId, searchRequest, page, size);
+
+        PagedResponse<TransactionResponse> response = new PagedResponse<>(
+                transactionsPage.getContent(),
+                transactionsPage.getNumber(),
+                transactionsPage.getSize(),
+                transactionsPage.getTotalElements(),
+                transactionsPage.getTotalPages(),
+                transactionsPage.isFirst(),
+                transactionsPage.isLast()
+        );
+
+        return ResponseEntity.ok(response);
     }
 }

@@ -14,4 +14,5 @@ public class CustomerResponse {
     private String pin;
     private String fullName;
     private String email;
+    private String accountNumber;
 }

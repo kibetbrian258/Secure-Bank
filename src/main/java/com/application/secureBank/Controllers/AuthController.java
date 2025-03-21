@@ -56,6 +56,7 @@ public class AuthController {
                 .pin(registrationResponse.getPin())
                 .fullName(registrationResponse.getFullName())
                 .email(registrationResponse.getEmail())
+                .accountNumber(registrationResponse.getAccountNumber())
                 .build();
 
         return ResponseEntity.ok(response);
