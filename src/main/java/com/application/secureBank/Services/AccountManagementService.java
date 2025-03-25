@@ -30,7 +30,7 @@ public class AccountManagementService {
         Account account = Account.builder()
                 .accountNumber(accountNumber)
                 .customer(customer)
-                .balance(new BigDecimal("100.00"))  // Initial balance
+                .balance(new BigDecimal("0.00"))  // Initial balance
                 .status("Active")
                 .interestRate(new BigDecimal("2.5"))
                 .branchName("Main Branch")

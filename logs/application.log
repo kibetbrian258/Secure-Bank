@@ -203,3 +203,942 @@
 2025-03-25 10:36:13 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-03-25 10:36:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-03-25 10:36:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-25 10:47:02 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 21128 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
+2025-03-25 10:47:02 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-03-25 10:47:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-25 10:47:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 3 JPA repository interfaces.
+2025-03-25 10:47:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-25 10:47:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-25 10:47:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-25 10:47:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-25 10:47:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3051 ms
+2025-03-25 10:47:05 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-25 10:47:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-03-25 10:47:06 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-25 10:47:06 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-25 10:47:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-25 10:47:07 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:securebankdb user=USERNAME
+2025-03-25 10:47:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-25 10:47:07 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-25 10:47:09 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-25 10:47:09 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25 10:47:10 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-25 10:47:10 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-03-25 10:47:10 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-25 10:47:11 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-03-25 10:47:12 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:securebankdb'
+2025-03-25 10:47:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-25 10:47:12 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 10.865 seconds (process running for 12.1)
+2025-03-25 10:47:20 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-25 10:47:20 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-25 10:47:20 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-03-25 10:47:20 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-03-25 10:47:20 [tomcat-handler-0] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:20 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2025-03-25 10:47:20 [tomcat-handler-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
+2025-03-25 10:47:20 [tomcat-handler-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:20 [tomcat-handler-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
+2025-03-25 10:47:20 [tomcat-handler-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
+2025-03-25 10:47:20 [tomcat-handler-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:20 [tomcat-handler-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
+2025-03-25 10:47:20 [tomcat-handler-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-03-25 10:47:20 [tomcat-handler-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-03-25 10:47:20 [tomcat-handler-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:20 [tomcat-handler-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:20 [tomcat-handler-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
+2025-03-25 10:47:20 [tomcat-handler-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-03-25 10:47:20 [tomcat-handler-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:20 [tomcat-handler-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-03-25 10:47:20 [tomcat-handler-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
+2025-03-25 10:47:20 [tomcat-handler-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs/swagger-config
+2025-03-25 10:47:20 [tomcat-handler-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:20 [tomcat-handler-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs/swagger-config
+2025-03-25 10:47:20 [tomcat-handler-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/favicon-32x32.png
+2025-03-25 10:47:20 [tomcat-handler-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:20 [tomcat-handler-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/favicon-32x32.png
+2025-03-25 10:47:20 [tomcat-handler-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs
+2025-03-25 10:47:20 [tomcat-handler-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:20 [tomcat-handler-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs
+2025-03-25 10:47:21 [tomcat-handler-8] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1026 ms
+2025-03-25 10:47:38 [tomcat-handler-14] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/query.do?jsessionid=a9d9fb6aa42c318174594bca3850e560
+2025-03-25 10:47:38 [tomcat-handler-14] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:38 [tomcat-handler-14] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/query.do?jsessionid=a9d9fb6aa42c318174594bca3850e560
+2025-03-25 10:47:38 [tomcat-handler-15] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/stylesheet.css
+2025-03-25 10:47:38 [tomcat-handler-15] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:38 [tomcat-handler-15] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/stylesheet.css
+2025-03-25 10:47:38 [tomcat-handler-16] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/login.jsp?jsessionid=2e8072fb64131b4093af9f764d84af24
+2025-03-25 10:47:38 [tomcat-handler-16] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:38 [tomcat-handler-16] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/login.jsp?jsessionid=2e8072fb64131b4093af9f764d84af24
+2025-03-25 10:47:38 [tomcat-handler-17] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/login.jsp
+2025-03-25 10:47:38 [tomcat-handler-17] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:38 [tomcat-handler-18] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/background.gif
+2025-03-25 10:47:38 [tomcat-handler-17] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/login.jsp
+2025-03-25 10:47:38 [tomcat-handler-18] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:38 [tomcat-handler-18] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/background.gif
+2025-03-25 10:47:38 [tomcat-handler-19] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/login.jsp?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:38 [tomcat-handler-19] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:38 [tomcat-handler-19] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/login.jsp?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:38 [tomcat-handler-20] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-25 10:47:38 [tomcat-handler-20] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:38 [tomcat-handler-20] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-25 10:47:38 [tomcat-handler-20] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-21] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/login.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:40 [tomcat-handler-21] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-21] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/login.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:40 [tomcat-handler-22] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/header.jsp?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:40 [tomcat-handler-22] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-22] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/header.jsp?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:40 [tomcat-handler-23] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tables.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:40 [tomcat-handler-23] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-23] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tables.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:40 [tomcat-handler-24] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/query.jsp?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:40 [tomcat-handler-24] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-24] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/query.jsp?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:40 [tomcat-handler-25] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/help.jsp?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:40 [tomcat-handler-25] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-25] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/help.jsp?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:40 [tomcat-handler-26] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_disconnect.gif
+2025-03-25 10:47:40 [tomcat-handler-26] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-26] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_disconnect.gif
+2025-03-25 10:47:40 [tomcat-handler-27] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_line.gif
+2025-03-25 10:47:40 [tomcat-handler-28] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_refresh.gif
+2025-03-25 10:47:40 [tomcat-handler-30] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_commit.gif
+2025-03-25 10:47:40 [tomcat-handler-29] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_rollback.gif
+2025-03-25 10:47:40 [tomcat-handler-28] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-30] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-27] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-28] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_refresh.gif
+2025-03-25 10:47:40 [tomcat-handler-30] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_commit.gif
+2025-03-25 10:47:40 [tomcat-handler-27] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_line.gif
+2025-03-25 10:47:40 [tomcat-handler-29] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-29] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_rollback.gif
+2025-03-25 10:47:40 [tomcat-handler-33] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_run.gif
+2025-03-25 10:47:40 [tomcat-handler-31] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_history.gif
+2025-03-25 10:47:40 [tomcat-handler-32] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_help.gif
+2025-03-25 10:47:40 [tomcat-handler-32] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-32] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_help.gif
+2025-03-25 10:47:40 [tomcat-handler-33] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-31] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-33] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_run.gif
+2025-03-25 10:47:40 [tomcat-handler-31] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_history.gif
+2025-03-25 10:47:40 [tomcat-handler-34] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_run_selected.gif
+2025-03-25 10:47:40 [tomcat-handler-35] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_stop.gif
+2025-03-25 10:47:40 [tomcat-handler-35] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-35] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_stop.gif
+2025-03-25 10:47:40 [tomcat-handler-34] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-34] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_run_selected.gif
+2025-03-25 10:47:40 [tomcat-handler-36] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree.js
+2025-03-25 10:47:40 [tomcat-handler-36] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-36] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree.js
+2025-03-25 10:47:40 [tomcat-handler-39] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_plus.gif
+2025-03-25 10:47:40 [tomcat-handler-41] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_empty.gif
+2025-03-25 10:47:40 [tomcat-handler-41] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-39] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-39] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_plus.gif
+2025-03-25 10:47:40 [tomcat-handler-41] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_empty.gif
+2025-03-25 10:47:40 [tomcat-handler-40] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_table.gif
+2025-03-25 10:47:40 [tomcat-handler-40] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-40] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_table.gif
+2025-03-25 10:47:40 [tomcat-handler-37] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_minus.gif
+2025-03-25 10:47:40 [tomcat-handler-38] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_database.gif
+2025-03-25 10:47:40 [tomcat-handler-37] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-38] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-37] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_minus.gif
+2025-03-25 10:47:40 [tomcat-handler-38] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_database.gif
+2025-03-25 10:47:40 [tomcat-handler-42] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_column.gif
+2025-03-25 10:47:40 [tomcat-handler-42] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-42] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_column.gif
+2025-03-25 10:47:40 [tomcat-handler-43] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_type.gif
+2025-03-25 10:47:40 [tomcat-handler-43] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-44] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_index_az.gif
+2025-03-25 10:47:40 [tomcat-handler-43] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_type.gif
+2025-03-25 10:47:40 [tomcat-handler-44] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-44] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_index_az.gif
+2025-03-25 10:47:40 [tomcat-handler-45] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_index.gif
+2025-03-25 10:47:40 [tomcat-handler-45] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-45] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_index.gif
+2025-03-25 10:47:40 [tomcat-handler-46] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_folder.gif
+2025-03-25 10:47:40 [tomcat-handler-46] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-46] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_folder.gif
+2025-03-25 10:47:40 [tomcat-handler-47] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_view.gif
+2025-03-25 10:47:40 [tomcat-handler-47] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-48] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_users.gif
+2025-03-25 10:47:40 [tomcat-handler-47] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_view.gif
+2025-03-25 10:47:40 [tomcat-handler-48] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-48] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_users.gif
+2025-03-25 10:47:40 [tomcat-handler-50] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_user.gif
+2025-03-25 10:47:40 [tomcat-handler-49] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_info.gif
+2025-03-25 10:47:40 [tomcat-handler-50] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-49] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-49] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_info.gif
+2025-03-25 10:47:40 [tomcat-handler-50] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_user.gif
+2025-03-25 10:47:40 [tomcat-handler-51] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-25 10:47:40 [tomcat-handler-51] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:40 [tomcat-handler-51] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-25 10:47:40 [tomcat-handler-51] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:45 [tomcat-handler-52] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/query.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:45 [tomcat-handler-52] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:45 [tomcat-handler-52] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/query.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:47:45 [tomcat-handler-53] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/table.js
+2025-03-25 10:47:45 [tomcat-handler-53] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:47:45 [tomcat-handler-53] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/table.js
+2025-03-25 10:48:12 [tomcat-handler-60] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/register
+2025-03-25 10:48:12 [tomcat-handler-61] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2025-03-25 10:48:12 [tomcat-handler-61] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:48:12 [tomcat-handler-61] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2025-03-25 10:48:14 [tomcat-handler-61] INFO  c.a.secureBank.Services.EmailService - Email sent successfully to kibet@mail.com
+2025-03-25 10:48:46 [tomcat-handler-63] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-25 10:48:46 [tomcat-handler-64] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-25 10:48:46 [tomcat-handler-64] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:48:46 [tomcat-handler-64] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-25 10:48:47 [tomcat-handler-64] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Failed to find user ' RD2347'
+2025-03-25 10:49:07 [tomcat-handler-65] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-25 10:49:07 [tomcat-handler-66] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-25 10:49:07 [tomcat-handler-66] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:49:07 [tomcat-handler-66] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-25 10:49:07 [tomcat-handler-66] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Failed to find user ' RD2347'
+2025-03-25 10:49:34 [tomcat-handler-67] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-25 10:49:34 [tomcat-handler-68] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-25 10:49:34 [tomcat-handler-68] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:49:34 [tomcat-handler-68] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-25 10:49:34 [tomcat-handler-68] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Failed to find user ' RD2347'
+2025-03-25 10:50:06 [tomcat-handler-69] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/query.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:50:06 [tomcat-handler-69] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:50:06 [tomcat-handler-69] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/query.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:50:06 [tomcat-handler-70] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/stylesheet.css
+2025-03-25 10:50:06 [tomcat-handler-70] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:50:06 [tomcat-handler-70] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/stylesheet.css
+2025-03-25 10:50:06 [tomcat-handler-71] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/table.js
+2025-03-25 10:50:06 [tomcat-handler-71] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:50:06 [tomcat-handler-71] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/table.js
+2025-03-25 10:54:42 [tomcat-handler-74] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/register
+2025-03-25 10:54:42 [tomcat-handler-75] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2025-03-25 10:54:42 [tomcat-handler-75] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:54:42 [tomcat-handler-75] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2025-03-25 10:54:42 [tomcat-handler-75] INFO  c.a.secureBank.Services.EmailService - Email sent successfully to maine@mail.com
+2025-03-25 10:55:24 [tomcat-handler-77] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-25 10:55:24 [tomcat-handler-78] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-25 10:55:24 [tomcat-handler-78] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:55:24 [tomcat-handler-78] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-25 10:55:24 [tomcat-handler-78] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Failed to find user ' RD8615'
+2025-03-25 10:58:48 [tomcat-handler-79] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/query.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:58:48 [tomcat-handler-79] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:58:48 [tomcat-handler-79] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/query.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 10:58:48 [tomcat-handler-80] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/stylesheet.css
+2025-03-25 10:58:48 [tomcat-handler-80] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:58:48 [tomcat-handler-80] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/stylesheet.css
+2025-03-25 10:58:48 [tomcat-handler-81] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/table.js
+2025-03-25 10:58:48 [tomcat-handler-81] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 10:58:48 [tomcat-handler-81] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/table.js
+2025-03-25 10:59:50 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25 10:59:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-25 10:59:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-25 11:22:31 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 12860 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
+2025-03-25 11:22:31 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-03-25 11:22:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-25 11:22:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 3 JPA repository interfaces.
+2025-03-25 11:22:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-25 11:22:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-25 11:22:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-25 11:22:35 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-25 11:22:35 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3549 ms
+2025-03-25 11:22:35 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-25 11:22:35 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-03-25 11:22:36 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-25 11:22:36 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-25 11:22:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-25 11:22:36 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:securebankdb user=USERNAME
+2025-03-25 11:22:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-25 11:22:37 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-25 11:22:38 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-25 11:22:38 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25 11:22:39 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-25 11:22:39 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-03-25 11:22:39 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-25 11:22:41 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-03-25 11:22:41 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:securebankdb'
+2025-03-25 11:22:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-25 11:22:41 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 11.277 seconds (process running for 13.894)
+2025-03-25 11:23:01 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/query.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 11:23:01 [tomcat-handler-0] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:01 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/query.do?jsessionid=7171e5ec8e8c1f3d30559c45c8369f70
+2025-03-25 11:23:01 [tomcat-handler-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/stylesheet.css
+2025-03-25 11:23:01 [tomcat-handler-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:01 [tomcat-handler-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/stylesheet.css
+2025-03-25 11:23:01 [tomcat-handler-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/login.jsp?jsessionid=055a786a10fbc5368444a8c0178a1207
+2025-03-25 11:23:01 [tomcat-handler-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:01 [tomcat-handler-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/login.jsp?jsessionid=055a786a10fbc5368444a8c0178a1207
+2025-03-25 11:23:02 [tomcat-handler-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/login.jsp
+2025-03-25 11:23:02 [tomcat-handler-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:02 [tomcat-handler-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/login.jsp
+2025-03-25 11:23:02 [tomcat-handler-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/background.gif
+2025-03-25 11:23:02 [tomcat-handler-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:02 [tomcat-handler-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/background.gif
+2025-03-25 11:23:03 [tomcat-handler-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/login.jsp?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:03 [tomcat-handler-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:03 [tomcat-handler-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/login.jsp?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:03 [tomcat-handler-6] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-25 11:23:03 [tomcat-handler-6] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-25 11:23:03 [tomcat-handler-6] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 19 ms
+2025-03-25 11:23:03 [tomcat-handler-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-25 11:23:03 [tomcat-handler-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:03 [tomcat-handler-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-25 11:23:03 [tomcat-handler-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/login.do?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:04 [tomcat-handler-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-7] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/login.do?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:04 [tomcat-handler-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/header.jsp?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:04 [tomcat-handler-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tables.do?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:04 [tomcat-handler-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/header.jsp?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:04 [tomcat-handler-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tables.do?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:04 [tomcat-handler-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/query.jsp?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:04 [tomcat-handler-11] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/help.jsp?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:04 [tomcat-handler-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-11] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-11] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/help.jsp?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:04 [tomcat-handler-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/query.jsp?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:04 [tomcat-handler-12] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_disconnect.gif
+2025-03-25 11:23:04 [tomcat-handler-14] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_help.gif
+2025-03-25 11:23:04 [tomcat-handler-14] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-14] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_help.gif
+2025-03-25 11:23:04 [tomcat-handler-12] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-12] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_disconnect.gif
+2025-03-25 11:23:04 [tomcat-handler-16] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_history.gif
+2025-03-25 11:23:04 [tomcat-handler-17] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_refresh.gif
+2025-03-25 11:23:04 [tomcat-handler-13] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_line.gif
+2025-03-25 11:23:04 [tomcat-handler-17] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-16] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-17] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_refresh.gif
+2025-03-25 11:23:04 [tomcat-handler-16] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_history.gif
+2025-03-25 11:23:04 [tomcat-handler-13] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-13] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_line.gif
+2025-03-25 11:23:04 [tomcat-handler-15] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_rollback.gif
+2025-03-25 11:23:04 [tomcat-handler-15] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-15] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_rollback.gif
+2025-03-25 11:23:04 [tomcat-handler-19] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_run_selected.gif
+2025-03-25 11:23:04 [tomcat-handler-18] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_stop.gif
+2025-03-25 11:23:04 [tomcat-handler-19] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-19] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_run_selected.gif
+2025-03-25 11:23:04 [tomcat-handler-22] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_run.gif
+2025-03-25 11:23:04 [tomcat-handler-18] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-22] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-20] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_commit.gif
+2025-03-25 11:23:04 [tomcat-handler-21] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree.js
+2025-03-25 11:23:04 [tomcat-handler-18] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_stop.gif
+2025-03-25 11:23:04 [tomcat-handler-20] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-21] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:04 [tomcat-handler-21] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree.js
+2025-03-25 11:23:04 [tomcat-handler-22] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_run.gif
+2025-03-25 11:23:04 [tomcat-handler-20] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_commit.gif
+2025-03-25 11:23:07 [tomcat-handler-23] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_plus.gif
+2025-03-25 11:23:07 [tomcat-handler-23] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:07 [tomcat-handler-23] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_plus.gif
+2025-03-25 11:23:07 [tomcat-handler-24] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_minus.gif
+2025-03-25 11:23:07 [tomcat-handler-25] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_table.gif
+2025-03-25 11:23:07 [tomcat-handler-24] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:07 [tomcat-handler-26] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_database.gif
+2025-03-25 11:23:07 [tomcat-handler-25] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:07 [tomcat-handler-28] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_column.gif
+2025-03-25 11:23:07 [tomcat-handler-25] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_table.gif
+2025-03-25 11:23:07 [tomcat-handler-27] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_empty.gif
+2025-03-25 11:23:07 [tomcat-handler-24] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_minus.gif
+2025-03-25 11:23:07 [tomcat-handler-26] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:07 [tomcat-handler-28] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:07 [tomcat-handler-26] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_database.gif
+2025-03-25 11:23:07 [tomcat-handler-28] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_column.gif
+2025-03-25 11:23:07 [tomcat-handler-27] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:07 [tomcat-handler-27] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_empty.gif
+2025-03-25 11:23:07 [tomcat-handler-30] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_info.gif
+2025-03-25 11:23:07 [tomcat-handler-30] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:07 [tomcat-handler-29] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_users.gif
+2025-03-25 11:23:07 [tomcat-handler-30] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_info.gif
+2025-03-25 11:23:07 [tomcat-handler-31] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_folder.gif
+2025-03-25 11:23:07 [tomcat-handler-29] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:07 [tomcat-handler-31] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:07 [tomcat-handler-31] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_folder.gif
+2025-03-25 11:23:07 [tomcat-handler-29] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_users.gif
+2025-03-25 11:23:08 [tomcat-handler-32] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_type.gif
+2025-03-25 11:23:08 [tomcat-handler-33] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_index_az.gif
+2025-03-25 11:23:08 [tomcat-handler-33] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:08 [tomcat-handler-32] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:08 [tomcat-handler-33] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_index_az.gif
+2025-03-25 11:23:08 [tomcat-handler-32] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_type.gif
+2025-03-25 11:23:08 [tomcat-handler-34] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_index.gif
+2025-03-25 11:23:08 [tomcat-handler-34] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:08 [tomcat-handler-34] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_index.gif
+2025-03-25 11:23:09 [tomcat-handler-36] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_user.gif
+2025-03-25 11:23:09 [tomcat-handler-35] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/query.do?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:09 [tomcat-handler-35] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:09 [tomcat-handler-36] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:09 [tomcat-handler-35] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/query.do?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 11:23:09 [tomcat-handler-36] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_user.gif
+2025-03-25 11:23:09 [tomcat-handler-37] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_view.gif
+2025-03-25 11:23:09 [tomcat-handler-37] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:09 [tomcat-handler-37] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_view.gif
+2025-03-25 11:23:10 [tomcat-handler-41] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/table.js
+2025-03-25 11:23:10 [tomcat-handler-41] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:10 [tomcat-handler-41] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/table.js
+2025-03-25 11:23:10 [tomcat-handler-42] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-25 11:23:10 [tomcat-handler-42] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:10 [tomcat-handler-42] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-25 11:23:10 [tomcat-handler-42] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:29 [tomcat-handler-46] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/register
+2025-03-25 11:23:29 [tomcat-handler-47] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2025-03-25 11:23:29 [tomcat-handler-47] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:29 [tomcat-handler-47] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2025-03-25 11:23:30 [tomcat-handler-47] INFO  c.a.secureBank.Services.EmailService - Email sent successfully to kibet@mail.com
+2025-03-25 11:23:57 [tomcat-handler-49] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-25 11:23:57 [tomcat-handler-50] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-25 11:23:57 [tomcat-handler-50] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:23:57 [tomcat-handler-50] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-25 11:23:57 [tomcat-handler-50] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-25 11:24:13 [tomcat-handler-52] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-25 11:24:13 [tomcat-handler-53] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-25 11:24:13 [tomcat-handler-53] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 11:24:13 [tomcat-handler-53] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-25 11:24:13 [tomcat-handler-53] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-25 12:04:46 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 2236 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
+2025-03-25 12:04:46 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-03-25 12:04:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-25 12:04:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 3 JPA repository interfaces.
+2025-03-25 12:04:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-25 12:04:50 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-25 12:04:50 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-25 12:04:50 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-25 12:04:50 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3889 ms
+2025-03-25 12:04:51 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-25 12:04:51 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-03-25 12:04:51 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-25 12:04:51 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-25 12:04:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-25 12:04:52 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:securebankdb user=USERNAME
+2025-03-25 12:04:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-25 12:04:52 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-25 12:04:53 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-25 12:04:54 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25 12:04:54 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-25 12:04:54 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-03-25 12:04:54 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-25 12:04:56 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-03-25 12:04:57 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:securebankdb'
+2025-03-25 12:04:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-25 12:04:57 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 11.409 seconds (process running for 20.595)
+2025-03-25 12:04:58 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-25 12:04:58 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-25 12:04:58 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-03-25 12:04:58 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-03-25 12:04:58 [tomcat-handler-0] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 12:04:58 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2025-03-25 12:04:58 [tomcat-handler-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
+2025-03-25 12:04:58 [tomcat-handler-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 12:04:58 [tomcat-handler-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
+2025-03-25 12:04:58 [tomcat-handler-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
+2025-03-25 12:04:58 [tomcat-handler-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 12:04:58 [tomcat-handler-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
+2025-03-25 12:04:58 [tomcat-handler-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-03-25 12:04:58 [tomcat-handler-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 12:04:58 [tomcat-handler-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-03-25 12:04:58 [tomcat-handler-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
+2025-03-25 12:04:58 [tomcat-handler-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 12:04:58 [tomcat-handler-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
+2025-03-25 12:04:58 [tomcat-handler-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-03-25 12:04:58 [tomcat-handler-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 12:04:58 [tomcat-handler-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-03-25 12:04:58 [tomcat-handler-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs/swagger-config
+2025-03-25 12:04:58 [tomcat-handler-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 12:04:58 [tomcat-handler-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs/swagger-config
+2025-03-25 12:04:58 [tomcat-handler-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/favicon-32x32.png
+2025-03-25 12:04:58 [tomcat-handler-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 12:04:58 [tomcat-handler-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/favicon-32x32.png
+2025-03-25 12:04:58 [tomcat-handler-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs
+2025-03-25 12:04:58 [tomcat-handler-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 12:04:58 [tomcat-handler-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs
+2025-03-25 12:04:59 [tomcat-handler-8] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 761 ms
+2025-03-25 13:07:12 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25 13:07:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-25 13:07:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-25 21:45:14 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 10448 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
+2025-03-25 21:45:14 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-03-25 21:45:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-25 21:45:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
+2025-03-25 21:45:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-25 21:45:17 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-25 21:45:17 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-25 21:45:17 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-25 21:45:17 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2972 ms
+2025-03-25 21:45:17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-25 21:45:17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-03-25 21:45:17 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-25 21:45:18 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-25 21:45:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-25 21:45:18 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:securebankdb user=USERNAME
+2025-03-25 21:45:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-25 21:45:18 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-25 21:45:19 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-25 21:45:19 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25 21:45:20 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-25 21:45:20 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-03-25 21:45:20 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-25 21:45:21 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-03-25 21:45:22 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:securebankdb'
+2025-03-25 21:45:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-25 21:45:22 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 9.21 seconds (process running for 15.971)
+2025-03-25 21:46:26 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/login.do?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 21:46:26 [tomcat-handler-0] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:26 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/login.do?jsessionid=377865669673afea6b3feecce4d6cd48
+2025-03-25 21:46:27 [tomcat-handler-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/stylesheet.css
+2025-03-25 21:46:27 [tomcat-handler-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:27 [tomcat-handler-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/stylesheet.css
+2025-03-25 21:46:27 [tomcat-handler-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/login.jsp?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:27 [tomcat-handler-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:27 [tomcat-handler-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/login.jsp?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:27 [tomcat-handler-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/background.gif
+2025-03-25 21:46:27 [tomcat-handler-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:27 [tomcat-handler-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/background.gif
+2025-03-25 21:46:27 [tomcat-handler-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-25 21:46:27 [tomcat-handler-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-25 21:46:27 [tomcat-handler-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-03-25 21:46:27 [tomcat-handler-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-25 21:46:27 [tomcat-handler-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:27 [tomcat-handler-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-25 21:46:27 [tomcat-handler-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:28 [tomcat-handler-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/test.do?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:28 [tomcat-handler-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:28 [tomcat-handler-7] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/test.do?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:28 [tomcat-handler-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-25 21:46:28 [tomcat-handler-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:28 [tomcat-handler-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-25 21:46:28 [tomcat-handler-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/login.do?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:29 [tomcat-handler-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-9] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/login.do?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:29 [tomcat-handler-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/header.jsp?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:29 [tomcat-handler-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/header.jsp?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:29 [tomcat-handler-11] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tables.do?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:29 [tomcat-handler-11] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-11] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tables.do?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:29 [tomcat-handler-12] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/query.jsp?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:29 [tomcat-handler-12] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-12] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/query.jsp?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:29 [tomcat-handler-13] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/help.jsp?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:29 [tomcat-handler-13] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-13] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/help.jsp?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:29 [tomcat-handler-14] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_disconnect.gif
+2025-03-25 21:46:29 [tomcat-handler-14] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-14] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_disconnect.gif
+2025-03-25 21:46:29 [tomcat-handler-16] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_refresh.gif
+2025-03-25 21:46:29 [tomcat-handler-16] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-16] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_refresh.gif
+2025-03-25 21:46:29 [tomcat-handler-15] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_line.gif
+2025-03-25 21:46:29 [tomcat-handler-17] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_rollback.gif
+2025-03-25 21:46:29 [tomcat-handler-15] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-15] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_line.gif
+2025-03-25 21:46:29 [tomcat-handler-19] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_run.gif
+2025-03-25 21:46:29 [tomcat-handler-17] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-17] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_rollback.gif
+2025-03-25 21:46:29 [tomcat-handler-19] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-19] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_run.gif
+2025-03-25 21:46:29 [tomcat-handler-20] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_run_selected.gif
+2025-03-25 21:46:29 [tomcat-handler-18] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_commit.gif
+2025-03-25 21:46:29 [tomcat-handler-20] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-20] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_run_selected.gif
+2025-03-25 21:46:29 [tomcat-handler-21] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_stop.gif
+2025-03-25 21:46:29 [tomcat-handler-21] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-21] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_stop.gif
+2025-03-25 21:46:29 [tomcat-handler-22] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_history.gif
+2025-03-25 21:46:29 [tomcat-handler-22] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-22] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_history.gif
+2025-03-25 21:46:29 [tomcat-handler-18] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-23] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/icon_help.gif
+2025-03-25 21:46:29 [tomcat-handler-18] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_commit.gif
+2025-03-25 21:46:29 [tomcat-handler-23] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-23] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/icon_help.gif
+2025-03-25 21:46:29 [tomcat-handler-24] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree.js
+2025-03-25 21:46:29 [tomcat-handler-24] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-24] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree.js
+2025-03-25 21:46:29 [tomcat-handler-25] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_minus.gif
+2025-03-25 21:46:29 [tomcat-handler-26] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_plus.gif
+2025-03-25 21:46:29 [tomcat-handler-27] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_database.gif
+2025-03-25 21:46:29 [tomcat-handler-25] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-26] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-27] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-29] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_empty.gif
+2025-03-25 21:46:29 [tomcat-handler-30] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_column.gif
+2025-03-25 21:46:29 [tomcat-handler-26] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_plus.gif
+2025-03-25 21:46:29 [tomcat-handler-29] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-29] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_empty.gif
+2025-03-25 21:46:29 [tomcat-handler-25] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_minus.gif
+2025-03-25 21:46:29 [tomcat-handler-27] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_database.gif
+2025-03-25 21:46:29 [tomcat-handler-30] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-30] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_column.gif
+2025-03-25 21:46:29 [tomcat-handler-28] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_table.gif
+2025-03-25 21:46:29 [tomcat-handler-28] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-28] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_table.gif
+2025-03-25 21:46:29 [tomcat-handler-31] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_type.gif
+2025-03-25 21:46:29 [tomcat-handler-31] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-31] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_type.gif
+2025-03-25 21:46:29 [tomcat-handler-32] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_index_az.gif
+2025-03-25 21:46:29 [tomcat-handler-32] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-34] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_folder.gif
+2025-03-25 21:46:29 [tomcat-handler-32] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_index_az.gif
+2025-03-25 21:46:29 [tomcat-handler-34] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-33] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_index.gif
+2025-03-25 21:46:29 [tomcat-handler-34] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_folder.gif
+2025-03-25 21:46:29 [tomcat-handler-33] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-33] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_index.gif
+2025-03-25 21:46:29 [tomcat-handler-37] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_info.gif
+2025-03-25 21:46:29 [tomcat-handler-36] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_users.gif
+2025-03-25 21:46:29 [tomcat-handler-36] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-37] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-37] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_info.gif
+2025-03-25 21:46:29 [tomcat-handler-36] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_users.gif
+2025-03-25 21:46:29 [tomcat-handler-35] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_view.gif
+2025-03-25 21:46:29 [tomcat-handler-38] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/tree_user.gif
+2025-03-25 21:46:29 [tomcat-handler-38] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-35] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-38] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_user.gif
+2025-03-25 21:46:29 [tomcat-handler-35] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/tree_view.gif
+2025-03-25 21:46:29 [tomcat-handler-39] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-25 21:46:29 [tomcat-handler-39] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:29 [tomcat-handler-39] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-25 21:46:29 [tomcat-handler-39] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:34 [tomcat-handler-40] DEBUG o.s.security.web.FilterChainProxy - Securing POST /h2-console/query.do?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:34 [tomcat-handler-40] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:34 [tomcat-handler-40] DEBUG o.s.security.web.FilterChainProxy - Secured POST /h2-console/query.do?jsessionid=4d510b0aaa53c352a283026ff9c291d4
+2025-03-25 21:46:34 [tomcat-handler-41] DEBUG o.s.security.web.FilterChainProxy - Securing GET /h2-console/table.js
+2025-03-25 21:46:34 [tomcat-handler-41] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:34 [tomcat-handler-41] DEBUG o.s.security.web.FilterChainProxy - Secured GET /h2-console/table.js
+2025-03-25 21:46:46 [tomcat-handler-48] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/register
+2025-03-25 21:46:46 [tomcat-handler-49] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2025-03-25 21:46:46 [tomcat-handler-49] ERROR c.a.s.Config.JwtAuthenticationFilter - Could not set user authentication in security context
+org.springframework.security.core.userdetails.UsernameNotFoundException: Customer not found with ID: RD2739
+	at com.application.secureBank.Services.CustomerService.lambda$findByCustomerId$0(CustomerService.java:49)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.application.secureBank.Services.CustomerService.findByCustomerId(CustomerService.java:49)
+	at com.application.secureBank.Services.CustomerService.loadUserByUsername(CustomerService.java:41)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
+	at com.application.secureBank.Services.CustomerService$$SpringCGLIB$$1.loadUserByUsername(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
+	at com.application.secureBank.Services.CustomerService$$SpringCGLIB$$0.loadUserByUsername(<generated>)
+	at com.application.secureBank.Config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:329)
+2025-03-25 21:46:46 [tomcat-handler-49] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:46:46 [tomcat-handler-49] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2025-03-25 21:46:48 [tomcat-handler-49] INFO  c.a.secureBank.Services.EmailService - Email sent successfully to kibet@mail.com
+2025-03-25 21:47:22 [tomcat-handler-51] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-25 21:47:22 [tomcat-handler-52] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-25 21:47:22 [tomcat-handler-52] ERROR c.a.s.Config.JwtAuthenticationFilter - Could not set user authentication in security context
+org.springframework.security.core.userdetails.UsernameNotFoundException: Customer not found with ID: RD2739
+	at com.application.secureBank.Services.CustomerService.lambda$findByCustomerId$0(CustomerService.java:49)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.application.secureBank.Services.CustomerService.findByCustomerId(CustomerService.java:49)
+	at com.application.secureBank.Services.CustomerService.loadUserByUsername(CustomerService.java:41)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
+	at com.application.secureBank.Services.CustomerService$$SpringCGLIB$$1.loadUserByUsername(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
+	at com.application.secureBank.Services.CustomerService$$SpringCGLIB$$0.loadUserByUsername(<generated>)
+	at com.application.secureBank.Config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:329)
+2025-03-25 21:47:22 [tomcat-handler-52] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:47:22 [tomcat-handler-52] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-25 21:47:22 [tomcat-handler-52] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-25 21:47:22 [tomcat-handler-53] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-25 21:47:22 [tomcat-handler-54] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-25 21:47:22 [tomcat-handler-54] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-25 21:47:22 [tomcat-handler-55] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-25 21:47:22 [tomcat-handler-56] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-25 21:47:22 [tomcat-handler-56] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-25 21:47:22 [tomcat-handler-57] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/02691715747
+2025-03-25 21:47:22 [tomcat-handler-58] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/02691715747
+2025-03-25 21:47:22 [tomcat-handler-58] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/02691715747
+2025-03-25 21:47:53 [tomcat-handler-60] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-25 21:47:53 [tomcat-handler-61] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-25 21:47:53 [tomcat-handler-61] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:47:53 [tomcat-handler-61] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-25 21:47:53 [tomcat-handler-61] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-25 21:47:53 [tomcat-handler-62] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-25 21:47:53 [tomcat-handler-63] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-25 21:47:53 [tomcat-handler-63] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-25 21:47:53 [tomcat-handler-64] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-25 21:47:53 [tomcat-handler-65] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-25 21:47:53 [tomcat-handler-65] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-25 21:47:53 [tomcat-handler-66] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/02691715747
+2025-03-25 21:47:53 [tomcat-handler-67] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/02691715747
+2025-03-25 21:47:53 [tomcat-handler-67] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/02691715747
+2025-03-25 21:48:08 [tomcat-handler-68] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-25 21:48:08 [tomcat-handler-69] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-25 21:48:08 [tomcat-handler-69] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-25 21:48:08 [tomcat-handler-70] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-25 21:48:08 [tomcat-handler-71] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-25 21:48:08 [tomcat-handler-71] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-25 21:48:08 [tomcat-handler-72] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/02691715747
+2025-03-25 21:48:08 [tomcat-handler-73] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/02691715747
+2025-03-25 21:48:08 [tomcat-handler-73] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/02691715747
+2025-03-25 21:51:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25 21:51:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-25 21:51:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-25 21:51:32 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 20448 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
+2025-03-25 21:51:32 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-03-25 21:51:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-25 21:51:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 3 JPA repository interfaces.
+2025-03-25 21:51:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-25 21:51:34 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-25 21:51:34 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-25 21:51:34 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-25 21:51:34 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2114 ms
+2025-03-25 21:51:34 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-25 21:51:34 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-03-25 21:51:34 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-25 21:51:35 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-25 21:51:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-25 21:51:35 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:securebankdb user=USERNAME
+2025-03-25 21:51:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-25 21:51:35 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-25 21:51:36 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-25 21:51:36 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25 21:51:37 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-25 21:51:37 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-03-25 21:51:37 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-25 21:51:38 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-03-25 21:51:38 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:securebankdb'
+2025-03-25 21:51:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-25 21:51:38 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 7.567 seconds (process running for 8.971)
+2025-03-25 21:51:48 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-25 21:51:48 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-25 21:51:48 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-25 21:51:48 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-25 21:51:48 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-25 21:51:48 [tomcat-handler-0] ERROR c.a.s.Config.JwtAuthenticationFilter - Could not set user authentication in security context
+org.springframework.security.core.userdetails.UsernameNotFoundException: Customer not found with ID: RD6088
+	at com.application.secureBank.Services.CustomerService.lambda$findByCustomerId$0(CustomerService.java:49)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.application.secureBank.Services.CustomerService.findByCustomerId(CustomerService.java:49)
+	at com.application.secureBank.Services.CustomerService.loadUserByUsername(CustomerService.java:41)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
+	at com.application.secureBank.Services.CustomerService$$SpringCGLIB$$1.loadUserByUsername(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
+	at com.application.secureBank.Services.CustomerService$$SpringCGLIB$$0.loadUserByUsername(<generated>)
+	at com.application.secureBank.Config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:329)
+2025-03-25 21:51:48 [tomcat-handler-0] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:51:48 [tomcat-handler-0] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-25 21:51:48 [tomcat-handler-0] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:51:56 [tomcat-handler-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-25 21:51:56 [tomcat-handler-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-25 21:51:56 [tomcat-handler-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:51:56 [tomcat-handler-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-25 21:51:56 [tomcat-handler-3] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Failed to find user 'RD6088'
+2025-03-25 21:52:03 [tomcat-handler-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/register
+2025-03-25 21:52:03 [tomcat-handler-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2025-03-25 21:52:03 [tomcat-handler-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:52:03 [tomcat-handler-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2025-03-25 21:52:04 [tomcat-handler-5] INFO  c.a.secureBank.Services.EmailService - Email sent successfully to kibet@mail.com
+2025-03-25 21:52:25 [tomcat-handler-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-25 21:52:25 [tomcat-handler-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-25 21:52:25 [tomcat-handler-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-25 21:52:25 [tomcat-handler-8] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-25 21:52:25 [tomcat-handler-8] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-25 21:52:25 [tomcat-handler-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-25 21:52:25 [tomcat-handler-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-25 21:52:25 [tomcat-handler-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-25 21:52:25 [tomcat-handler-11] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-25 21:52:25 [tomcat-handler-12] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-25 21:52:25 [tomcat-handler-12] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-25 21:52:25 [tomcat-handler-13] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/63572971158
+2025-03-25 21:52:25 [tomcat-handler-14] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/63572971158
+2025-03-25 21:52:25 [tomcat-handler-14] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/63572971158
+2025-03-25 21:52:46 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25 21:52:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-25 21:52:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

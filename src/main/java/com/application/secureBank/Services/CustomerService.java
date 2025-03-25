@@ -37,13 +37,16 @@ public class CustomerService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String customerId) throws UsernameNotFoundException {
+        customerId = customerId != null ? customerId.trim() : customerId;
         Customer customer = findByCustomerId(customerId);
         return new User(customer.getCustomerId(), customer.getPin(), new ArrayList<>());
     }
 
     public Customer findByCustomerId(String customerId) {
-        return customerRepository.findByCustomerId(customerId)
-                .orElseThrow(() -> new UsernameNotFoundException("Customer not found with ID: " + customerId));
+        String trimmedCustomerId = customerId != null ? customerId.trim() : customerId;
+
+        return customerRepository.findByCustomerId(trimmedCustomerId)
+                .orElseThrow(() -> new UsernameNotFoundException("Customer not found with ID: " + trimmedCustomerId));
     }
 
     public void updateLastLogin(String customerId) {
