@@ -3,6 +3,17 @@ spring:
     url: jdbc:h2:mem:securebankdb
     username: username
     password: password
+  mail:
+    host: localhost
+    port: 1025
+    username: noreply@securebank.com
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
 
   h2:
     console:

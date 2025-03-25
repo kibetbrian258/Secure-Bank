@@ -43,7 +43,7 @@ logging:
   level:
     root: INFO
     org.springframework.security: DEBUG
-    com.securebank: DEBUG
+    com.secureBank: DEBUG
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

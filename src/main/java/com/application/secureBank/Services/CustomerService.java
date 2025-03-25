@@ -22,14 +22,17 @@ public class CustomerService implements UserDetailsService {
 
     private final CustomerRepository customerRepository;
     private final PasswordEncoder passwordEncoder;
-    private final AccountManagementService accountManagementService; // Changed from AccountService
+    private final AccountManagementService accountManagementService;
+    private final EmailService emailService;
 
     public CustomerService(CustomerRepository customerRepository,
                            PasswordEncoder passwordEncoder,
-                           AccountManagementService accountManagementService) { // Changed constructor parameter
+                           AccountManagementService accountManagementService,
+                           EmailService emailService) {
         this.customerRepository = customerRepository;
         this.passwordEncoder = passwordEncoder;
         this.accountManagementService = accountManagementService;
+        this.emailService = emailService;
     }
 
     @Override
@@ -77,6 +80,15 @@ public class CustomerService implements UserDetailsService {
 
         // Create an account for the customer using the AccountManagementService
         Account account = accountManagementService.createAccount(savedCustomer);
+
+        // Send email with credentials
+        emailService.sendRegistrationEmail(
+                request.getEmail(),
+                request.getFullName(),
+                customerId,
+                pin,
+                account.getAccountNumber()
+        );
 
         // Return registration response with plain text PIN for first-time login
         // and the generated account number
