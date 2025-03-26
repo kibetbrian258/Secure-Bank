@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -28,6 +29,9 @@ public class CustomerProfileResponse {
 
     @Schema(description = "Customer's phone number", example = "+1234567890")
     private String phoneNumber;
+
+    @Schema(description = "Customer's date of birth", example = "1990-01-15")
+    private LocalDate dateOfBirth;
 
     @Schema(description = "Date and time when the customer registered", example = "2023-01-15T10:30:00")
     private LocalDateTime registrationDate;

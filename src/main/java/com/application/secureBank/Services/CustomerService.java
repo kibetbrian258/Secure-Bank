@@ -68,7 +68,7 @@ public class CustomerService implements UserDetailsService {
         // Generate customer ID with RD prefix and 4 digits
         String customerId = generateCustomerId();
 
-        // Create customer entity
+        // Create customer entity with new fields
         Customer customer = Customer.builder()
                 .customerId(customerId)
                 .fullName(request.getFullName())
@@ -76,6 +76,11 @@ public class CustomerService implements UserDetailsService {
                 .pin(passwordEncoder.encode(pin))
                 .registrationDate(LocalDateTime.now())
                 .lastLogin(LocalDateTime.now())
+                .dateOfBirth(request.getDateOfBirth() != null
+                        ? request.getDateOfBirth().atStartOfDay()
+                        : null)
+                .phoneNumber(request.getPhoneNumber())
+                .address(request.getAddress())
                 .build();
 
         // Save customer
@@ -101,6 +106,9 @@ public class CustomerService implements UserDetailsService {
                 .email(request.getEmail())
                 .pin(pin)
                 .accountNumber(account.getAccountNumber())
+                .dateOfBirth(request.getDateOfBirth())
+                .phoneNumber(request.getPhoneNumber())
+                .address(request.getAddress())
                 .build();
     }
 
