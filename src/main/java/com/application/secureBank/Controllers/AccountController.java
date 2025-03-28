@@ -1,6 +1,7 @@
 package com.application.secureBank.Controllers;
 
 import com.application.secureBank.DTOs.AccountResponse;
+import com.application.secureBank.DTOs.CreateAccountRequest;
 import com.application.secureBank.Services.AccountService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -12,7 +13,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -90,5 +93,40 @@ public class AccountController {
 
         AccountResponse account = accountService.getAccountDetails(customerId, accountNumber);
         return ResponseEntity.ok(account);
+    }
+
+    @PostMapping("/create")
+    @Operation(
+            summary = "Create a new account",
+            description = "Creates a new account for the authenticated customer"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "Account created successfully",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = AccountResponse.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Invalid account type",
+                    content = @Content
+            ),
+            @ApiResponse(
+                    responseCode = "401",
+                    description = "Unauthorized - Invalid or missing JWT token",
+                    content = @Content
+            )
+    })
+    public ResponseEntity<AccountResponse> createAccount(
+            @Valid @RequestBody CreateAccountRequest request) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String customerId = authentication.getName();
+
+        AccountResponse account = accountService.createAccountForCustomer(customerId, request.getAccountType());
+        return new ResponseEntity<>(account, HttpStatus.CREATED);
     }
 }

@@ -293,15 +293,23 @@ public class TransactionService {
 
         Customer customer = customerService.findByCustomerId(customerId);
 
+        // Prepare parameters to avoid NULL issues with COALESCE
+        String accountNumber = searchRequest.getAccountNumber();
+        String type = searchRequest.getType();
+        LocalDateTime startDate = searchRequest.getStartDate();
+        LocalDateTime endDate = searchRequest.getEndDate();
+        BigDecimal minAmount = searchRequest.getMinAmount();
+        BigDecimal maxAmount = searchRequest.getMaxAmount();
+
         // Use the repository method that does all filtering in the database
         List<Transaction> transactions = transactionRepository.searchTransactions(
                 customer.getId(),
-                searchRequest.getAccountNumber(),
-                searchRequest.getType(),
-                searchRequest.getStartDate(),
-                searchRequest.getEndDate(),
-                searchRequest.getMinAmount(),
-                searchRequest.getMaxAmount());
+                accountNumber,
+                type,
+                startDate,
+                endDate,
+                minAmount,
+                maxAmount);
 
         // Map the results to DTOs
         return transactions.stream()
@@ -326,15 +334,28 @@ public class TransactionService {
                 size,
                 Sort.by(Sort.Direction.DESC, "transactionDateTime"));
 
+        // Handle null parameters by providing empty strings or default values instead of null
+        // This avoids SQL issues with COALESCE and NULL parameters
+        String accountNumber = searchRequest.getAccountNumber() != null && !searchRequest.getAccountNumber().trim().isEmpty() ?
+                searchRequest.getAccountNumber() : null;
+
+        String type = searchRequest.getType() != null && !searchRequest.getType().trim().isEmpty() ?
+                searchRequest.getType() : null;
+
+        LocalDateTime startDate = searchRequest.getStartDate();
+        LocalDateTime endDate = searchRequest.getEndDate();
+        BigDecimal minAmount = searchRequest.getMinAmount();
+        BigDecimal maxAmount = searchRequest.getMaxAmount();
+
         // Use the paginated repository method
         Page<Transaction> transactionsPage = transactionRepository.searchTransactionsPaginated(
                 customer.getId(),
-                searchRequest.getAccountNumber(),
-                searchRequest.getType(),
-                searchRequest.getStartDate(),
-                searchRequest.getEndDate(),
-                searchRequest.getMinAmount(),
-                searchRequest.getMaxAmount(),
+                accountNumber,
+                type,
+                startDate,
+                endDate,
+                minAmount,
+                maxAmount,
                 pageable);
 
         // Map the results to DTOs

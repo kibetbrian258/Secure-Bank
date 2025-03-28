@@ -27,8 +27,6 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     // Paginated version for more flexibility
     Page<Transaction> findByAccountOrderByTransactionDateTimeDesc(Account account, Pageable pageable);
 
-    // Search methods that leverage database filtering instead of in-memory filtering
-
     // Find transactions for an account number
     List<Transaction> findByAccount_AccountNumber(String accountNumber);
 
@@ -43,15 +41,15 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     List<Transaction> findByAccount_AccountNumberAndAmountBetween(
             String accountNumber, BigDecimal minAmount, BigDecimal maxAmount);
 
-    // Complex parameterized query to handle multiple optional search criteria
+    // Complex query to handle multiple optional search criteria with IS NULL checks instead of COALESCE
     @Query("SELECT t FROM Transaction t WHERE " +
             "t.account.customer.id = :customerId " +
             "AND (:accountNumber IS NULL OR t.account.accountNumber = :accountNumber) " +
             "AND (:type IS NULL OR t.type = :type) " +
-            "AND (COALESCE(:startDate, NULL) IS NULL OR t.transactionDateTime >= :startDate) " +
-            "AND (COALESCE(:endDate, NULL) IS NULL OR t.transactionDateTime <= :endDate) " +
-            "AND (COALESCE(:minAmount, NULL) IS NULL OR t.amount >= :minAmount) " +
-            "AND (COALESCE(:maxAmount, NULL) IS NULL OR t.amount <= :maxAmount) " +
+            "AND (:startDate IS NULL OR t.transactionDateTime >= :startDate) " +
+            "AND (:endDate IS NULL OR t.transactionDateTime <= :endDate) " +
+            "AND (:minAmount IS NULL OR t.amount >= :minAmount) " +
+            "AND (:maxAmount IS NULL OR t.amount <= :maxAmount) " +
             "ORDER BY t.transactionDateTime DESC")
     List<Transaction> searchTransactions(
             @Param("customerId") Long customerId,
@@ -62,15 +60,15 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
             @Param("minAmount") BigDecimal minAmount,
             @Param("maxAmount") BigDecimal maxAmount);
 
-    // Paginated version of the search query
+    // Paginated version of the search query with IS NULL checks
     @Query("SELECT t FROM Transaction t WHERE " +
             "t.account.customer.id = :customerId " +
             "AND (:accountNumber IS NULL OR t.account.accountNumber = :accountNumber) " +
             "AND (:type IS NULL OR t.type = :type) " +
-            "AND (COALESCE(:startDate, NULL) IS NULL OR t.transactionDateTime >= :startDate) " +
-            "AND (COALESCE(:endDate, NULL) IS NULL OR t.transactionDateTime <= :endDate) " +
-            "AND (COALESCE(:minAmount, NULL) IS NULL OR t.amount >= :minAmount) " +
-            "AND (COALESCE(:maxAmount, NULL) IS NULL OR t.amount <= :maxAmount) " +
+            "AND (:startDate IS NULL OR t.transactionDateTime >= :startDate) " +
+            "AND (:endDate IS NULL OR t.transactionDateTime <= :endDate) " +
+            "AND (:minAmount IS NULL OR t.amount >= :minAmount) " +
+            "AND (:maxAmount IS NULL OR t.amount <= :maxAmount) " +
             "ORDER BY t.transactionDateTime DESC")
     Page<Transaction> searchTransactionsPaginated(
             @Param("customerId") Long customerId,
