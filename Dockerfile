@@ -1,7 +1,7 @@
 # Build stage
 FROM maven:3.9-eclipse-temurin-17-alpine as build
 WORKDIR /app
-COPY . .
+COPY docker/backend .
 RUN mvn clean package -DskipTests
 
 # Run stage
