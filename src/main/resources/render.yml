@@ -31,8 +31,8 @@ services:
         sync: false
       - key: MAIL_PASSWORD
         sync: false
-#      - key: CORS_ALLOWED_ORIGINS
-#        value:
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://secure-bank-sb.vercel.app, http://localhost:4200
 
 # PostgreSQL Database
 databases:
