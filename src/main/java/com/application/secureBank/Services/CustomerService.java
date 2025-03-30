@@ -26,15 +26,18 @@ public class CustomerService implements UserDetailsService {
     private final PasswordEncoder passwordEncoder;
     private final AccountManagementService accountManagementService;
     private final EmailService emailService;
+    private final PhoneNumberService phoneNumberService;
 
     public CustomerService(CustomerRepository customerRepository,
                            PasswordEncoder passwordEncoder,
                            AccountManagementService accountManagementService,
-                           EmailService emailService) {
+                           EmailService emailService,
+                           PhoneNumberService phoneNumberService) {
         this.customerRepository = customerRepository;
         this.passwordEncoder = passwordEncoder;
         this.accountManagementService = accountManagementService;
         this.emailService = emailService;
+        this.phoneNumberService = phoneNumberService;
     }
 
     @Override
@@ -70,6 +73,9 @@ public class CustomerService implements UserDetailsService {
         // Generate customer ID with RD prefix and 4 digits
         String customerId = generateCustomerId();
 
+        // Format the phone number
+        String formattedPhoneNumber = phoneNumberService.formatKenyanPhoneNumber(request.getPhoneNumber());
+
         // Create customer entity with new fields
         Customer customer = Customer.builder()
                 .customerId(customerId)
@@ -81,7 +87,7 @@ public class CustomerService implements UserDetailsService {
                 .dateOfBirth(request.getDateOfBirth() != null
                         ? request.getDateOfBirth().atStartOfDay()
                         : null)
-                .phoneNumber(request.getPhoneNumber())
+                .phoneNumber(formattedPhoneNumber)
                 .address(request.getAddress())
                 .build();
 
@@ -109,7 +115,7 @@ public class CustomerService implements UserDetailsService {
                 .pin(pin)
                 .accountNumber(account.getAccountNumber())
                 .dateOfBirth(request.getDateOfBirth())
-                .phoneNumber(request.getPhoneNumber())
+                .phoneNumber(phoneNumberService.extractSignificantDigits(formattedPhoneNumber))
                 .address(request.getAddress())
                 .build();
     }
@@ -164,7 +170,8 @@ public class CustomerService implements UserDetailsService {
         }
 
         if (request.getPhoneNumber() != null) {
-            customer.setPhoneNumber(request.getPhoneNumber());
+            String formattedPhoneNumber = phoneNumberService.formatKenyanPhoneNumber(request.getPhoneNumber());
+            customer.setPhoneNumber(formattedPhoneNumber);
         }
 
         if (request.getAddress() != null) {
@@ -184,7 +191,7 @@ public class CustomerService implements UserDetailsService {
                 .fullName(savedCustomer.getFullName())
                 .email(savedCustomer.getEmail())
                 .address(savedCustomer.getAddress())
-                .phoneNumber(savedCustomer.getPhoneNumber())
+                .phoneNumber(savedCustomer.getPhoneNumber()) // Full formatted phone with prefix
                 .dateOfBirth(savedCustomer.getDateOfBirth() != null
                         ? savedCustomer.getDateOfBirth().toLocalDate()
                         : null)

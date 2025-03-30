@@ -1,6 +1,6 @@
 package com.application.secureBank.DTOs;
 
-import com.application.secureBank.validators.ValidEastAfricanPhone;
+import com.application.secureBank.validators.ValidKenyanPhone;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
@@ -26,8 +26,8 @@ public class UpdateProfileRequest {
     @Email(message = "Invalid email format")
     private String email;
 
-    @Schema(description = "Customer's phone number in East African format", example = "+254712345678")
-    @ValidEastAfricanPhone
+    @Schema(description = "Customer's phone number in Kenyan format (e.g. 712345678)", example = "712345678")
+    @ValidKenyanPhone
     private String phoneNumber;
 
     @Schema(description = "Customer's address", example = "123 Main St, City")

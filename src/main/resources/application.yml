@@ -7,7 +7,7 @@ spring:
     open-in-view: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   jackson:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false

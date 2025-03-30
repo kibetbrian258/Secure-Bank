@@ -27,7 +27,7 @@ public class CustomerProfileResponse {
     @Schema(description = "Customer's address", example = "123 Main St, City")
     private String address;
 
-    @Schema(description = "Customer's phone number", example = "+1234567890")
+    @Schema(description = "Customer's phone number", example = "+254712345678")
     private String phoneNumber;
 
     @Schema(description = "Customer's date of birth", example = "1990-01-15")

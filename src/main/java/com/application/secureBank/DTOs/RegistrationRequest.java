@@ -1,11 +1,10 @@
 package com.application.secureBank.DTOs;
 
-import com.application.secureBank.validators.ValidEastAfricanPhone;
+import com.application.secureBank.validators.ValidKenyanPhone;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,9 +33,9 @@ public class RegistrationRequest {
     @NotNull(message = "Date of birth is required")
     private LocalDate dateOfBirth;
 
-    @Schema(description = "Phone number in East African international format", example = "+254712345678", required = true)
+    @Schema(description = "Phone number in Kenyan format (e.g. 712345678)", example = "712345678", required = true)
     @NotBlank(message = "Phone number is required")
-    @ValidEastAfricanPhone
+    @ValidKenyanPhone
     private String phoneNumber;
 
     @Schema(description = "Customer's address", example = "123 Main St, City, State, ZIP", required = true)

@@ -41,7 +41,40 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     List<Transaction> findByAccount_AccountNumberAndAmountBetween(
             String accountNumber, BigDecimal minAmount, BigDecimal maxAmount);
 
-    // Complex query to handle multiple optional search criteria with IS NULL checks instead of COALESCE
+    // Native query with explicit casting for PostgreSQL compatibility - fixed ORDER BY clause
+    @Query(value =
+            "SELECT t.* FROM transactions t " +
+                    "JOIN accounts a ON t.account_id = a.id " +
+                    "WHERE a.customer_id = :customerId " +
+                    "AND (CAST(:accountNumber AS VARCHAR) IS NULL OR a.account_number = :accountNumber) " +
+                    "AND (CAST(:type AS VARCHAR) IS NULL OR t.type = :type) " +
+                    "AND (CAST(:startDate AS timestamp) IS NULL OR t.transaction_date_time >= :startDate) " +
+                    "AND (CAST(:endDate AS timestamp) IS NULL OR t.transaction_date_time <= :endDate) " +
+                    "AND (CAST(:minAmount AS numeric) IS NULL OR t.amount >= :minAmount) " +
+                    "AND (CAST(:maxAmount AS numeric) IS NULL OR t.amount <= :maxAmount) " +
+                    "ORDER BY t.transaction_date_time DESC",
+            nativeQuery = true,
+            countQuery =
+                    "SELECT COUNT(*) FROM transactions t " +
+                            "JOIN accounts a ON t.account_id = a.id " +
+                            "WHERE a.customer_id = :customerId " +
+                            "AND (CAST(:accountNumber AS VARCHAR) IS NULL OR a.account_number = :accountNumber) " +
+                            "AND (CAST(:type AS VARCHAR) IS NULL OR t.type = :type) " +
+                            "AND (CAST(:startDate AS timestamp) IS NULL OR t.transaction_date_time >= :startDate) " +
+                            "AND (CAST(:endDate AS timestamp) IS NULL OR t.transaction_date_time <= :endDate) " +
+                            "AND (CAST(:minAmount AS numeric) IS NULL OR t.amount >= :minAmount) " +
+                            "AND (CAST(:maxAmount AS numeric) IS NULL OR t.amount <= :maxAmount)")
+    Page<Transaction> searchTransactionsPaginated(
+            @Param("customerId") Long customerId,
+            @Param("accountNumber") String accountNumber,
+            @Param("type") String type,
+            @Param("startDate") LocalDateTime startDate,
+            @Param("endDate") LocalDateTime endDate,
+            @Param("minAmount") BigDecimal minAmount,
+            @Param("maxAmount") BigDecimal maxAmount,
+            Pageable pageable);
+
+    // JPQL query for standard search
     @Query("SELECT t FROM Transaction t WHERE " +
             "t.account.customer.id = :customerId " +
             "AND (:accountNumber IS NULL OR t.account.accountNumber = :accountNumber) " +
@@ -59,24 +92,4 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
             @Param("endDate") LocalDateTime endDate,
             @Param("minAmount") BigDecimal minAmount,
             @Param("maxAmount") BigDecimal maxAmount);
-
-    // Paginated version of the search query with IS NULL checks
-    @Query("SELECT t FROM Transaction t WHERE " +
-            "t.account.customer.id = :customerId " +
-            "AND (:accountNumber IS NULL OR t.account.accountNumber = :accountNumber) " +
-            "AND (:type IS NULL OR t.type = :type) " +
-            "AND (:startDate IS NULL OR t.transactionDateTime >= :startDate) " +
-            "AND (:endDate IS NULL OR t.transactionDateTime <= :endDate) " +
-            "AND (:minAmount IS NULL OR t.amount >= :minAmount) " +
-            "AND (:maxAmount IS NULL OR t.amount <= :maxAmount) " +
-            "ORDER BY t.transactionDateTime DESC")
-    Page<Transaction> searchTransactionsPaginated(
-            @Param("customerId") Long customerId,
-            @Param("accountNumber") String accountNumber,
-            @Param("type") String type,
-            @Param("startDate") LocalDateTime startDate,
-            @Param("endDate") LocalDateTime endDate,
-            @Param("minAmount") BigDecimal minAmount,
-            @Param("maxAmount") BigDecimal maxAmount,
-            Pageable pageable);
 }

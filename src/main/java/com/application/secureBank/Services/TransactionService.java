@@ -13,7 +13,6 @@ import com.application.secureBank.models.Transaction;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -318,7 +317,7 @@ public class TransactionService {
     }
 
     /**
-     * Paginated version of the transaction search
+     * Paginated version of the transaction search - fixed to work with PostgreSQL
      */
     public Page<TransactionResponse> searchTransactionsPaginated(
             String customerId,
@@ -328,38 +327,57 @@ public class TransactionService {
 
         Customer customer = customerService.findByCustomerId(customerId);
 
-        // Create a pageable request with sorting
-        Pageable pageable = PageRequest.of(
-                page,
-                size,
-                Sort.by(Sort.Direction.DESC, "transactionDateTime"));
+        // Create a pageable request WITHOUT sorting - we'll let the query handle the sorting
+        Pageable pageable = PageRequest.of(page, size);
 
-        // Handle null parameters by providing empty strings or default values instead of null
-        // This avoids SQL issues with COALESCE and NULL parameters
-        String accountNumber = searchRequest.getAccountNumber() != null && !searchRequest.getAccountNumber().trim().isEmpty() ?
-                searchRequest.getAccountNumber() : null;
+        // Handle null parameters explicitly
+        String accountNumber = null;
+        if (searchRequest.getAccountNumber() != null && !searchRequest.getAccountNumber().trim().isEmpty()) {
+            accountNumber = searchRequest.getAccountNumber();
+        }
 
-        String type = searchRequest.getType() != null && !searchRequest.getType().trim().isEmpty() ?
-                searchRequest.getType() : null;
+        String type = null;
+        if (searchRequest.getType() != null && !searchRequest.getType().trim().isEmpty()) {
+            type = searchRequest.getType();
+        }
 
         LocalDateTime startDate = searchRequest.getStartDate();
         LocalDateTime endDate = searchRequest.getEndDate();
+
+        // Set BigDecimal parameters to null if not provided
         BigDecimal minAmount = searchRequest.getMinAmount();
         BigDecimal maxAmount = searchRequest.getMaxAmount();
 
-        // Use the paginated repository method
-        Page<Transaction> transactionsPage = transactionRepository.searchTransactionsPaginated(
-                customer.getId(),
-                accountNumber,
-                type,
-                startDate,
-                endDate,
-                minAmount,
-                maxAmount,
-                pageable);
+        // Debug log
+        System.out.println("Search Parameters:");
+        System.out.println("Customer ID: " + customer.getId());
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Type: " + type);
+        System.out.println("Start Date: " + startDate);
+        System.out.println("End Date: " + endDate);
+        System.out.println("Min Amount: " + minAmount);
+        System.out.println("Max Amount: " + maxAmount);
 
-        // Map the results to DTOs
-        return transactionsPage.map(this::mapToTransactionResponse);
+        try {
+            // Use the paginated repository method
+            Page<Transaction> transactionsPage = transactionRepository.searchTransactionsPaginated(
+                    customer.getId(),
+                    accountNumber,
+                    type,
+                    startDate,
+                    endDate,
+                    minAmount,
+                    maxAmount,
+                    pageable);
+
+            // Map the results to DTOs
+            return transactionsPage.map(this::mapToTransactionResponse);
+        } catch (Exception e) {
+            // Log the exception
+            System.err.println("Error in searchTransactionsPaginated: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     /**

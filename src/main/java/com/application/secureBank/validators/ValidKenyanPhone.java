@@ -9,14 +9,14 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Custom validation annotation for East African phone numbers
+ * Custom validation annotation for Kenyan phone numbers
  */
 @Documented
-@Constraint(validatedBy = EastAfricanPhoneValidator.class)
+@Constraint(validatedBy = KenyanPhoneValidator.class)
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ValidEastAfricanPhone {
-    String message() default "Phone number must be a valid East African phone number";
+public @interface ValidKenyanPhone {
+    String message() default "Phone number must be a valid Kenyan phone number";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
