@@ -26,7 +26,8 @@ services:
         value: smtp.gmail.com
       - key: MAIL_PORT
         value: 587
-      - key: kibetbrian258@gmail.com
+      - key: MAIL_USERNAME
+        value: kibetbrian258@gmail.com
         sync: false
       - key: MAIL_PASSWORD
         sync: false
