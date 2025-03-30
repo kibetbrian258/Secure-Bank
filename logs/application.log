@@ -1,1 +1,211 @@
 2025-03-30 15:19:26 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14h54m28s384ms273µs).
+2025-03-30 15:21:37 [tomcat-handler-70] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/register
+2025-03-30 15:21:37 [tomcat-handler-70] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2025-03-30 15:21:37 [tomcat-handler-70] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-30 15:21:37 [tomcat-handler-70] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2025-03-30 15:23:01 [tomcat-handler-73] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/register
+2025-03-30 15:23:01 [tomcat-handler-74] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2025-03-30 15:23:01 [tomcat-handler-74] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-30 15:23:01 [tomcat-handler-74] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2025-03-30 15:23:02 [tomcat-handler-74] INFO  c.a.secureBank.Services.EmailService - Email sent successfully to mandy@mail.com
+2025-03-30 15:23:28 [tomcat-handler-76] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-03-30 15:23:28 [tomcat-handler-77] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-03-30 15:23:28 [tomcat-handler-77] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-30 15:23:28 [tomcat-handler-77] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-03-30 15:23:29 [tomcat-handler-77] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-30 15:23:29 [tomcat-handler-78] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:23:29 [tomcat-handler-79] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:23:29 [tomcat-handler-79] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:23:29 [tomcat-handler-80] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:23:29 [tomcat-handler-80] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:23:29 [tomcat-handler-81] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:23:29 [tomcat-handler-82] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:23:29 [tomcat-handler-82] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:23:29 [tomcat-handler-83] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:23:29 [tomcat-handler-84] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:23:29 [tomcat-handler-84] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:23:35 [tomcat-handler-87] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:23:35 [tomcat-handler-88] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:23:35 [tomcat-handler-90] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:23:35 [tomcat-handler-89] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:23:35 [tomcat-handler-90] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:23:35 [tomcat-handler-89] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:23:47 [tomcat-handler-93] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:23:47 [tomcat-handler-94] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:23:47 [tomcat-handler-94] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:23:47 [tomcat-handler-95] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:23:47 [tomcat-handler-96] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:23:47 [tomcat-handler-96] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:23:47 [tomcat-handler-97] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:23:47 [tomcat-handler-98] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:23:47 [tomcat-handler-98] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:23:50 [tomcat-handler-99] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:23:50 [tomcat-handler-99] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:23:58 [tomcat-handler-101] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/deposit
+2025-03-30 15:23:58 [tomcat-handler-102] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/transactions/deposit
+2025-03-30 15:23:58 [tomcat-handler-102] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/transactions/deposit
+2025-03-30 15:24:01 [tomcat-handler-103] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:24:01 [tomcat-handler-104] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:24:01 [tomcat-handler-104] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:24:01 [tomcat-handler-105] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:24:01 [tomcat-handler-106] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:24:01 [tomcat-handler-106] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:24:01 [tomcat-handler-107] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:24:01 [tomcat-handler-108] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:24:01 [tomcat-handler-108] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:24:06 [tomcat-handler-110] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:24:06 [tomcat-handler-110] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:24:13 [tomcat-handler-112] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/withdraw
+2025-03-30 15:24:13 [tomcat-handler-113] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/transactions/withdraw
+2025-03-30 15:24:13 [tomcat-handler-113] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/transactions/withdraw
+2025-03-30 15:24:16 [tomcat-handler-114] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:24:16 [tomcat-handler-115] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:24:16 [tomcat-handler-115] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:24:16 [tomcat-handler-116] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:24:16 [tomcat-handler-117] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:24:16 [tomcat-handler-117] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:24:16 [tomcat-handler-118] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:24:16 [tomcat-handler-119] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:24:16 [tomcat-handler-119] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:24:20 [tomcat-handler-120] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:24:20 [tomcat-handler-120] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:24:20 [tomcat-handler-121] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:24:20 [tomcat-handler-121] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:24:22 [tomcat-handler-122] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/search/paged?page=0&size=10
+2025-03-30 15:24:22 [tomcat-handler-123] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/transactions/search/paged?page=0&size=10
+2025-03-30 15:24:22 [tomcat-handler-123] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/transactions/search/paged?page=0&size=10
+2025-03-30 15:24:27 [tomcat-handler-125] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/transactions/search/paged?page=0&size=10
+2025-03-30 15:24:27 [tomcat-handler-125] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/transactions/search/paged?page=0&size=10
+2025-03-30 15:24:35 [tomcat-handler-127] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:24:35 [tomcat-handler-128] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:24:35 [tomcat-handler-128] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:24:35 [tomcat-handler-129] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:24:35 [tomcat-handler-130] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:24:35 [tomcat-handler-130] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:24:35 [tomcat-handler-131] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:24:35 [tomcat-handler-132] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:24:35 [tomcat-handler-132] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:24:50 [tomcat-handler-134] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:24:50 [tomcat-handler-135] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:24:50 [tomcat-handler-136] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:24:50 [tomcat-handler-137] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:24:50 [tomcat-handler-137] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:24:50 [tomcat-handler-136] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:24:52 [tomcat-handler-138] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:24:52 [tomcat-handler-138] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:24:52 [tomcat-handler-139] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:24:52 [tomcat-handler-140] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:24:52 [tomcat-handler-140] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:25:01 [tomcat-handler-143] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:25:01 [tomcat-handler-144] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:25:02 [tomcat-handler-144] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:25:02 [tomcat-handler-145] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:25:02 [tomcat-handler-146] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:25:02 [tomcat-handler-146] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:25:02 [tomcat-handler-147] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:25:02 [tomcat-handler-148] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:25:02 [tomcat-handler-148] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:25:05 [tomcat-handler-150] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:25:05 [tomcat-handler-151] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:25:05 [tomcat-handler-150] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:25:05 [tomcat-handler-151] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:25:14 [tomcat-handler-154] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts/create
+2025-03-30 15:25:14 [tomcat-handler-155] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/accounts/create
+2025-03-30 15:25:14 [tomcat-handler-155] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/accounts/create
+2025-03-30 15:25:20 [tomcat-handler-156] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:25:20 [tomcat-handler-157] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:25:20 [tomcat-handler-157] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:25:20 [tomcat-handler-158] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:25:20 [tomcat-handler-159] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:25:20 [tomcat-handler-159] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:25:20 [tomcat-handler-160] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:25:20 [tomcat-handler-161] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:25:20 [tomcat-handler-161] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:25:25 [tomcat-handler-163] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/97002305498
+2025-03-30 15:25:25 [tomcat-handler-164] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/97002305498
+2025-03-30 15:25:25 [tomcat-handler-164] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/97002305498
+2025-03-30 15:29:36 [tomcat-handler-167] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:29:36 [tomcat-handler-166] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:29:36 [tomcat-handler-166] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:29:36 [tomcat-handler-166] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:29:36 [tomcat-handler-168] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:29:36 [tomcat-handler-169] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:29:36 [tomcat-handler-170] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:29:36 [tomcat-handler-168] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:29:36 [tomcat-handler-170] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:29:36 [tomcat-handler-171] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:29:36 [tomcat-handler-172] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:29:36 [tomcat-handler-172] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:29:57 [tomcat-handler-175] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:29:57 [tomcat-handler-176] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:29:57 [tomcat-handler-176] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:29:57 [tomcat-handler-177] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:29:57 [tomcat-handler-177] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:29:57 [tomcat-handler-178] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:29:57 [tomcat-handler-179] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:29:57 [tomcat-handler-179] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:29:57 [tomcat-handler-180] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:29:57 [tomcat-handler-181] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:29:57 [tomcat-handler-181] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:30:09 [tomcat-handler-184] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:30:09 [tomcat-handler-185] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:30:09 [tomcat-handler-185] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:30:09 [tomcat-handler-186] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:30:09 [tomcat-handler-186] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:30:09 [tomcat-handler-187] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:30:09 [tomcat-handler-188] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:30:09 [tomcat-handler-188] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:30:09 [tomcat-handler-189] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:30:09 [tomcat-handler-190] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:30:09 [tomcat-handler-190] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:30:12 [tomcat-handler-191] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:30:12 [tomcat-handler-191] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:30:12 [tomcat-handler-192] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:30:12 [tomcat-handler-192] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:30:12 [tomcat-handler-193] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:30:12 [tomcat-handler-193] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:30:12 [tomcat-handler-194] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:30:12 [tomcat-handler-194] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 15:30:26 [tomcat-handler-196] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:30:26 [tomcat-handler-197] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
+2025-03-30 15:30:26 [tomcat-handler-198] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:30:26 [tomcat-handler-198] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:30:26 [tomcat-handler-199] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
+2025-03-30 15:30:26 [tomcat-handler-200] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
+2025-03-30 15:30:26 [tomcat-handler-201] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2025-03-30 15:30:26 [tomcat-handler-199] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
+2025-03-30 15:30:27 [tomcat-handler-201] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2025-03-30 15:30:27 [tomcat-handler-202] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
+2025-03-30 15:30:27 [tomcat-handler-203] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
+2025-03-30 15:30:27 [tomcat-handler-203] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
+2025-03-30 17:12:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-30 17:12:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-30 17:12:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-30 18:37:01 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 10928 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
+2025-03-30 18:37:01 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-03-30 18:37:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-30 18:37:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
+2025-03-30 18:37:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-30 18:37:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-30 18:37:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-30 18:37:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-30 18:37:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2673 ms
+2025-03-30 18:37:04 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-30 18:37:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-03-30 18:37:05 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-30 18:37:05 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-30 18:37:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-30 18:37:05 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4f4d05b3
+2025-03-30 18:37:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-30 18:37:05 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-30 18:37:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-30 18:37:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-30 18:37:08 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-30 18:37:08 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-03-30 18:37:08 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-30 18:37:09 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-03-30 18:37:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-30 18:37:09 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 8.378 seconds (process running for 14.077)
+2025-03-30 18:37:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-30 18:37:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-30 18:37:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
