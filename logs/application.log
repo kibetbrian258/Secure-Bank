@@ -1,211 +1,296 @@
-2025-03-30 15:19:26 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14h54m28s384ms273µs).
-2025-03-30 15:21:37 [tomcat-handler-70] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/register
-2025-03-30 15:21:37 [tomcat-handler-70] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
-2025-03-30 15:21:37 [tomcat-handler-70] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-03-30 15:21:37 [tomcat-handler-70] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
-2025-03-30 15:23:01 [tomcat-handler-73] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/register
-2025-03-30 15:23:01 [tomcat-handler-74] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
-2025-03-30 15:23:01 [tomcat-handler-74] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-03-30 15:23:01 [tomcat-handler-74] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
-2025-03-30 15:23:02 [tomcat-handler-74] INFO  c.a.secureBank.Services.EmailService - Email sent successfully to mandy@mail.com
-2025-03-30 15:23:28 [tomcat-handler-76] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
-2025-03-30 15:23:28 [tomcat-handler-77] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
-2025-03-30 15:23:28 [tomcat-handler-77] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-03-30 15:23:28 [tomcat-handler-77] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
-2025-03-30 15:23:29 [tomcat-handler-77] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
-2025-03-30 15:23:29 [tomcat-handler-78] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:23:29 [tomcat-handler-79] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:23:29 [tomcat-handler-79] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:23:29 [tomcat-handler-80] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:23:29 [tomcat-handler-80] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:23:29 [tomcat-handler-81] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:23:29 [tomcat-handler-82] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:23:29 [tomcat-handler-82] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:23:29 [tomcat-handler-83] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:23:29 [tomcat-handler-84] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:23:29 [tomcat-handler-84] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:23:35 [tomcat-handler-87] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:23:35 [tomcat-handler-88] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:23:35 [tomcat-handler-90] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:23:35 [tomcat-handler-89] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:23:35 [tomcat-handler-90] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:23:35 [tomcat-handler-89] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:23:47 [tomcat-handler-93] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:23:47 [tomcat-handler-94] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:23:47 [tomcat-handler-94] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:23:47 [tomcat-handler-95] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:23:47 [tomcat-handler-96] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:23:47 [tomcat-handler-96] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:23:47 [tomcat-handler-97] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:23:47 [tomcat-handler-98] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:23:47 [tomcat-handler-98] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:23:50 [tomcat-handler-99] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:23:50 [tomcat-handler-99] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:23:58 [tomcat-handler-101] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/deposit
-2025-03-30 15:23:58 [tomcat-handler-102] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/transactions/deposit
-2025-03-30 15:23:58 [tomcat-handler-102] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/transactions/deposit
-2025-03-30 15:24:01 [tomcat-handler-103] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:24:01 [tomcat-handler-104] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:24:01 [tomcat-handler-104] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:24:01 [tomcat-handler-105] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:24:01 [tomcat-handler-106] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:24:01 [tomcat-handler-106] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:24:01 [tomcat-handler-107] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:24:01 [tomcat-handler-108] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:24:01 [tomcat-handler-108] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:24:06 [tomcat-handler-110] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:24:06 [tomcat-handler-110] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:24:13 [tomcat-handler-112] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/withdraw
-2025-03-30 15:24:13 [tomcat-handler-113] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/transactions/withdraw
-2025-03-30 15:24:13 [tomcat-handler-113] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/transactions/withdraw
-2025-03-30 15:24:16 [tomcat-handler-114] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:24:16 [tomcat-handler-115] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:24:16 [tomcat-handler-115] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:24:16 [tomcat-handler-116] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:24:16 [tomcat-handler-117] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:24:16 [tomcat-handler-117] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:24:16 [tomcat-handler-118] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:24:16 [tomcat-handler-119] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:24:16 [tomcat-handler-119] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:24:20 [tomcat-handler-120] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:24:20 [tomcat-handler-120] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:24:20 [tomcat-handler-121] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:24:20 [tomcat-handler-121] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:24:22 [tomcat-handler-122] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/search/paged?page=0&size=10
-2025-03-30 15:24:22 [tomcat-handler-123] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/transactions/search/paged?page=0&size=10
-2025-03-30 15:24:22 [tomcat-handler-123] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/transactions/search/paged?page=0&size=10
-2025-03-30 15:24:27 [tomcat-handler-125] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/transactions/search/paged?page=0&size=10
-2025-03-30 15:24:27 [tomcat-handler-125] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/transactions/search/paged?page=0&size=10
-2025-03-30 15:24:35 [tomcat-handler-127] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:24:35 [tomcat-handler-128] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:24:35 [tomcat-handler-128] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:24:35 [tomcat-handler-129] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:24:35 [tomcat-handler-130] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:24:35 [tomcat-handler-130] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:24:35 [tomcat-handler-131] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:24:35 [tomcat-handler-132] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:24:35 [tomcat-handler-132] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:24:50 [tomcat-handler-134] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:24:50 [tomcat-handler-135] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:24:50 [tomcat-handler-136] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:24:50 [tomcat-handler-137] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:24:50 [tomcat-handler-137] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:24:50 [tomcat-handler-136] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:24:52 [tomcat-handler-138] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:24:52 [tomcat-handler-138] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:24:52 [tomcat-handler-139] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:24:52 [tomcat-handler-140] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:24:52 [tomcat-handler-140] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:25:01 [tomcat-handler-143] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:25:01 [tomcat-handler-144] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:25:02 [tomcat-handler-144] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:25:02 [tomcat-handler-145] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:25:02 [tomcat-handler-146] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:25:02 [tomcat-handler-146] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:25:02 [tomcat-handler-147] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:25:02 [tomcat-handler-148] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:25:02 [tomcat-handler-148] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:25:05 [tomcat-handler-150] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:25:05 [tomcat-handler-151] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:25:05 [tomcat-handler-150] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:25:05 [tomcat-handler-151] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:25:14 [tomcat-handler-154] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts/create
-2025-03-30 15:25:14 [tomcat-handler-155] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/accounts/create
-2025-03-30 15:25:14 [tomcat-handler-155] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/accounts/create
-2025-03-30 15:25:20 [tomcat-handler-156] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:25:20 [tomcat-handler-157] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:25:20 [tomcat-handler-157] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:25:20 [tomcat-handler-158] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:25:20 [tomcat-handler-159] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:25:20 [tomcat-handler-159] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:25:20 [tomcat-handler-160] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:25:20 [tomcat-handler-161] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:25:20 [tomcat-handler-161] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:25:25 [tomcat-handler-163] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/97002305498
-2025-03-30 15:25:25 [tomcat-handler-164] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/97002305498
-2025-03-30 15:25:25 [tomcat-handler-164] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/97002305498
-2025-03-30 15:29:36 [tomcat-handler-167] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:29:36 [tomcat-handler-166] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:29:36 [tomcat-handler-166] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:29:36 [tomcat-handler-166] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:29:36 [tomcat-handler-168] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:29:36 [tomcat-handler-169] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:29:36 [tomcat-handler-170] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:29:36 [tomcat-handler-168] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:29:36 [tomcat-handler-170] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:29:36 [tomcat-handler-171] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:29:36 [tomcat-handler-172] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:29:36 [tomcat-handler-172] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:29:57 [tomcat-handler-175] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:29:57 [tomcat-handler-176] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:29:57 [tomcat-handler-176] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:29:57 [tomcat-handler-177] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:29:57 [tomcat-handler-177] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:29:57 [tomcat-handler-178] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:29:57 [tomcat-handler-179] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:29:57 [tomcat-handler-179] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:29:57 [tomcat-handler-180] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:29:57 [tomcat-handler-181] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:29:57 [tomcat-handler-181] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:30:09 [tomcat-handler-184] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:30:09 [tomcat-handler-185] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:30:09 [tomcat-handler-185] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:30:09 [tomcat-handler-186] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:30:09 [tomcat-handler-186] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:30:09 [tomcat-handler-187] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:30:09 [tomcat-handler-188] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:30:09 [tomcat-handler-188] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:30:09 [tomcat-handler-189] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:30:09 [tomcat-handler-190] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:30:09 [tomcat-handler-190] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:30:12 [tomcat-handler-191] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:30:12 [tomcat-handler-191] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:30:12 [tomcat-handler-192] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:30:12 [tomcat-handler-192] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:30:12 [tomcat-handler-193] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:30:12 [tomcat-handler-193] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:30:12 [tomcat-handler-194] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:30:12 [tomcat-handler-194] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 15:30:26 [tomcat-handler-196] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:30:26 [tomcat-handler-197] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/customers/profile
-2025-03-30 15:30:26 [tomcat-handler-198] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:30:26 [tomcat-handler-198] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:30:26 [tomcat-handler-199] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/customers/profile
-2025-03-30 15:30:26 [tomcat-handler-200] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/accounts
-2025-03-30 15:30:26 [tomcat-handler-201] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
-2025-03-30 15:30:26 [tomcat-handler-199] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/customers/profile
-2025-03-30 15:30:27 [tomcat-handler-201] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
-2025-03-30 15:30:27 [tomcat-handler-202] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions/recent/21100853216
-2025-03-30 15:30:27 [tomcat-handler-203] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions/recent/21100853216
-2025-03-30 15:30:27 [tomcat-handler-203] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions/recent/21100853216
-2025-03-30 17:12:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-03-30 17:12:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-03-30 17:12:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-03-30 18:37:01 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 10928 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
-2025-03-30 18:37:01 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
-2025-03-30 18:37:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-30 18:37:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
-2025-03-30 18:37:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-03-30 18:37:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-03-30 18:37:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-30 18:37:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-03-30 18:37:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2673 ms
-2025-03-30 18:37:04 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-30 18:37:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-03-30 18:37:05 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-03-30 18:37:05 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-30 18:37:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-30 18:37:05 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4f4d05b3
-2025-03-30 18:37:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-03-30 18:37:05 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-03-30 18:37:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-30 18:37:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-30 18:37:08 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-03-30 18:37:08 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2025-03-30 18:37:08 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-03-30 18:37:09 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2025-03-30 18:37:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-03-30 18:37:09 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 8.378 seconds (process running for 14.077)
-2025-03-30 18:37:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-03-30 18:37:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-03-30 18:37:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-31 17:26:18 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 18736 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
+2025-03-31 17:26:18 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-03-31 17:26:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-31 17:26:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 3 JPA repository interfaces.
+2025-03-31 17:26:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-31 17:26:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-31 17:26:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-31 17:26:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-31 17:26:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5029 ms
+2025-03-31 17:26:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-31 17:26:24 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70f4abc1
+2025-03-31 17:26:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-31 17:26:24 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-03-31 17:26:24 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-03-31 17:26:24 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-03-31 17:26:24 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-03-31 17:26:24 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-03-31 17:26:24 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+2025-03-31 17:26:24 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 0 migrations (execution time 00:00.026s)
+2025-03-31 17:26:24 [main] WARN  o.f.core.internal.command.DbValidate - No migrations found. Are your locations set up correctly?
+2025-03-31 17:26:24 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Found non-empty schema(s) "public" but no schema history table. Use baseline() or set baselineOnMigrate to true to initialize the schema history table.
+2025-03-31 17:26:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-31 17:26:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-31 17:26:24 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-03-31 17:26:24 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-03-31 17:26:24 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Found non-empty schema(s) "public" but no schema history table. Use baseline() or set baselineOnMigrate to true to initialize the schema history table.
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.application.secureBank.SecureBankApplication.main(SecureBankApplication.java:10)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Found non-empty schema(s) "public" but no schema history table. Use baseline() or set baselineOnMigrate to true to initialize the schema history table.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	... 10 common frames omitted
+Caused by: org.flywaydb.core.api.FlywayException: Found non-empty schema(s) "public" but no schema history table. Use baseline() or set baselineOnMigrate to true to initialize the schema history table.
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:178)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 17 common frames omitted
+2025-03-31 17:33:23 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 23140 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
+2025-03-31 17:33:23 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-03-31 17:33:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-31 17:33:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 3 JPA repository interfaces.
+2025-03-31 17:33:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-31 17:33:27 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-31 17:33:27 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-31 17:33:27 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-31 17:33:27 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3269 ms
+2025-03-31 17:33:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-31 17:33:27 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@45297e7
+2025-03-31 17:33:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-31 17:33:28 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-03-31 17:33:28 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-03-31 17:33:28 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-03-31 17:33:28 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-03-31 17:33:28 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-03-31 17:33:28 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+2025-03-31 17:33:28 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.036s)
+2025-03-31 17:33:28 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" with baseline ...
+2025-03-31 17:33:28 [main] INFO  o.f.core.internal.command.DbBaseline - Successfully baselined schema with version: 1
+2025-03-31 17:33:28 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2025-03-31 17:33:28 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-03-31 17:33:28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-31 17:33:28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-03-31 17:33:28 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Unable to resolve name [org.hibernate.cache.ehcache.EhCacheRegionFactory] as strategy [org.hibernate.cache.spi.RegionFactory]
+2025-03-31 17:33:28 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Unable to resolve name [org.hibernate.cache.ehcache.EhCacheRegionFactory] as strategy [org.hibernate.cache.spi.RegionFactory]
+2025-03-31 17:33:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-31 17:33:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-31 17:33:28 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-03-31 17:33:28 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-03-31 17:33:28 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Unable to resolve name [org.hibernate.cache.ehcache.EhCacheRegionFactory] as strategy [org.hibernate.cache.spi.RegionFactory]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.application.secureBank.SecureBankApplication.main(SecureBankApplication.java:10)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Unable to resolve name [org.hibernate.cache.ehcache.EhCacheRegionFactory] as strategy [org.hibernate.cache.spi.RegionFactory]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.internal.MetadataBuilderImpl$MetadataBuildingOptionsImpl.<init>(MetadataBuilderImpl.java:705)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.<init>(MetadataBuilderImpl.java:139)
+	at org.hibernate.boot.MetadataSources.getMetadataBuilder(MetadataSources.java:164)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:276)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:197)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:63)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 15 common frames omitted
+Caused by: org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.cache.ehcache.EhCacheRegionFactory] as strategy [org.hibernate.cache.spi.RegionFactory]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:154)
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:236)
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:189)
+	at org.hibernate.cache.internal.RegionFactoryInitiator.resolveRegionFactory(RegionFactoryInitiator.java:96)
+	at org.hibernate.cache.internal.RegionFactoryInitiator.initiateService(RegionFactoryInitiator.java:47)
+	at org.hibernate.cache.internal.RegionFactoryInitiator.initiateService(RegionFactoryInitiator.java:32)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 29 common frames omitted
+Caused by: org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [org.hibernate.cache.ehcache.EhCacheRegionFactory]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:126)
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:150)
+	... 36 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Could not load requested class : org.hibernate.cache.ehcache.EhCacheRegionFactory
+	at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:216)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:595)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:123)
+	... 37 common frames omitted
+Caused by: java.lang.Throwable: null
+	at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:209)
+	... 43 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: org.hibernate.cache.ehcache.EhCacheRegionFactory
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
+		... 43 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: org.hibernate.cache.ehcache.EhCacheRegionFactory
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
+		... 43 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: org.hibernate.cache.ehcache.EhCacheRegionFactory
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
+		... 43 common frames omitted
+2025-03-31 17:50:19 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 21092 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
+2025-03-31 17:50:19 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-03-31 17:50:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-31 17:50:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 3 JPA repository interfaces.
+2025-03-31 17:50:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-31 17:50:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-31 17:50:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-31 17:50:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-31 17:50:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3469 ms
+2025-03-31 17:50:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-31 17:50:23 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d7c9811
+2025-03-31 17:50:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-31 17:50:24 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-03-31 17:50:24 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-03-31 17:50:24 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-03-31 17:50:24 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-03-31 17:50:24 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-03-31 17:50:24 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.057s)
+2025-03-31 17:50:24 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2025-03-31 17:50:24 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-03-31 17:50:24 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-31 17:50:24 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-03-31 17:50:24 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-31 17:50:25 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-31 17:50:25 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-31 17:50:26 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-31 17:50:27 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-31 17:50:28 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-31 17:50:29 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-31 17:50:29 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-03-31 17:50:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-31 17:50:31 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 12.545 seconds (process running for 14.1)
+2025-03-31 17:50:31 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-03-31 17:50:31 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.orm.jpa.JpaSystemException: Unable to commit against JDBC Connection
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:341)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:663)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:413)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy154.count(Unknown Source)
+	at com.application.secureBank.Config.DataInitializer.lambda$initData$0(DataInitializer.java:33)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:571)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.application.secureBank.SecureBankApplication.main(SecureBankApplication.java:10)
+Caused by: org.hibernate.TransactionException: Unable to commit against JDBC Connection
+	at org.hibernate.resource.jdbc.internal.AbstractLogicalConnectionImplementor.commit(AbstractLogicalConnectionImplementor.java:97)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:268)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562)
+	... 35 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Cannot commit when autoCommit is enabled.
+	at org.postgresql.jdbc.PgConnection.commit(PgConnection.java:998)
+	at com.zaxxer.hikari.pool.ProxyConnection.commit(ProxyConnection.java:378)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.commit(HikariProxyConnection.java)
+	at org.hibernate.resource.jdbc.internal.AbstractLogicalConnectionImplementor.commit(AbstractLogicalConnectionImplementor.java:87)
+	... 38 common frames omitted
+2025-03-31 17:50:31 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-31 17:50:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-31 17:50:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-31 18:10:01 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 22664 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
+2025-03-31 18:10:01 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-03-31 18:10:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-31 18:10:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 3 JPA repository interfaces.
+2025-03-31 18:10:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-31 18:10:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-31 18:10:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-31 18:10:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-31 18:10:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3596 ms
+2025-03-31 18:10:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-31 18:10:05 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f60cbf2
+2025-03-31 18:10:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-31 18:10:05 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-03-31 18:10:05 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-03-31 18:10:05 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-03-31 18:10:05 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-03-31 18:10:05 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-03-31 18:10:05 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.046s)
+2025-03-31 18:10:05 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2025-03-31 18:10:05 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-03-31 18:10:05 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-31 18:10:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-03-31 18:10:06 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-31 18:10:06 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-31 18:10:06 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-31 18:10:08 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-31 18:10:08 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4f466207] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-03-31 18:10:09 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-31 18:10:09 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-31 18:10:10 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-31 18:10:10 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-03-31 18:10:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-31 18:10:12 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 12.357 seconds (process running for 13.828)
+2025-03-31 18:10:39 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-31 18:10:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-31 18:10:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

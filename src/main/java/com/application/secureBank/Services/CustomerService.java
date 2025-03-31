@@ -7,6 +7,8 @@ import com.application.secureBank.DTOs.UpdateProfileRequest;
 import com.application.secureBank.Repositories.CustomerRepository;
 import com.application.secureBank.models.Account;
 import com.application.secureBank.models.Customer;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -41,12 +43,14 @@ public class CustomerService implements UserDetailsService {
     }
 
     @Override
+    @Cacheable(value = "userDetails", key = "#customerId")
     public UserDetails loadUserByUsername(String customerId) throws UsernameNotFoundException {
         customerId = customerId != null ? customerId.trim() : customerId;
         Customer customer = findByCustomerId(customerId);
         return new User(customer.getCustomerId(), customer.getPin(), new ArrayList<>());
     }
 
+    @Cacheable(value = "customers", key = "#customerId")
     public Customer findByCustomerId(String customerId) {
         String trimmedCustomerId = customerId != null ? customerId.trim() : customerId;
 
@@ -54,10 +58,11 @@ public class CustomerService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("Customer not found with ID: " + trimmedCustomerId));
     }
 
+    @Transactional
+    @CacheEvict(value = {"customers", "userDetails"}, key = "#customerId")
     public void updateLastLogin(String customerId) {
-        Customer customer = findByCustomerId(customerId);
-        customer.setLastLogin(LocalDateTime.now());
-        customerRepository.save(customer);
+        // Using direct database update instead of fetch-modify-save for better performance
+        customerRepository.updateLastLogin(customerId, LocalDateTime.now());
     }
 
     @Transactional
@@ -97,7 +102,7 @@ public class CustomerService implements UserDetailsService {
         // Create an account for the customer using the AccountManagementService
         Account account = accountManagementService.createAccount(savedCustomer);
 
-        // Send email with credentials
+        // Send email with credentials asynchronously - this won't block the registration process
         emailService.sendRegistrationEmail(
                 request.getEmail(),
                 request.getFullName(),
@@ -152,6 +157,8 @@ public class CustomerService implements UserDetailsService {
      * @param request The update profile request containing fields to update
      * @return The updated customer profile response
      */
+    @Transactional
+    @CacheEvict(value = {"customers", "userDetails"}, key = "#customerId")
     public CustomerProfileResponse updateCustomerProfile(String customerId, UpdateProfileRequest request) {
         Customer customer = findByCustomerId(customerId);
 

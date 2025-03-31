@@ -3,10 +3,14 @@ package com.application.secureBank.Services;
 import com.application.secureBank.Repositories.AccountRepository;
 import com.application.secureBank.models.Account;
 import com.application.secureBank.models.Customer;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * This service handles account creation functionality that was previously
@@ -24,6 +28,8 @@ public class AccountManagementService {
     /**
      * Creates a new account for a customer with a randomly generated account number
      */
+    @Transactional
+    @CacheEvict(value = "accounts", allEntries = true)
     public Account createAccount(Customer customer) {
         String accountNumber = generateUniqueAccountNumber();
 
@@ -47,15 +53,16 @@ public class AccountManagementService {
     }
 
     /**
-     * Generates a unique account number
+     * Generates a unique account number using ThreadLocalRandom for better performance
+     * than standard Random in multi-threaded environments
      */
     private String generateUniqueAccountNumber() {
-        Random random = new Random();
         String accountNumber;
+        ThreadLocalRandom random = ThreadLocalRandom.current();
 
         do {
             // Generate an 11-digit account number
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder(11);
             for (int i = 0; i < 11; i++) {
                 sb.append(random.nextInt(10));
             }

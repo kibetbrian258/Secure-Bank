@@ -10,6 +10,8 @@ import com.application.secureBank.Repositories.TransactionRepository;
 import com.application.secureBank.models.Account;
 import com.application.secureBank.models.Customer;
 import com.application.secureBank.models.Transaction;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -28,6 +30,7 @@ public class TransactionService {
     private final TransactionRepository transactionRepository;
     private final AccountRepository accountRepository;
     private final CustomerService customerService;
+    private final Random random = new Random();
 
     public TransactionService(
             TransactionRepository transactionRepository,
@@ -38,9 +41,11 @@ public class TransactionService {
         this.customerService = customerService;
     }
 
-    /*
+    /**
      * Deposit money to an account
      */
+    @Transactional
+    @CacheEvict(value = {"accounts", "transactions"}, allEntries = true)
     public TransactionResponse deposit(String customerId, DepositRequest request) {
         Customer customer = customerService.findByCustomerId(customerId);
 
@@ -81,21 +86,14 @@ public class TransactionService {
 
         transactionRepository.save(transaction);
 
-        return TransactionResponse.builder()
-                .transactionId(transaction.getTransactionId())
-                .accountNumber(account.getAccountNumber())
-                .type(transaction.getType())
-                .amount(transaction.getAmount())
-                .balanceAfterTransaction(transaction.getBalanceAfterTransaction())
-                .transactionDateTime(transaction.getTransactionDateTime())
-                .status(transaction.getStatus())
-                .build();
+        return mapToTransactionResponse(transaction);
     }
 
-    /*
+    /**
      * Withdraw money from account
      */
     @Transactional
+    @CacheEvict(value = {"accounts", "transactions"}, allEntries = true)
     public TransactionResponse withdraw(String customerId, WithdrawRequest request) {
         Customer customer = customerService.findByCustomerId(customerId);
 
@@ -147,21 +145,14 @@ public class TransactionService {
 
         transactionRepository.save(transaction);
 
-        return TransactionResponse.builder()
-                .transactionId(transaction.getTransactionId())
-                .accountNumber(account.getAccountNumber())
-                .type(transaction.getType())
-                .amount(transaction.getAmount())
-                .balanceAfterTransaction(transaction.getBalanceAfterTransaction())
-                .transactionDateTime(transaction.getTransactionDateTime())
-                .status(transaction.getStatus())
-                .build();
+        return mapToTransactionResponse(transaction);
     }
 
-    /*
+    /**
      * Transfer money between accounts
      */
     @Transactional
+    @CacheEvict(value = {"accounts", "transactions"}, allEntries = true)
     public TransactionResponse transfer(String customerId, TransferRequest request) {
         Customer customer = customerService.findByCustomerId(customerId);
 
@@ -209,12 +200,13 @@ public class TransactionService {
         // Update source account balance
         BigDecimal newSourceBalance = sourceAccount.getBalance().subtract(request.getAmount());
         sourceAccount.setBalance(newSourceBalance);
-        accountRepository.save(sourceAccount);
 
         // Update destination account balance
         BigDecimal newDestBalance = destinationAccount.getBalance().add(request.getAmount());
         destinationAccount.setBalance(newDestBalance);
-        accountRepository.save(destinationAccount);
+
+        // Save both accounts in one batch
+        accountRepository.saveAll(List.of(sourceAccount, destinationAccount));
 
         // Create transaction record for source account
         Transaction sourceTransaction = Transaction.builder()
@@ -228,8 +220,6 @@ public class TransactionService {
                 .destinationAccountNumber(destinationAccount.getAccountNumber())
                 .build();
 
-        transactionRepository.save(sourceTransaction);
-
         // Create transaction record for destination account
         Transaction destTransaction = Transaction.builder()
                 .transactionId(generateTransactionId())
@@ -241,23 +231,16 @@ public class TransactionService {
                 .status("Completed")
                 .build();
 
-        transactionRepository.save(destTransaction);
+        // Save both transactions
+        transactionRepository.saveAll(List.of(sourceTransaction, destTransaction));
 
-        return TransactionResponse.builder()
-                .transactionId(sourceTransaction.getTransactionId())
-                .accountNumber(sourceAccount.getAccountNumber())
-                .type(sourceTransaction.getType())
-                .amount(sourceTransaction.getAmount())
-                .balanceAfterTransaction(sourceTransaction.getBalanceAfterTransaction())
-                .transactionDateTime(sourceTransaction.getTransactionDateTime())
-                .status(sourceTransaction.getStatus())
-                .destinationAccountNumber(destinationAccount.getAccountNumber())
-                .build();
+        return mapToTransactionResponse(sourceTransaction);
     }
 
-    /*
+    /**
      * Get the last 10 transactions
      */
+    @Cacheable(value = "transactions", key = "'recent_' + #accountNumber")
     public List<TransactionResponse> getLastTenTransactions(String customerId, String accountNumber) {
         Customer customer = customerService.findByCustomerId(customerId);
 
@@ -283,9 +266,10 @@ public class TransactionService {
                 .collect(Collectors.toList());
     }
 
-    /*
+    /**
      * Search transactions by criteria
      */
+    @Cacheable(value = "transactions", key = "'search_' + #customerId")
     public List<TransactionResponse> searchTransactions(
             String customerId,
             TransactionSearchRequest searchRequest) {
@@ -317,7 +301,7 @@ public class TransactionService {
     }
 
     /**
-     * Paginated version of the transaction search - fixed to work with PostgreSQL
+     * Paginated version of the transaction search
      */
     public Page<TransactionResponse> searchTransactionsPaginated(
             String customerId,
@@ -347,16 +331,6 @@ public class TransactionService {
         // Set BigDecimal parameters to null if not provided
         BigDecimal minAmount = searchRequest.getMinAmount();
         BigDecimal maxAmount = searchRequest.getMaxAmount();
-
-        // Debug log
-        System.out.println("Search Parameters:");
-        System.out.println("Customer ID: " + customer.getId());
-        System.out.println("Account Number: " + accountNumber);
-        System.out.println("Type: " + type);
-        System.out.println("Start Date: " + startDate);
-        System.out.println("End Date: " + endDate);
-        System.out.println("Min Amount: " + minAmount);
-        System.out.println("Max Amount: " + maxAmount);
 
         try {
             // Use the paginated repository method
@@ -400,6 +374,6 @@ public class TransactionService {
      * Generate a unique transaction ID
      */
     private String generateTransactionId() {
-        return "TRANS" + String.format("%05d", new Random().nextInt(100000));
+        return "TRANS" + String.format("%05d", random.nextInt(100000));
     }
 }

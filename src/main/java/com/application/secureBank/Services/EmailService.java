@@ -56,6 +56,7 @@ public class EmailService {
 
     /**
      * Send a registration confirmation email with credentials
+     * Made asynchronous to prevent blocking the registration process
      *
      * @param to          Recipient email
      * @param fullName    Customer's full name
@@ -63,6 +64,7 @@ public class EmailService {
      * @param pin         Generated PIN
      * @param accountNumber Generated account number
      */
+    @Async
     public void sendRegistrationEmail(String to, String fullName, String customerId, String pin, String accountNumber) {
         Context context = new Context();
         context.setVariable("fullName", fullName);

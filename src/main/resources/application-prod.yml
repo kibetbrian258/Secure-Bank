@@ -6,11 +6,12 @@ spring:
     password: ${JDBC_DATABASE_PASSWORD}
     driver-class-name: org.postgresql.Driver
     hikari:
-      maximum-pool-size: 5
-      minimum-idle: 2
+      maximum-pool-size: 10
+      minimum-idle: 5
       idle-timeout: 300000
       connection-timeout: 20000
-      max-lifetime: 1200000
+      max-lifetime: 1800000
+      leak-detection-threshold: 60000
 
   # Mail configuration for production
   mail:
@@ -32,12 +33,18 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update  # Use Flyway migrations instead of auto-updating
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: false
         show_sql: false
+        # Performance optimizations for production
+        jdbc.batch_size: 50
+        order_inserts: true
+        order_updates: true
+        jdbc.batch_versioned_data: true
+        connection.provider_disables_autocommit: true
 
   # Flyway configuration
   flyway:
@@ -49,6 +56,21 @@ spring:
   sql:
     init:
       mode: never
+
+  # Enhanced async task execution configuration
+  task:
+    execution:
+      pool:
+        core-size: 10
+        max-size: 20
+        queue-capacity: 200
+      thread-name-prefix: secure-bank-prod-
+
+  # Caching configuration for production
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=10000,expireAfterWrite=3600s
 
 # JWT configuration
 jwt:
@@ -66,6 +88,18 @@ server:
     include-stacktrace: never
     whitelabel:
       enabled: false
+  # Tomcat tuning for production
+  tomcat:
+    max-threads: 200
+    max-connections: 10000
+    accept-count: 100
+    min-spare-threads: 20
+    max-keep-alive-requests: 100
+    connection-timeout: 20000
+    accesslog:
+      enabled: true
+      directory: /tmp
+      pattern: "%t %a \"%r\" %s (%D ms)"
 
 # Actuator endpoints for monitoring
 management:
@@ -75,7 +109,7 @@ management:
         include: health,info,metrics,prometheus
   endpoint:
     health:
-      show-details: when_authorized
+      show-details: when-authorized
       probes:
         enabled: true
   health:

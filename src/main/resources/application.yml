@@ -8,12 +8,26 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Performance optimizations
+        jdbc.batch_size: 30
+        order_inserts: true
+        order_updates: true
+        jdbc.batch_versioned_data: true
+        connection.provider_disables_autocommit: true
   jackson:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false
     time-zone: UTC
   main:
     allow-circular-references: true
+  # Enable async task execution with larger thread pool
+  task:
+    execution:
+      pool:
+        core-size: 8
+        max-size: 16
+        queue-capacity: 100
+      thread-name-prefix: secure-bank-async-
 
 # Global SpringDoc configuration for all environments
 springdoc:
@@ -38,12 +52,20 @@ server:
   port: 8080
   servlet:
     context-path: /
+  # Tomcat performance tuning
+  tomcat:
+    max-threads: 200
+    max-connections: 8192
+    accept-count: 100
+    min-spare-threads: 10
 
 logging:
   level:
     root: INFO
-    org.springframework.security: DEBUG
-    com.secureBank: DEBUG
+    org.springframework.security: INFO
+    com.secureBank: INFO
+    # Log more details for performance monitoring
+    com.application.secureBank.Config.PerformanceMonitoringAspect: DEBUG
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
