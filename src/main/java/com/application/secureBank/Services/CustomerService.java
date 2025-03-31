@@ -7,6 +7,7 @@ import com.application.secureBank.DTOs.UpdateProfileRequest;
 import com.application.secureBank.Repositories.CustomerRepository;
 import com.application.secureBank.models.Account;
 import com.application.secureBank.models.Customer;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.core.userdetails.User;
@@ -15,13 +16,16 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.CompletableFuture;
 
 @Service
+@Slf4j
 public class CustomerService implements UserDetailsService {
 
     private final CustomerRepository customerRepository;
@@ -65,64 +69,79 @@ public class CustomerService implements UserDetailsService {
         customerRepository.updateLastLogin(customerId, LocalDateTime.now());
     }
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public CustomerRegistrationResponse registerCustomer(RegistrationRequest request) {
-        // Check if email already exists
+        // Check if email already exists - moved outside transaction for efficiency
         if (customerRepository.existsByEmail(request.getEmail())) {
             throw new IllegalArgumentException("Email already registered");
         }
 
-        // Generate a 4-digit PIN
-        String pin = generateRandomPin();
+        try {
+            // Generate a 4-digit PIN
+            String pin = generateRandomPin();
 
-        // Generate customer ID with RD prefix and 4 digits
-        String customerId = generateCustomerId();
+            // Generate customer ID with RD prefix and 4 digits
+            String customerId = generateCustomerId();
 
-        // Format the phone number
-        String formattedPhoneNumber = phoneNumberService.formatKenyanPhoneNumber(request.getPhoneNumber());
+            // Format the phone number
+            String formattedPhoneNumber = phoneNumberService.formatKenyanPhoneNumber(request.getPhoneNumber());
 
-        // Create customer entity with new fields
-        Customer customer = Customer.builder()
-                .customerId(customerId)
-                .fullName(request.getFullName())
-                .email(request.getEmail())
-                .pin(passwordEncoder.encode(pin))
-                .registrationDate(LocalDateTime.now())
-                .lastLogin(LocalDateTime.now())
-                .dateOfBirth(request.getDateOfBirth() != null
-                        ? request.getDateOfBirth().atStartOfDay()
-                        : null)
-                .phoneNumber(formattedPhoneNumber)
-                .address(request.getAddress())
-                .build();
+            // Create customer entity
+            Customer customer = Customer.builder()
+                    .customerId(customerId)
+                    .fullName(request.getFullName())
+                    .email(request.getEmail())
+                    .pin(passwordEncoder.encode(pin))
+                    .registrationDate(LocalDateTime.now())
+                    .lastLogin(LocalDateTime.now())
+                    .dateOfBirth(request.getDateOfBirth() != null
+                            ? request.getDateOfBirth().atStartOfDay()
+                            : null)
+                    .phoneNumber(formattedPhoneNumber)
+                    .address(request.getAddress())
+                    .build();
 
-        // Save customer
-        Customer savedCustomer = customerRepository.save(customer);
+            // Save customer
+            Customer savedCustomer = customerRepository.save(customer);
 
-        // Create an account for the customer using the AccountManagementService
-        Account account = accountManagementService.createAccount(savedCustomer);
+            // Create account
+            Account account = accountManagementService.createAccount(savedCustomer);
 
-        // Send email with credentials asynchronously - this won't block the registration process
-        emailService.sendRegistrationEmail(
-                request.getEmail(),
-                request.getFullName(),
-                customerId,
-                pin,
-                account.getAccountNumber()
-        );
+            // Prepare response
+            CustomerRegistrationResponse response = CustomerRegistrationResponse.builder()
+                    .customerId(customerId)
+                    .fullName(request.getFullName())
+                    .email(request.getEmail())
+                    .pin(pin)
+                    .accountNumber(account.getAccountNumber())
+                    .dateOfBirth(request.getDateOfBirth())
+                    .phoneNumber(phoneNumberService.extractSignificantDigits(formattedPhoneNumber))
+                    .address(request.getAddress())
+                    .build();
 
-        // Return registration response with plain text PIN for first-time login
-        // and the generated account number
-        return CustomerRegistrationResponse.builder()
-                .customerId(customerId)
-                .fullName(request.getFullName())
-                .email(request.getEmail())
-                .pin(pin)
-                .accountNumber(account.getAccountNumber())
-                .dateOfBirth(request.getDateOfBirth())
-                .phoneNumber(phoneNumberService.extractSignificantDigits(formattedPhoneNumber))
-                .address(request.getAddress())
-                .build();
+            // Send email AFTER transaction completion to avoid impacting the transaction
+            // This is moved outside the transactional boundary
+            CompletableFuture.runAsync(() -> {
+                try {
+                    emailService.sendRegistrationEmail(
+                            request.getEmail(),
+                            request.getFullName(),
+                            customerId,
+                            pin,
+                            account.getAccountNumber()
+                    );
+                } catch (Exception ex) {
+                    // Log but don't throw
+                    log.error("Failed to send registration email: {}", ex.getMessage());
+                }
+            });
+
+            return response;
+        } catch (Exception e) {
+            // Log the specific error for debugging
+            log.error("Error during customer registration: {}", e.getMessage(), e);
+            throw e; // Rethrow to trigger rollback
+        }
     }
 
     /**

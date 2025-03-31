@@ -6,12 +6,19 @@ spring:
     password: ${JDBC_DATABASE_PASSWORD}
     driver-class-name: org.postgresql.Driver
     hikari:
-      maximum-pool-size: 10
-      minimum-idle: 5
-      idle-timeout: 300000
-      connection-timeout: 20000
-      max-lifetime: 1800000
+      maximum-pool-size: 5          # Reduced for Render free tier
+      minimum-idle: 1               # Reduced for Render free tier
+      idle-timeout: 300000          # 5 minutes
+      connection-timeout: 30000     # 30 seconds
+      max-lifetime: 1800000         # 30 minutes
+      validation-timeout: 5000      # 5 seconds
       leak-detection-threshold: 60000
+      connection-test-query: SELECT 1
+      auto-commit: false
+    tomcat:
+      test-on-borrow: true
+      validation-query: SELECT 1
+      validation-interval: 30000
 
   # Mail configuration for production
   mail:
@@ -26,9 +33,9 @@ spring:
           starttls:
             enable: true
             required: true
-          timeout: 5000
-          connection-timeout: 5000
-          write-timeout: 5000
+          timeout: 15000             # Increased timeout
+          connection-timeout: 15000  # Increased timeout
+          write-timeout: 15000       # Increased timeout
     default-encoding: UTF-8
 
   jpa:
@@ -40,11 +47,12 @@ spring:
         format_sql: false
         show_sql: false
         # Performance optimizations for production
-        jdbc.batch_size: 50
+        jdbc.batch_size: 30          # Reduced from 50
         order_inserts: true
         order_updates: true
         jdbc.batch_versioned_data: true
         connection.provider_disables_autocommit: true
+    open-in-view: false              # Explicitly disable OSIV
 
   # Flyway configuration
   flyway:
@@ -61,16 +69,16 @@ spring:
   task:
     execution:
       pool:
-        core-size: 10
-        max-size: 20
-        queue-capacity: 200
+        core-size: 5                # Reduced from 10
+        max-size: 10                # Reduced from 20
+        queue-capacity: 100         # Reduced from 200
       thread-name-prefix: secure-bank-prod-
 
   # Caching configuration for production
   cache:
     type: caffeine
     caffeine:
-      spec: maximumSize=10000,expireAfterWrite=3600s
+      spec: maximumSize=5000,expireAfterWrite=3600s  # Reduced from 10000
 
 # JWT configuration
 jwt:
@@ -90,12 +98,12 @@ server:
       enabled: false
   # Tomcat tuning for production
   tomcat:
-    max-threads: 200
-    max-connections: 10000
-    accept-count: 100
-    min-spare-threads: 20
-    max-keep-alive-requests: 100
-    connection-timeout: 20000
+    max-threads: 100                # Reduced from 200
+    max-connections: 5000           # Reduced from 10000
+    accept-count: 50                # Reduced from 100
+    min-spare-threads: 10           # Reduced from 20
+    max-keep-alive-requests: 50     # Reduced from 100
+    connection-timeout: 30000       # Increased to 30 seconds
     accesslog:
       enabled: true
       directory: /tmp
@@ -109,7 +117,7 @@ management:
         include: health,info,metrics,prometheus
   endpoint:
     health:
-      show-details: when-authorized
+      show-details: always          # Changed from when-authorized
       probes:
         enabled: true
   health:
@@ -122,9 +130,13 @@ management:
 logging:
   level:
     root: INFO
-    com.application.secureBank: INFO
-    org.springframework: WARN
-    org.hibernate: WARN
+    com.application.secureBank: DEBUG
+    org.springframework.transaction: DEBUG
+    org.springframework.orm.jpa: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE
+    com.zaxxer.hikari: DEBUG
+    org.springframework.jdbc: DEBUG
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
   file:

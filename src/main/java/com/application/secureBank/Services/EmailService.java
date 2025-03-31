@@ -66,27 +66,32 @@ public class EmailService {
      */
     @Async
     public void sendRegistrationEmail(String to, String fullName, String customerId, String pin, String accountNumber) {
-        Context context = new Context();
-        context.setVariable("fullName", fullName);
-        context.setVariable("customerId", customerId);
-        context.setVariable("pin", pin);
-        context.setVariable("accountNumber", accountNumber);
-        context.setVariable("applicationName", applicationName);
-
-        // If template engine fails to find the template, use a fallback plain HTML email
-        String emailContent;
         try {
-            emailContent = templateEngine.process("registration-email", context);
-        } catch (Exception e) {
-            log.warn("Email template not found, using fallback HTML email: {}", e.getMessage());
-            emailContent = generateFallbackEmailContent(fullName, customerId, pin, accountNumber);
-        }
+            Context context = new Context();
+            context.setVariable("fullName", fullName);
+            context.setVariable("customerId", customerId);
+            context.setVariable("pin", pin);
+            context.setVariable("accountNumber", accountNumber);
+            context.setVariable("applicationName", applicationName);
 
-        sendEmail(
-                to,
-                applicationName + " - Your Account Details",
-                emailContent
-        );
+            // If template engine fails to find the template, use a fallback plain HTML email
+            String emailContent;
+            try {
+                emailContent = templateEngine.process("registration-email", context);
+            } catch (Exception e) {
+                log.warn("Email template not found, using fallback HTML email: {}", e.getMessage());
+                emailContent = generateFallbackEmailContent(fullName, customerId, pin, accountNumber);
+            }
+
+            sendEmail(
+                    to,
+                    applicationName + " - Your Account Details",
+                    emailContent
+            );
+        } catch (Exception e) {
+            // Just log errors but don't propagate them
+            log.error("Failed to send registration email: {}", e.getMessage(), e);
+        }
     }
 
     /**
