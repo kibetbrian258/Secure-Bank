@@ -4,6 +4,7 @@ import com.application.secureBank.DTOs.CustomerProfileResponse;
 import com.application.secureBank.DTOs.CustomerRegistrationResponse;
 import com.application.secureBank.DTOs.RegistrationRequest;
 import com.application.secureBank.DTOs.UpdateProfileRequest;
+import com.application.secureBank.Repositories.AccountRepository;
 import com.application.secureBank.Repositories.CustomerRepository;
 import com.application.secureBank.models.Account;
 import com.application.secureBank.models.Customer;
@@ -16,13 +17,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 @Slf4j
@@ -30,20 +32,21 @@ public class CustomerService implements UserDetailsService {
 
     private final CustomerRepository customerRepository;
     private final PasswordEncoder passwordEncoder;
-    private final AccountManagementService accountManagementService;
     private final EmailService emailService;
     private final PhoneNumberService phoneNumberService;
+    private final AccountRepository accountRepository;
 
     public CustomerService(CustomerRepository customerRepository,
                            PasswordEncoder passwordEncoder,
                            AccountManagementService accountManagementService,
                            EmailService emailService,
-                           PhoneNumberService phoneNumberService) {
+                           PhoneNumberService phoneNumberService,
+                           AccountRepository accountRepository) {
         this.customerRepository = customerRepository;
         this.passwordEncoder = passwordEncoder;
-        this.accountManagementService = accountManagementService;
         this.emailService = emailService;
         this.phoneNumberService = phoneNumberService;
+        this.accountRepository = accountRepository;
     }
 
     @Override
@@ -71,7 +74,7 @@ public class CustomerService implements UserDetailsService {
 
     @Transactional(rollbackFor = Exception.class)
     public CustomerRegistrationResponse registerCustomer(RegistrationRequest request) {
-        // Check if email already exists - moved outside transaction for efficiency
+        // Check if email already exists
         if (customerRepository.existsByEmail(request.getEmail())) {
             throw new IllegalArgumentException("Email already registered");
         }
@@ -104,8 +107,27 @@ public class CustomerService implements UserDetailsService {
             // Save customer
             Customer savedCustomer = customerRepository.save(customer);
 
-            // Create account
-            Account account = accountManagementService.createAccount(savedCustomer);
+            // IMPORTANT: Flush to ensure customer is written to database
+            customerRepository.flush();
+
+            // Create an account manually (not in a new transaction)
+            Account account = Account.builder()
+                    .accountNumber(generateUniqueAccountNumber())
+                    .customer(savedCustomer)
+                    .balance(new BigDecimal("0.00"))
+                    .status("Active")
+                    .interestRate(new BigDecimal("2.5"))
+                    .branchName("Main Branch")
+                    .branchCode("BR001")
+                    .onlineBanking(true)
+                    .mobileBanking(true)
+                    .monthlyFee(BigDecimal.ZERO)
+                    .minimumBalance(new BigDecimal("200.00"))
+                    .withdrawalLimit(new BigDecimal("10000.00"))
+                    .transferLimit(new BigDecimal("10000.00"))
+                    .build();
+
+            Account savedAccount = accountRepository.save(account);
 
             // Prepare response
             CustomerRegistrationResponse response = CustomerRegistrationResponse.builder()
@@ -113,14 +135,13 @@ public class CustomerService implements UserDetailsService {
                     .fullName(request.getFullName())
                     .email(request.getEmail())
                     .pin(pin)
-                    .accountNumber(account.getAccountNumber())
+                    .accountNumber(savedAccount.getAccountNumber())
                     .dateOfBirth(request.getDateOfBirth())
                     .phoneNumber(phoneNumberService.extractSignificantDigits(formattedPhoneNumber))
                     .address(request.getAddress())
                     .build();
 
-            // Send email AFTER transaction completion to avoid impacting the transaction
-            // This is moved outside the transactional boundary
+            // Send email AFTER transaction completion (this remains unchanged)
             CompletableFuture.runAsync(() -> {
                 try {
                     emailService.sendRegistrationEmail(
@@ -128,10 +149,9 @@ public class CustomerService implements UserDetailsService {
                             request.getFullName(),
                             customerId,
                             pin,
-                            account.getAccountNumber()
+                            savedAccount.getAccountNumber()
                     );
                 } catch (Exception ex) {
-                    // Log but don't throw
                     log.error("Failed to send registration email: {}", ex.getMessage());
                 }
             });
@@ -224,5 +244,22 @@ public class CustomerService implements UserDetailsService {
                 .registrationDate(savedCustomer.getRegistrationDate())
                 .lastLogin(savedCustomer.getLastLogin())
                 .build();
+    }
+
+    // Add this helper method to generate unique account numbers
+    private String generateUniqueAccountNumber() {
+        String accountNumber;
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+
+        do {
+            // Generate an 11-digit account number
+            StringBuilder sb = new StringBuilder(11);
+            for (int i = 0; i < 11; i++) {
+                sb.append(random.nextInt(10));
+            }
+            accountNumber = sb.toString();
+        } while (accountRepository.findByAccountNumber(accountNumber).isPresent());
+
+        return accountNumber;
     }
 }

@@ -28,9 +28,9 @@ public class AccountManagementService {
 
     /**
      * Creates a new account for a customer with a randomly generated account number
-     * Uses REQUIRES_NEW to ensure this runs in its own transaction
+     * Used for non-registration scenarios (e.g., creating additional accounts)
      */
-    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class)
     @CacheEvict(value = "accounts", allEntries = true)
     public Account createAccount(Customer customer) {
         try {
@@ -63,7 +63,7 @@ public class AccountManagementService {
      * Generates a unique account number using ThreadLocalRandom for better performance
      * than standard Random in multi-threaded environments
      */
-    private String generateUniqueAccountNumber() {
+    public String generateUniqueAccountNumber() {
         String accountNumber;
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
