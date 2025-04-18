@@ -38,4 +38,7 @@ public class CustomerProfileResponse {
 
     @Schema(description = "Date and time of customer's last login", example = "2023-03-20T14:45:00")
     private LocalDateTime lastLogin;
+
+    @Schema(description = "Profile image URL or data URL", example = "data:image/jpeg;base64,/9j/4AAQSkZJRg...")
+    private String profileImage;
 }

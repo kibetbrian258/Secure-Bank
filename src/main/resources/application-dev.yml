@@ -56,6 +56,19 @@ spring:
     livereload:
       enabled: true
 
+# Dev-specific file storage configuration
+file:
+  upload:
+    dir: ./uploads/dev/images
+  base:
+    url: http://localhost:8080/api/files
+
+# Profile image settings for dev
+profile:
+  image:
+    default:
+      url: http://localhost:8080/api/static/default-profile.png
+
 # Dev-specific SpringDoc configuration
 springdoc:
   show-actuator: true

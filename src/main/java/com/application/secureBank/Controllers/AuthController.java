@@ -3,7 +3,6 @@ package com.application.secureBank.Controllers;
 import com.application.secureBank.DTOs.*;
 import com.application.secureBank.Services.CustomerService;
 import com.application.secureBank.Services.JwtService;
-import com.application.secureBank.models.Customer;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -13,11 +12,13 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://secure-bank-sb.vercel.app"})
 @RequiredArgsConstructor
 @Tag(name = "Authentication", description = "API endpoints for customer registration and authentication")
 public class AuthController {
@@ -89,5 +90,30 @@ public class AuthController {
     ) {
         JwtResponse jwtResponse = jwtService.authenticateCustomer(loginRequest);
         return ResponseEntity.ok(jwtResponse);
+    }
+
+    // Removed refresh token endpoint
+
+    @PostMapping("/logout")
+    @Operation(
+            summary = "Logout customer",
+            description = "Logs out the customer."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Logged out successfully",
+                    content = @Content(mediaType = "application/json")
+            ),
+            @ApiResponse(
+                    responseCode = "401",
+                    description = "Unauthorized - Invalid or missing JWT token",
+                    content = @Content(mediaType = "application/json")
+            )
+    })
+    public ResponseEntity<MessageResponse> logoutCustomer() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String customerId = authentication.getName();
+        return ResponseEntity.ok(new MessageResponse("Logged out successfully"));
     }
 }

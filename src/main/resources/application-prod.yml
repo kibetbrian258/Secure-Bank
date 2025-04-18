@@ -6,12 +6,12 @@ spring:
     password: ${JDBC_DATABASE_PASSWORD}
     driver-class-name: org.postgresql.Driver
     hikari:
-      maximum-pool-size: 5          # Reduced for Render free tier
-      minimum-idle: 1               # Reduced for Render free tier
-      idle-timeout: 300000          # 5 minutes
-      connection-timeout: 30000     # 30 seconds
-      max-lifetime: 1800000         # 30 minutes
-      validation-timeout: 5000      # 5 seconds
+      maximum-pool-size: 5
+      minimum-idle: 1
+      idle-timeout: 300000
+      connection-timeout: 30000
+      max-lifetime: 1800000
+      validation-timeout: 5000
       leak-detection-threshold: 60000
       connection-test-query: SELECT 1
       auto-commit: false
@@ -33,9 +33,9 @@ spring:
           starttls:
             enable: true
             required: true
-          timeout: 15000             # Increased timeout
-          connection-timeout: 15000  # Increased timeout
-          write-timeout: 15000       # Increased timeout
+          timeout: 15000
+          connection-timeout: 15000
+          write-timeout: 15000
     default-encoding: UTF-8
 
   jpa:
@@ -47,7 +47,7 @@ spring:
         format_sql: false
         show_sql: false
         # Performance optimizations for production
-        jdbc.batch_size: 30          # Reduced from 50
+        jdbc.batch_size: 30
         order_inserts: true
         order_updates: true
         jdbc.batch_versioned_data: true
@@ -80,10 +80,24 @@ spring:
     caffeine:
       spec: maximumSize=5000,expireAfterWrite=3600s  # Reduced from 10000
 
+# File storage configuration for production
+file:
+  upload:
+    dir: ${FILE_UPLOAD_DIR:/tmp/securebank/uploads/images}
+  base:
+    url: ${FILE_BASE_URL:https://secure-bank-sb.vercel.app/api/files}
+
+# Profile image settings for production
+profile:
+  image:
+    default:
+      url: ${DEFAULT_PROFILE_IMG_URL:https://secure-bank-sb.vercel.app/assets/default-profile.png}
+
 # JWT configuration
 jwt:
   secret: ${JWT_SECRET}
   expiration: 86400
+  issuer: ${JWT_ISSUER:secure-bank-api}
 
 # Server configuration
 server:

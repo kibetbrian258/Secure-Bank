@@ -35,18 +35,21 @@ public class CustomerService implements UserDetailsService {
     private final EmailService emailService;
     private final PhoneNumberService phoneNumberService;
     private final AccountRepository accountRepository;
+    private final ProfileImageService profileImageService;
 
     public CustomerService(CustomerRepository customerRepository,
                            PasswordEncoder passwordEncoder,
                            AccountManagementService accountManagementService,
                            EmailService emailService,
                            PhoneNumberService phoneNumberService,
-                           AccountRepository accountRepository) {
+                           AccountRepository accountRepository,
+                           ProfileImageService profileImageService) {
         this.customerRepository = customerRepository;
         this.passwordEncoder = passwordEncoder;
         this.emailService = emailService;
         this.phoneNumberService = phoneNumberService;
         this.accountRepository = accountRepository;
+        this.profileImageService = profileImageService;
     }
 
     @Override
@@ -160,7 +163,7 @@ public class CustomerService implements UserDetailsService {
         } catch (Exception e) {
             // Log the specific error for debugging
             log.error("Error during customer registration: {}", e.getMessage(), e);
-            throw e; // Rethrow to trigger rollback
+            throw e;
         }
     }
 
@@ -207,7 +210,7 @@ public class CustomerService implements UserDetailsService {
         }
 
         if (request.getEmail() != null) {
-            // Check if email is being changed and is not already in use
+
             if (!request.getEmail().equals(customer.getEmail()) &&
                     customerRepository.existsByEmail(request.getEmail())) {
                 throw new IllegalArgumentException("Email already in use");
@@ -246,7 +249,7 @@ public class CustomerService implements UserDetailsService {
                 .build();
     }
 
-    // Add this helper method to generate unique account numbers
+    //  generate unique account numbers
     private String generateUniqueAccountNumber() {
         String accountNumber;
         ThreadLocalRandom random = ThreadLocalRandom.current();

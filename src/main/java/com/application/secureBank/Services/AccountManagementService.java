@@ -55,7 +55,7 @@ public class AccountManagementService {
             return accountRepository.save(account);
         } catch (Exception e) {
             log.error("Error creating account for customer {}: {}", customer.getCustomerId(), e.getMessage(), e);
-            throw e;  // Rethrow to trigger rollback
+            throw e;
         }
     }
 

@@ -32,7 +32,7 @@ import java.util.List;
 public class AccountController {
     private final AccountService accountService;
 
-    @GetMapping
+    @GetMapping         // check this
     @Operation(
             summary = "Get customer accounts",
             description = "Retrieves all accounts owned by the authenticated customer"

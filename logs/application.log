@@ -1,104 +1,811 @@
-2025-03-31 17:26:18 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 18736 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
-2025-03-31 17:26:18 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
-2025-03-31 17:26:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-31 17:26:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 3 JPA repository interfaces.
-2025-03-31 17:26:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-03-31 17:26:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-03-31 17:26:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-31 17:26:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-03-31 17:26:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5029 ms
-2025-03-31 17:26:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-31 17:26:24 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70f4abc1
-2025-03-31 17:26:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-03-31 17:26:24 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-03-31 17:26:24 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-03-31 17:26:24 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-03-31 17:26:24 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
-2025-03-31 17:26:24 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-2025-03-31 17:26:24 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
-2025-03-31 17:26:24 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 0 migrations (execution time 00:00.026s)
-2025-03-31 17:26:24 [main] WARN  o.f.core.internal.command.DbValidate - No migrations found. Are your locations set up correctly?
-2025-03-31 17:26:24 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Found non-empty schema(s) "public" but no schema history table. Use baseline() or set baselineOnMigrate to true to initialize the schema history table.
-2025-03-31 17:26:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-03-31 17:26:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-03-31 17:26:24 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2025-03-31 17:26:24 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+2025-04-18 09:30:35 [tomcat-handler-124] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: RefreshTokenService.findByToken(..) completed in 1336 ms
+2025-04-18 09:30:37 [tomcat-handler-124] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: RefreshTokenService.verifyExpiration(..) completed in 739 ms
+2025-04-18 09:30:37 [tomcat-handler-124] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: JwtService.refreshToken(..) completed in 3012 ms
+2025-04-18 09:30:49 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16h35m21s845ms485µs700ns).
+2025-04-18 11:04:29 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m37s758ms160µs200ns).
+2025-04-18 11:14:43 [tomcat-handler-125] INFO  c.a.secureBank.Services.JwtService - Authenticating customer: RD7057
+2025-04-18 11:14:43 [tomcat-handler-125] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 352 ms
+2025-04-18 11:14:43 [tomcat-handler-125] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: JwtService.authenticateCustomer(..) completed in 653 ms
+2025-04-18 11:15:25 [tomcat-handler-127] INFO  c.a.secureBank.Services.JwtService - Authenticating customer:  RD6980
+2025-04-18 11:15:25 [tomcat-handler-127] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 8 ms
+2025-04-18 11:15:25 [tomcat-handler-127] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.createRefreshToken(..) completed in 111 ms
+2025-04-18 11:15:25 [tomcat-handler-127] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 39 ms
+2025-04-18 11:15:25 [tomcat-handler-127] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.authenticateCustomer(..) completed in 449 ms
+2025-04-18 11:15:25 [tomcat-handler-129] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 9 ms
+2025-04-18 11:15:26 [tomcat-handler-137] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 8 ms
+2025-04-18 11:15:26 [tomcat-handler-137] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 11:15:26 [tomcat-handler-137] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 10 ms
+2025-04-18 11:16:25 [tomcat-handler-142] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 14 ms
+2025-04-18 11:16:25 [tomcat-handler-142] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 11:16:25 [tomcat-handler-142] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 16 ms
+2025-04-18 11:16:25 [tomcat-handler-149] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 9 ms
+2025-04-18 11:16:25 [tomcat-handler-149] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 11:16:25 [tomcat-handler-149] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 12 ms
+2025-04-18 11:16:52 [tomcat-handler-154] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 7 ms
+2025-04-18 11:16:52 [tomcat-handler-154] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 11:16:52 [tomcat-handler-154] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 10 ms
+2025-04-18 11:16:53 [tomcat-handler-162] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 27 ms
+2025-04-18 11:16:53 [tomcat-handler-162] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 11:16:53 [tomcat-handler-162] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 31 ms
+2025-04-18 11:23:05 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-18 11:23:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-18 11:23:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-18 12:31:19 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 21.0.2 with PID 18024 (C:\Users\user\Desktop\Projects\SecureBank\target\classes started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-18 12:31:19 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-04-18 12:31:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-18 12:31:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 5 JPA repository interfaces.
+2025-04-18 12:31:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-18 12:31:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-18 12:31:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-18 12:31:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-18 12:31:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3868 ms
+2025-04-18 12:31:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-18 12:31:24 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2353354a
+2025-04-18 12:31:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-18 12:31:25 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-18 12:31:25 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-18 12:31:25 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-18 12:31:25 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-18 12:31:25 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-18 12:31:25 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.049s)
+2025-04-18 12:31:25 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-18 12:31:25 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-18 12:31:25 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-18 12:31:25 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-18 12:31:25 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-18 12:31:25 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-18 12:31:26 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-18 12:31:28 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-18 12:31:28 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5ce1ec7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-18 12:31:28 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-18 12:31:29 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-18 12:31:30 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-18 12:31:30 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 4 ms
+2025-04-18 12:31:30 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-18 12:31:30 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-18 12:31:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-18 12:31:32 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 13.598 seconds (process running for 15.223)
+2025-04-18 12:31:32 [main] INFO  c.a.s.Config.AppStartupConfig - Initializing file storage directories...
+2025-04-18 12:31:32 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-18 12:31:32 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 254 ms
+2025-04-18 12:35:25 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-18 12:35:25 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-18 12:35:25 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-18 12:35:25 [tomcat-handler-0] INFO  c.a.secureBank.Services.JwtService - Authenticating customer: RD4090
+2025-04-18 12:35:26 [tomcat-handler-0] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 192 ms
+2025-04-18 12:35:26 [tomcat-handler-0] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.createRefreshToken(..) completed in 68 ms
+2025-04-18 12:35:26 [tomcat-handler-0] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 17 ms
+2025-04-18 12:35:26 [tomcat-handler-0] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: JwtService.authenticateCustomer(..) completed in 524 ms
+2025-04-18 12:35:26 [tomcat-handler-2] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 4 ms
+2025-04-18 12:35:26 [tomcat-handler-2] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.findByCustomerId(..) completed in 4 ms
+2025-04-18 12:35:26 [tomcat-handler-2] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 12:35:26 [tomcat-handler-2] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 9 ms
+2025-04-18 12:35:26 [tomcat-handler-4] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-18 12:35:26 [tomcat-handler-4] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 12:35:26 [tomcat-handler-4] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 4 ms
+2025-04-18 12:35:26 [tomcat-handler-5] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 12:35:26 [tomcat-handler-5] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 7 ms
+2025-04-18 12:35:26 [tomcat-handler-7] DEBUG c.a.s.C.PerformanceMonitoringAspect - AccountService.getAccountsByCustomerId(..) completed in 33 ms
+2025-04-18 12:35:26 [tomcat-handler-8] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-18 12:35:26 [tomcat-handler-8] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 12:35:26 [tomcat-handler-8] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 4 ms
+2025-04-18 12:35:26 [tomcat-handler-11] DEBUG c.a.s.C.PerformanceMonitoringAspect - TransactionService.getLastTenTransactions(..) completed in 130 ms
+2025-04-18 12:35:40 [tomcat-handler-13] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 12:35:40 [tomcat-handler-13] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 6 ms
+2025-04-18 12:35:41 [tomcat-handler-15] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-18 12:35:41 [tomcat-handler-15] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 12:35:41 [tomcat-handler-15] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 4 ms
+2025-04-18 12:35:41 [tomcat-handler-17] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 12:35:41 [tomcat-handler-17] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 5 ms
+2025-04-18 12:35:41 [tomcat-handler-19] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-18 12:35:41 [tomcat-handler-19] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 12:35:41 [tomcat-handler-19] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 5 ms
+2025-04-18 12:35:44 [tomcat-handler-24] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.deleteByCustomerId(..) completed in 9 ms
+2025-04-18 12:35:44 [tomcat-handler-24] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.logout(..) completed in 21 ms
+2025-04-18 12:36:06 [tomcat-handler-26] INFO  c.a.secureBank.Services.JwtService - Authenticating customer:  RD6980
+2025-04-18 12:36:06 [tomcat-handler-26] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 7 ms
+2025-04-18 12:36:06 [tomcat-handler-26] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.createRefreshToken(..) completed in 6 ms
+2025-04-18 12:36:06 [tomcat-handler-26] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 2 ms
+2025-04-18 12:36:06 [tomcat-handler-26] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.authenticateCustomer(..) completed in 112 ms
+2025-04-18 12:36:06 [tomcat-handler-28] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 4 ms
+2025-04-18 12:36:06 [tomcat-handler-36] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:36:06 [tomcat-handler-36] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:06 [tomcat-handler-36] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 10 ms
+2025-04-18 12:36:06 [tomcat-handler-37] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:36:06 [tomcat-handler-37] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:06 [tomcat-handler-37] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:36:06 [tomcat-handler-40] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:36:06 [tomcat-handler-40] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:06 [tomcat-handler-40] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:36:07 [tomcat-handler-42] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 8 ms
+2025-04-18 12:36:07 [tomcat-handler-42] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:07 [tomcat-handler-42] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 9 ms
+2025-04-18 12:36:07 [tomcat-handler-50] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:36:07 [tomcat-handler-50] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:07 [tomcat-handler-50] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:36:07 [tomcat-handler-51] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:36:07 [tomcat-handler-51] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:07 [tomcat-handler-51] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:36:08 [tomcat-handler-55] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:36:08 [tomcat-handler-55] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:08 [tomcat-handler-55] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:08 [tomcat-handler-57] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:36:08 [tomcat-handler-57] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:08 [tomcat-handler-57] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:09 [tomcat-handler-59] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 9 ms
+2025-04-18 12:36:09 [tomcat-handler-59] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:09 [tomcat-handler-59] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 14 ms
+2025-04-18 12:36:09 [tomcat-handler-65] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:36:09 [tomcat-handler-65] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:09 [tomcat-handler-65] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:36:10 [tomcat-handler-66] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 10 ms
+2025-04-18 12:36:10 [tomcat-handler-66] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:10 [tomcat-handler-66] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 13 ms
+2025-04-18 12:36:10 [tomcat-handler-70] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:36:10 [tomcat-handler-70] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:10 [tomcat-handler-70] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:11 [tomcat-handler-73] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:36:11 [tomcat-handler-73] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:11 [tomcat-handler-73] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:36:11 [tomcat-handler-77] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:36:11 [tomcat-handler-77] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:11 [tomcat-handler-77] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:36:12 [tomcat-handler-79] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 8 ms
+2025-04-18 12:36:12 [tomcat-handler-79] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:12 [tomcat-handler-79] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 11 ms
+2025-04-18 12:36:12 [tomcat-handler-87] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:36:12 [tomcat-handler-87] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:12 [tomcat-handler-87] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:12 [tomcat-handler-88] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:36:12 [tomcat-handler-88] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:12 [tomcat-handler-88] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:13 [tomcat-handler-92] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:36:13 [tomcat-handler-92] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:13 [tomcat-handler-92] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:14 [tomcat-handler-95] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 9 ms
+2025-04-18 12:36:14 [tomcat-handler-95] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:14 [tomcat-handler-95] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 12 ms
+2025-04-18 12:36:14 [tomcat-handler-97] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:36:14 [tomcat-handler-97] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:14 [tomcat-handler-97] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:15 [tomcat-handler-99] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 10 ms
+2025-04-18 12:36:15 [tomcat-handler-99] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:15 [tomcat-handler-99] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 13 ms
+2025-04-18 12:36:15 [tomcat-handler-105] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:36:15 [tomcat-handler-105] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:15 [tomcat-handler-105] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:36:15 [tomcat-handler-106] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:36:15 [tomcat-handler-106] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:15 [tomcat-handler-106] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:36:16 [tomcat-handler-110] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:36:16 [tomcat-handler-110] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:16 [tomcat-handler-110] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:17 [tomcat-handler-115] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:36:17 [tomcat-handler-115] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:17 [tomcat-handler-115] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:36:17 [tomcat-handler-117] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:36:17 [tomcat-handler-117] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:17 [tomcat-handler-117] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:18 [tomcat-handler-121] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 9 ms
+2025-04-18 12:36:18 [tomcat-handler-121] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:18 [tomcat-handler-121] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 10 ms
+2025-04-18 12:36:18 [tomcat-handler-129] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:36:18 [tomcat-handler-129] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:18 [tomcat-handler-129] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:36:18 [tomcat-handler-130] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:36:18 [tomcat-handler-130] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:18 [tomcat-handler-130] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:36:19 [tomcat-handler-134] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:36:19 [tomcat-handler-134] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:19 [tomcat-handler-134] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 9 ms
+2025-04-18 12:36:20 [tomcat-handler-137] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:36:20 [tomcat-handler-137] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:20 [tomcat-handler-137] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:20 [tomcat-handler-140] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 10 ms
+2025-04-18 12:36:20 [tomcat-handler-140] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:20 [tomcat-handler-140] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 12 ms
+2025-04-18 12:36:21 [tomcat-handler-143] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 9 ms
+2025-04-18 12:36:21 [tomcat-handler-143] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:21 [tomcat-handler-143] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 10 ms
+2025-04-18 12:36:22 [tomcat-handler-148] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:36:22 [tomcat-handler-148] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:22 [tomcat-handler-148] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:36:22 [tomcat-handler-150] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 8 ms
+2025-04-18 12:36:22 [tomcat-handler-150] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:22 [tomcat-handler-150] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 11 ms
+2025-04-18 12:36:23 [tomcat-handler-152] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:36:23 [tomcat-handler-152] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 1 ms
+2025-04-18 12:36:23 [tomcat-handler-152] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:36:24 [tomcat-handler-160] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:36:24 [tomcat-handler-160] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:24 [tomcat-handler-160] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 9 ms
+2025-04-18 12:36:24 [tomcat-handler-161] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:36:24 [tomcat-handler-161] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:36:24 [tomcat-handler-161] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:37:11 [tomcat-handler-170] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 8 ms
+2025-04-18 12:37:11 [tomcat-handler-170] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:11 [tomcat-handler-170] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 10 ms
+2025-04-18 12:37:12 [tomcat-handler-173] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 7 ms
+2025-04-18 12:37:12 [tomcat-handler-173] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:12 [tomcat-handler-173] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 9 ms
+2025-04-18 12:37:13 [tomcat-handler-176] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:13 [tomcat-handler-176] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:13 [tomcat-handler-176] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:14 [tomcat-handler-179] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 13 ms
+2025-04-18 12:37:14 [tomcat-handler-179] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:14 [tomcat-handler-179] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 15 ms
+2025-04-18 12:37:14 [tomcat-handler-181] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:14 [tomcat-handler-181] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:14 [tomcat-handler-181] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:15 [tomcat-handler-183] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:15 [tomcat-handler-183] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:15 [tomcat-handler-183] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:16 [tomcat-handler-191] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:16 [tomcat-handler-191] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:16 [tomcat-handler-191] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:16 [tomcat-handler-192] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:16 [tomcat-handler-192] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:16 [tomcat-handler-192] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:16 [tomcat-handler-196] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:16 [tomcat-handler-196] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:16 [tomcat-handler-196] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:17 [tomcat-handler-201] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:17 [tomcat-handler-201] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:17 [tomcat-handler-201] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:18 [tomcat-handler-204] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:18 [tomcat-handler-204] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:18 [tomcat-handler-204] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:18 [tomcat-handler-206] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 7 ms
+2025-04-18 12:37:18 [tomcat-handler-206] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:18 [tomcat-handler-206] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 10 ms
+2025-04-18 12:37:19 [tomcat-handler-208] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:19 [tomcat-handler-208] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:19 [tomcat-handler-208] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:19 [tomcat-handler-214] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:19 [tomcat-handler-214] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:19 [tomcat-handler-214] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:19 [tomcat-handler-215] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:19 [tomcat-handler-215] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:19 [tomcat-handler-215] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:20 [tomcat-handler-219] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:20 [tomcat-handler-219] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:20 [tomcat-handler-219] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:21 [tomcat-handler-222] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:21 [tomcat-handler-222] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:21 [tomcat-handler-222] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 9 ms
+2025-04-18 12:37:21 [tomcat-handler-225] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:21 [tomcat-handler-225] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:21 [tomcat-handler-225] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:22 [tomcat-handler-227] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:22 [tomcat-handler-227] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:22 [tomcat-handler-227] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:22 [tomcat-handler-231] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:22 [tomcat-handler-231] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:22 [tomcat-handler-231] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:23 [tomcat-handler-239] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:23 [tomcat-handler-239] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 1 ms
+2025-04-18 12:37:23 [tomcat-handler-239] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:23 [tomcat-handler-240] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:23 [tomcat-handler-240] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:23 [tomcat-handler-240] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:23 [tomcat-handler-244] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:23 [tomcat-handler-244] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:23 [tomcat-handler-244] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:24 [tomcat-handler-247] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:24 [tomcat-handler-247] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:24 [tomcat-handler-247] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:24 [tomcat-handler-249] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:24 [tomcat-handler-249] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:24 [tomcat-handler-249] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:25 [tomcat-handler-251] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 10 ms
+2025-04-18 12:37:25 [tomcat-handler-251] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:25 [tomcat-handler-251] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 12 ms
+2025-04-18 12:37:26 [tomcat-handler-257] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:26 [tomcat-handler-257] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:26 [tomcat-handler-257] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:26 [tomcat-handler-258] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:26 [tomcat-handler-258] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:26 [tomcat-handler-258] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:26 [tomcat-handler-262] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:26 [tomcat-handler-262] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:26 [tomcat-handler-262] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:27 [tomcat-handler-264] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:27 [tomcat-handler-264] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:27 [tomcat-handler-264] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:27 [tomcat-handler-266] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:27 [tomcat-handler-266] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:27 [tomcat-handler-266] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 9 ms
+2025-04-18 12:37:28 [tomcat-handler-271] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:28 [tomcat-handler-271] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:28 [tomcat-handler-271] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:28 [tomcat-handler-279] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 7 ms
+2025-04-18 12:37:28 [tomcat-handler-279] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 1 ms
+2025-04-18 12:37:28 [tomcat-handler-279] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 11 ms
+2025-04-18 12:37:28 [tomcat-handler-280] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:28 [tomcat-handler-280] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 1 ms
+2025-04-18 12:37:28 [tomcat-handler-280] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:29 [tomcat-handler-284] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:29 [tomcat-handler-284] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:29 [tomcat-handler-284] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:29 [tomcat-handler-287] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:29 [tomcat-handler-287] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:29 [tomcat-handler-287] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:30 [tomcat-handler-289] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:30 [tomcat-handler-289] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:30 [tomcat-handler-289] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:37:30 [tomcat-handler-291] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:30 [tomcat-handler-291] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:30 [tomcat-handler-291] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:31 [tomcat-handler-297] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:31 [tomcat-handler-297] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:31 [tomcat-handler-297] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:31 [tomcat-handler-298] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:31 [tomcat-handler-298] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:31 [tomcat-handler-298] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:31 [tomcat-handler-302] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:31 [tomcat-handler-302] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:31 [tomcat-handler-302] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:32 [tomcat-handler-305] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:32 [tomcat-handler-305] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:32 [tomcat-handler-305] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:33 [tomcat-handler-310] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:33 [tomcat-handler-310] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 1 ms
+2025-04-18 12:37:33 [tomcat-handler-310] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:33 [tomcat-handler-312] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 9 ms
+2025-04-18 12:37:33 [tomcat-handler-312] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:33 [tomcat-handler-312] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 11 ms
+2025-04-18 12:37:34 [tomcat-handler-314] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 8 ms
+2025-04-18 12:37:34 [tomcat-handler-314] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:34 [tomcat-handler-314] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 10 ms
+2025-04-18 12:37:34 [tomcat-handler-322] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:34 [tomcat-handler-322] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:34 [tomcat-handler-322] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:34 [tomcat-handler-323] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 8 ms
+2025-04-18 12:37:34 [tomcat-handler-323] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:34 [tomcat-handler-323] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 9 ms
+2025-04-18 12:37:35 [tomcat-handler-327] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:35 [tomcat-handler-327] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:35 [tomcat-handler-327] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:36 [tomcat-handler-330] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:36 [tomcat-handler-330] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:36 [tomcat-handler-330] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:36 [tomcat-handler-332] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:36 [tomcat-handler-332] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:36 [tomcat-handler-332] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:37 [tomcat-handler-334] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:37 [tomcat-handler-334] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:37 [tomcat-handler-334] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:37:37 [tomcat-handler-340] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:37 [tomcat-handler-340] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:37 [tomcat-handler-340] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:37 [tomcat-handler-343] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:37 [tomcat-handler-343] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:37 [tomcat-handler-343] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:37 [tomcat-handler-347] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:37 [tomcat-handler-347] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:37 [tomcat-handler-347] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:38 [tomcat-handler-350] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:38 [tomcat-handler-350] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:38 [tomcat-handler-350] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 17 ms
+2025-04-18 12:37:38 [tomcat-handler-352] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 7 ms
+2025-04-18 12:37:38 [tomcat-handler-352] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:38 [tomcat-handler-352] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 9 ms
+2025-04-18 12:37:38 [tomcat-handler-356] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:38 [tomcat-handler-356] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:38 [tomcat-handler-356] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:38 [tomcat-handler-362] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:38 [tomcat-handler-362] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:38 [tomcat-handler-362] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:38 [tomcat-handler-363] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:38 [tomcat-handler-363] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:38 [tomcat-handler-363] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:39 [tomcat-handler-367] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:39 [tomcat-handler-367] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:39 [tomcat-handler-367] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:39 [tomcat-handler-369] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:39 [tomcat-handler-369] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:39 [tomcat-handler-369] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:39 [tomcat-handler-371] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:39 [tomcat-handler-371] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:39 [tomcat-handler-371] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:39 [tomcat-handler-377] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:39 [tomcat-handler-377] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:39 [tomcat-handler-377] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:39 [tomcat-handler-378] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 10 ms
+2025-04-18 12:37:39 [tomcat-handler-378] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:39 [tomcat-handler-378] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 11 ms
+2025-04-18 12:37:39 [tomcat-handler-380] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:39 [tomcat-handler-380] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:39 [tomcat-handler-380] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:39 [tomcat-handler-382] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:39 [tomcat-handler-382] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:39 [tomcat-handler-382] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:39 [tomcat-handler-390] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:39 [tomcat-handler-390] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:39 [tomcat-handler-390] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:39 [tomcat-handler-391] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 11 ms
+2025-04-18 12:37:39 [tomcat-handler-391] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:39 [tomcat-handler-391] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 12 ms
+2025-04-18 12:37:40 [tomcat-handler-395] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 7 ms
+2025-04-18 12:37:40 [tomcat-handler-395] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:40 [tomcat-handler-395] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:37:40 [tomcat-handler-397] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:40 [tomcat-handler-397] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:40 [tomcat-handler-397] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:40 [tomcat-handler-399] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:40 [tomcat-handler-399] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:40 [tomcat-handler-399] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:40 [tomcat-handler-405] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:40 [tomcat-handler-405] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:40 [tomcat-handler-405] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:40 [tomcat-handler-406] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:40 [tomcat-handler-406] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:40 [tomcat-handler-406] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:40 [tomcat-handler-410] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:40 [tomcat-handler-410] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:40 [tomcat-handler-410] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:41 [tomcat-handler-413] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:41 [tomcat-handler-413] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:41 [tomcat-handler-413] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:41 [tomcat-handler-416] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:41 [tomcat-handler-416] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:41 [tomcat-handler-416] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:41 [tomcat-handler-419] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:41 [tomcat-handler-419] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:41 [tomcat-handler-419] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:41 [tomcat-handler-422] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:41 [tomcat-handler-422] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:41 [tomcat-handler-422] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:42 [tomcat-handler-425] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:42 [tomcat-handler-425] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:42 [tomcat-handler-425] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:42 [tomcat-handler-428] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:42 [tomcat-handler-428] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:42 [tomcat-handler-428] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:42 [tomcat-handler-430] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:42 [tomcat-handler-430] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:42 [tomcat-handler-430] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:42 [tomcat-handler-432] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:42 [tomcat-handler-432] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 1 ms
+2025-04-18 12:37:42 [tomcat-handler-432] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:42 [tomcat-handler-438] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:42 [tomcat-handler-438] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:42 [tomcat-handler-438] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:42 [tomcat-handler-439] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 18 ms
+2025-04-18 12:37:42 [tomcat-handler-439] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:42 [tomcat-handler-439] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 19 ms
+2025-04-18 12:37:43 [tomcat-handler-443] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:43 [tomcat-handler-443] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:43 [tomcat-handler-443] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:43 [tomcat-handler-446] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:43 [tomcat-handler-446] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:43 [tomcat-handler-446] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:37:43 [tomcat-handler-450] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:43 [tomcat-handler-450] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:43 [tomcat-handler-450] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:43 [tomcat-handler-454] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:43 [tomcat-handler-454] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:43 [tomcat-handler-454] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:44 [tomcat-handler-460] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:44 [tomcat-handler-460] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:44 [tomcat-handler-460] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:44 [tomcat-handler-461] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:44 [tomcat-handler-461] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 1 ms
+2025-04-18 12:37:44 [tomcat-handler-461] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:44 [tomcat-handler-465] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:44 [tomcat-handler-465] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:44 [tomcat-handler-465] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:44 [tomcat-handler-468] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:44 [tomcat-handler-468] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:44 [tomcat-handler-468] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:44 [tomcat-handler-471] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:44 [tomcat-handler-471] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:44 [tomcat-handler-471] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:44 [tomcat-handler-473] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:44 [tomcat-handler-473] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:44 [tomcat-handler-473] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:45 [tomcat-handler-475] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:45 [tomcat-handler-475] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:45 [tomcat-handler-475] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:45 [tomcat-handler-483] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:45 [tomcat-handler-483] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:45 [tomcat-handler-483] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:45 [tomcat-handler-484] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:45 [tomcat-handler-484] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:45 [tomcat-handler-484] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:45 [tomcat-handler-489] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:45 [tomcat-handler-489] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:45 [tomcat-handler-489] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:45 [tomcat-handler-491] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:45 [tomcat-handler-491] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:45 [tomcat-handler-491] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:46 [tomcat-handler-493] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:46 [tomcat-handler-493] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:46 [tomcat-handler-493] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:46 [tomcat-handler-499] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:46 [tomcat-handler-499] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:46 [tomcat-handler-499] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:46 [tomcat-handler-500] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:46 [tomcat-handler-500] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:46 [tomcat-handler-500] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:46 [tomcat-handler-504] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:46 [tomcat-handler-504] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:46 [tomcat-handler-504] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:46 [tomcat-handler-506] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:46 [tomcat-handler-506] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:46 [tomcat-handler-506] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:37:46 [tomcat-handler-508] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:46 [tomcat-handler-508] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:46 [tomcat-handler-508] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:46 [tomcat-handler-514] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:46 [tomcat-handler-514] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:46 [tomcat-handler-514] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:46 [tomcat-handler-515] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:46 [tomcat-handler-515] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:46 [tomcat-handler-515] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:47 [tomcat-handler-519] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:47 [tomcat-handler-519] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:47 [tomcat-handler-519] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:47 [tomcat-handler-522] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 8 ms
+2025-04-18 12:37:47 [tomcat-handler-522] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:47 [tomcat-handler-522] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 9 ms
+2025-04-18 12:37:47 [tomcat-handler-524] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:47 [tomcat-handler-524] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:47 [tomcat-handler-524] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:47 [tomcat-handler-526] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:47 [tomcat-handler-526] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:47 [tomcat-handler-526] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:47 [tomcat-handler-532] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 1 ms
+2025-04-18 12:37:47 [tomcat-handler-532] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:47 [tomcat-handler-532] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:47 [tomcat-handler-533] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:47 [tomcat-handler-533] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:47 [tomcat-handler-533] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:48 [tomcat-handler-537] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:48 [tomcat-handler-537] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:48 [tomcat-handler-537] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:48 [tomcat-handler-540] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:48 [tomcat-handler-540] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:48 [tomcat-handler-540] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:48 [tomcat-handler-542] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 36 ms
+2025-04-18 12:37:48 [tomcat-handler-542] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:48 [tomcat-handler-542] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 37 ms
+2025-04-18 12:37:48 [tomcat-handler-546] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:48 [tomcat-handler-546] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:48 [tomcat-handler-546] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:48 [tomcat-handler-552] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:48 [tomcat-handler-552] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:48 [tomcat-handler-552] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:48 [tomcat-handler-553] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:48 [tomcat-handler-553] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 1 ms
+2025-04-18 12:37:48 [tomcat-handler-553] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:49 [tomcat-handler-557] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:49 [tomcat-handler-557] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:49 [tomcat-handler-557] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:49 [tomcat-handler-560] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:49 [tomcat-handler-560] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:49 [tomcat-handler-560] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:49 [tomcat-handler-562] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:49 [tomcat-handler-562] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:49 [tomcat-handler-562] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:49 [tomcat-handler-564] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:49 [tomcat-handler-564] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:49 [tomcat-handler-564] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:49 [tomcat-handler-570] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 1 ms
+2025-04-18 12:37:49 [tomcat-handler-570] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:49 [tomcat-handler-570] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:49 [tomcat-handler-571] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:49 [tomcat-handler-571] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:49 [tomcat-handler-571] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:50 [tomcat-handler-575] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:50 [tomcat-handler-575] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:50 [tomcat-handler-575] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:50 [tomcat-handler-578] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:50 [tomcat-handler-578] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:50 [tomcat-handler-578] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:50 [tomcat-handler-580] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:50 [tomcat-handler-580] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:50 [tomcat-handler-580] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:50 [tomcat-handler-582] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:50 [tomcat-handler-582] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:50 [tomcat-handler-582] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:50 [tomcat-handler-590] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:50 [tomcat-handler-590] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:50 [tomcat-handler-590] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:50 [tomcat-handler-591] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:50 [tomcat-handler-591] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:50 [tomcat-handler-591] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 7 ms
+2025-04-18 12:37:50 [tomcat-handler-595] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:50 [tomcat-handler-595] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:50 [tomcat-handler-595] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:50 [tomcat-handler-597] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:50 [tomcat-handler-597] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:50 [tomcat-handler-597] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:51 [tomcat-handler-599] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:51 [tomcat-handler-599] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:51 [tomcat-handler-599] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:51 [tomcat-handler-605] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:51 [tomcat-handler-605] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:51 [tomcat-handler-605] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:51 [tomcat-handler-606] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:51 [tomcat-handler-606] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:51 [tomcat-handler-606] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:51 [tomcat-handler-610] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:51 [tomcat-handler-610] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:51 [tomcat-handler-610] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:51 [tomcat-handler-613] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:51 [tomcat-handler-613] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:51 [tomcat-handler-613] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:52 [tomcat-handler-616] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:52 [tomcat-handler-616] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:52 [tomcat-handler-616] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:52 [tomcat-handler-618] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:52 [tomcat-handler-618] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:52 [tomcat-handler-618] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:52 [tomcat-handler-620] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:52 [tomcat-handler-620] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:52 [tomcat-handler-620] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:52 [tomcat-handler-626] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 1 ms
+2025-04-18 12:37:52 [tomcat-handler-626] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:52 [tomcat-handler-626] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 2 ms
+2025-04-18 12:37:52 [tomcat-handler-627] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:52 [tomcat-handler-627] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:52 [tomcat-handler-627] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:52 [tomcat-handler-631] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:52 [tomcat-handler-631] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:52 [tomcat-handler-631] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:52 [tomcat-handler-633] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:52 [tomcat-handler-633] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:52 [tomcat-handler-633] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:53 [tomcat-handler-635] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:53 [tomcat-handler-635] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:53 [tomcat-handler-635] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:53 [tomcat-handler-641] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:53 [tomcat-handler-641] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:53 [tomcat-handler-641] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:53 [tomcat-handler-642] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:53 [tomcat-handler-642] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:53 [tomcat-handler-642] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:53 [tomcat-handler-646] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:53 [tomcat-handler-646] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:53 [tomcat-handler-646] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:53 [tomcat-handler-651] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:53 [tomcat-handler-651] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:53 [tomcat-handler-651] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:53 [tomcat-handler-653] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:53 [tomcat-handler-653] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:53 [tomcat-handler-653] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:54 [tomcat-handler-655] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:54 [tomcat-handler-655] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:54 [tomcat-handler-655] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:54 [tomcat-handler-661] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:54 [tomcat-handler-661] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:54 [tomcat-handler-661] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:54 [tomcat-handler-662] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:54 [tomcat-handler-662] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:54 [tomcat-handler-662] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:54 [tomcat-handler-666] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:54 [tomcat-handler-666] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:54 [tomcat-handler-666] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:54 [tomcat-handler-668] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:54 [tomcat-handler-668] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:54 [tomcat-handler-668] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:54 [tomcat-handler-670] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:54 [tomcat-handler-670] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:54 [tomcat-handler-670] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:54 [tomcat-handler-676] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:54 [tomcat-handler-676] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:54 [tomcat-handler-676] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:54 [tomcat-handler-677] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 6 ms
+2025-04-18 12:37:54 [tomcat-handler-677] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:54 [tomcat-handler-677] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 8 ms
+2025-04-18 12:37:55 [tomcat-handler-681] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:55 [tomcat-handler-681] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:55 [tomcat-handler-681] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:55 [tomcat-handler-684] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:55 [tomcat-handler-684] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:55 [tomcat-handler-684] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:55 [tomcat-handler-686] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:55 [tomcat-handler-686] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:55 [tomcat-handler-686] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:55 [tomcat-handler-688] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:55 [tomcat-handler-688] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:55 [tomcat-handler-688] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:55 [tomcat-handler-696] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:55 [tomcat-handler-696] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:55 [tomcat-handler-696] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:55 [tomcat-handler-697] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 5 ms
+2025-04-18 12:37:55 [tomcat-handler-697] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:55 [tomcat-handler-697] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:56 [tomcat-handler-701] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:56 [tomcat-handler-701] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:56 [tomcat-handler-701] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:56 [tomcat-handler-703] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:56 [tomcat-handler-703] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:56 [tomcat-handler-703] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:56 [tomcat-handler-705] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:56 [tomcat-handler-705] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:56 [tomcat-handler-705] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:56 [tomcat-handler-711] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:56 [tomcat-handler-711] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:56 [tomcat-handler-711] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:56 [tomcat-handler-712] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 4 ms
+2025-04-18 12:37:56 [tomcat-handler-712] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:56 [tomcat-handler-712] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 6 ms
+2025-04-18 12:37:57 [tomcat-handler-716] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:57 [tomcat-handler-716] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:57 [tomcat-handler-716] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:57 [tomcat-handler-718] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:57 [tomcat-handler-718] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:57 [tomcat-handler-718] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:57 [tomcat-handler-720] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:57 [tomcat-handler-720] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:57 [tomcat-handler-720] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 4 ms
+2025-04-18 12:37:57 [tomcat-handler-726] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 2 ms
+2025-04-18 12:37:57 [tomcat-handler-726] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:57 [tomcat-handler-726] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 3 ms
+2025-04-18 12:37:57 [tomcat-handler-727] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:57 [tomcat-handler-727] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:57 [tomcat-handler-727] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:37:57 [tomcat-handler-731] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.findByToken(..) completed in 3 ms
+2025-04-18 12:37:57 [tomcat-handler-731] DEBUG c.a.s.C.PerformanceMonitoringAspect - RefreshTokenService.verifyExpiration(..) completed in 0 ms
+2025-04-18 12:37:57 [tomcat-handler-731] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.refreshToken(..) completed in 5 ms
+2025-04-18 12:44:33 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-18 12:44:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-18 12:44:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-18 12:53:12 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 21.0.2 with PID 24324 (C:\Users\user\Desktop\Projects\SecureBank\target\classes started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-18 12:53:12 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-04-18 12:53:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-18 12:53:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 100 ms. Found 5 JPA repository interfaces.
+2025-04-18 12:53:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-18 12:53:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-18 12:53:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-18 12:53:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-18 12:53:16 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3870 ms
+2025-04-18 12:53:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-18 12:53:17 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5f61e002
+2025-04-18 12:53:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-18 12:53:17 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-18 12:53:17 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-18 12:53:17 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-18 12:53:17 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-18 12:53:17 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-18 12:53:17 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.041s)
+2025-04-18 12:53:17 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-18 12:53:17 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-18 12:53:17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-18 12:53:18 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-18 12:53:18 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-18 12:53:18 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-18 12:53:18 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-18 12:53:20 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-18 12:53:20 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7bbc11ed] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-18 12:53:21 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-18 12:53:22 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-18 12:53:22 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-18 12:53:22 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 5 ms
+2025-04-18 12:53:23 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-18 12:53:23 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-18 12:53:23 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'refreshTokenService': Injection of autowired dependencies failed
+2025-04-18 12:53:23 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-18 12:53:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-18 12:53:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-18 12:53:23 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-18 12:53:23 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-03-31 17:26:24 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Found non-empty schema(s) "public" but no schema history table. Use baseline() or set baselineOnMigrate to true to initialize the schema history table.
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at com.application.secureBank.SecureBankApplication.main(SecureBankApplication.java:10)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Found non-empty schema(s) "public" but no schema history table. Use baseline() or set baselineOnMigrate to true to initialize the schema history table.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+2025-04-18 12:53:23 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'refreshTokenService': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
-	... 10 common frames omitted
-Caused by: org.flywaydb.core.api.FlywayException: Found non-empty schema(s) "public" but no schema history table. Use baseline() or set baselineOnMigrate to true to initialize the schema history table.
-	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:178)
-	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
-	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
-	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
-	... 17 common frames omitted
-2025-03-31 17:33:23 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 23140 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
-2025-03-31 17:33:23 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
-2025-03-31 17:33:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-31 17:33:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 3 JPA repository interfaces.
-2025-03-31 17:33:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-03-31 17:33:27 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-03-31 17:33:27 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-31 17:33:27 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-03-31 17:33:27 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3269 ms
-2025-03-31 17:33:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-31 17:33:27 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@45297e7
-2025-03-31 17:33:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-03-31 17:33:28 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-03-31 17:33:28 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-03-31 17:33:28 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-03-31 17:33:28 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
-2025-03-31 17:33:28 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-2025-03-31 17:33:28 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
-2025-03-31 17:33:28 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.036s)
-2025-03-31 17:33:28 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" with baseline ...
-2025-03-31 17:33:28 [main] INFO  o.f.core.internal.command.DbBaseline - Successfully baselined schema with version: 1
-2025-03-31 17:33:28 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
-2025-03-31 17:33:28 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2025-03-31 17:33:28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-31 17:33:28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-03-31 17:33:28 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Unable to resolve name [org.hibernate.cache.ehcache.EhCacheRegionFactory] as strategy [org.hibernate.cache.spi.RegionFactory]
-2025-03-31 17:33:28 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Unable to resolve name [org.hibernate.cache.ehcache.EhCacheRegionFactory] as strategy [org.hibernate.cache.spi.RegionFactory]
-2025-03-31 17:33:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-03-31 17:33:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-03-31 17:33:28 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2025-03-31 17:33:28 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-03-31 17:33:28 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Unable to resolve name [org.hibernate.cache.ehcache.EhCacheRegionFactory] as strategy [org.hibernate.cache.spi.RegionFactory]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
@@ -107,357 +814,189 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
 	at com.application.secureBank.SecureBankApplication.main(SecureBankApplication.java:10)
-Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Unable to resolve name [org.hibernate.cache.ehcache.EhCacheRegionFactory] as strategy [org.hibernate.cache.spi.RegionFactory]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
-	at org.hibernate.boot.internal.MetadataBuilderImpl$MetadataBuildingOptionsImpl.<init>(MetadataBuilderImpl.java:705)
-	at org.hibernate.boot.internal.MetadataBuilderImpl.<init>(MetadataBuilderImpl.java:139)
-	at org.hibernate.boot.MetadataSources.getMetadataBuilder(MetadataSources.java:164)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:276)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:197)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:63)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
-	... 15 common frames omitted
-Caused by: org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.cache.ehcache.EhCacheRegionFactory] as strategy [org.hibernate.cache.spi.RegionFactory]
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:154)
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:236)
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:189)
-	at org.hibernate.cache.internal.RegionFactoryInitiator.resolveRegionFactory(RegionFactoryInitiator.java:96)
-	at org.hibernate.cache.internal.RegionFactoryInitiator.initiateService(RegionFactoryInitiator.java:47)
-	at org.hibernate.cache.internal.RegionFactoryInitiator.initiateService(RegionFactoryInitiator.java:32)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	... 29 common frames omitted
-Caused by: org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [org.hibernate.cache.ehcache.EhCacheRegionFactory]
-	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:126)
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:150)
-	... 36 common frames omitted
-Caused by: java.lang.ClassNotFoundException: Could not load requested class : org.hibernate.cache.ehcache.EhCacheRegionFactory
-	at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:216)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:595)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:578)
-	at java.base/java.lang.Class.forName(Class.java:557)
-	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:123)
-	... 37 common frames omitted
-Caused by: java.lang.Throwable: null
-	at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:209)
-	... 43 common frames omitted
-	Suppressed: java.lang.ClassNotFoundException: org.hibernate.cache.ehcache.EhCacheRegionFactory
-		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
-		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
-		... 43 common frames omitted
-	Suppressed: java.lang.ClassNotFoundException: org.hibernate.cache.ehcache.EhCacheRegionFactory
-		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
-		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
-		... 43 common frames omitted
-	Suppressed: java.lang.ClassNotFoundException: org.hibernate.cache.ehcache.EhCacheRegionFactory
-		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
-		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
-		... 43 common frames omitted
-2025-03-31 17:50:19 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 21092 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
-2025-03-31 17:50:19 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
-2025-03-31 17:50:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-31 17:50:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 3 JPA repository interfaces.
-2025-03-31 17:50:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-03-31 17:50:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-03-31 17:50:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-31 17:50:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-03-31 17:50:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3469 ms
-2025-03-31 17:50:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-31 17:50:23 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d7c9811
-2025-03-31 17:50:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-03-31 17:50:24 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-03-31 17:50:24 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-03-31 17:50:24 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-03-31 17:50:24 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
-2025-03-31 17:50:24 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-2025-03-31 17:50:24 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.057s)
-2025-03-31 17:50:24 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
-2025-03-31 17:50:24 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2025-03-31 17:50:24 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-31 17:50:24 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-03-31 17:50:24 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-03-31 17:50:25 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-31 17:50:25 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-03-31 17:50:26 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-31 17:50:27 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-31 17:50:28 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-03-31 17:50:29 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-03-31 17:50:29 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2025-03-31 17:50:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-03-31 17:50:31 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 12.545 seconds (process running for 14.1)
-2025-03-31 17:50:31 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-03-31 17:50:31 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.orm.jpa.JpaSystemException: Unable to commit against JDBC Connection
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:341)
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241)
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:663)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:413)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
-	at jdk.proxy2/jdk.proxy2.$Proxy154.count(Unknown Source)
-	at com.application.secureBank.Config.DataInitializer.lambda$initData$0(DataInitializer.java:33)
-	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
-	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82)
-	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
-	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
-	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:571)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at com.application.secureBank.SecureBankApplication.main(SecureBankApplication.java:10)
-Caused by: org.hibernate.TransactionException: Unable to commit against JDBC Connection
-	at org.hibernate.resource.jdbc.internal.AbstractLogicalConnectionImplementor.commit(AbstractLogicalConnectionImplementor.java:97)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:268)
-	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562)
-	... 35 common frames omitted
-Caused by: org.postgresql.util.PSQLException: Cannot commit when autoCommit is enabled.
-	at org.postgresql.jdbc.PgConnection.commit(PgConnection.java:998)
-	at com.zaxxer.hikari.pool.ProxyConnection.commit(ProxyConnection.java:378)
-	at com.zaxxer.hikari.pool.HikariProxyConnection.commit(HikariProxyConnection.java)
-	at org.hibernate.resource.jdbc.internal.AbstractLogicalConnectionImplementor.commit(AbstractLogicalConnectionImplementor.java:87)
-	... 38 common frames omitted
-2025-03-31 17:50:31 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-03-31 17:50:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-03-31 17:50:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-03-31 18:10:01 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 22664 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
-2025-03-31 18:10:01 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
-2025-03-31 18:10:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-31 18:10:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 3 JPA repository interfaces.
-2025-03-31 18:10:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-03-31 18:10:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-03-31 18:10:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-31 18:10:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-03-31 18:10:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3596 ms
-2025-03-31 18:10:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-31 18:10:05 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f60cbf2
-2025-03-31 18:10:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-03-31 18:10:05 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-03-31 18:10:05 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-03-31 18:10:05 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-03-31 18:10:05 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
-2025-03-31 18:10:05 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-2025-03-31 18:10:05 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.046s)
-2025-03-31 18:10:05 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
-2025-03-31 18:10:05 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2025-03-31 18:10:05 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-31 18:10:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-03-31 18:10:06 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-03-31 18:10:06 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-31 18:10:06 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-03-31 18:10:08 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-31 18:10:08 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4f466207] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2025-03-31 18:10:09 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-31 18:10:09 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-03-31 18:10:10 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-03-31 18:10:10 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2025-03-31 18:10:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-03-31 18:10:12 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 12.357 seconds (process running for 13.828)
-2025-03-31 18:10:39 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-03-31 18:10:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-03-31 18:10:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-03-31 18:25:55 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 25396 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
-2025-03-31 18:25:55 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
-2025-03-31 18:25:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-31 18:25:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 3 JPA repository interfaces.
-2025-03-31 18:25:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-03-31 18:25:58 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-03-31 18:25:58 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-31 18:25:59 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-03-31 18:25:59 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3457 ms
-2025-03-31 18:25:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-31 18:25:59 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4b3ad7ca
-2025-03-31 18:25:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-03-31 18:25:59 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-03-31 18:25:59 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-03-31 18:25:59 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-03-31 18:25:59 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
-2025-03-31 18:25:59 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-2025-03-31 18:26:00 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.057s)
-2025-03-31 18:26:00 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
-2025-03-31 18:26:00 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2025-03-31 18:26:00 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-31 18:26:00 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-03-31 18:26:00 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-03-31 18:26:01 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-31 18:26:01 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-03-31 18:26:02 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-31 18:26:02 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@65067d37] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2025-03-31 18:26:03 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-31 18:26:04 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-03-31 18:26:05 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-03-31 18:26:05 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2025-03-31 18:26:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-03-31 18:26:07 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 12.328 seconds (process running for 13.671)
-2025-03-31 18:26:31 [tomcat-handler-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-31 18:26:31 [tomcat-handler-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-03-31 18:26:31 [tomcat-handler-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2025-03-31 18:26:32 [tomcat-handler-1] DEBUG c.a.s.C.PerformanceMonitoringAspect - PhoneNumberService.formatKenyanPhoneNumber(..) completed in 0 ms
-2025-03-31 18:26:32 [tomcat-handler-1] DEBUG c.a.s.C.PerformanceMonitoringAspect - AccountManagementService.createAccount(..) completed in 65 ms
-2025-03-31 18:26:32 [tomcat-handler-1] DEBUG c.a.s.C.PerformanceMonitoringAspect - PhoneNumberService.extractSignificantDigits(..) completed in 0 ms
-2025-03-31 18:26:32 [tomcat-handler-1] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.registerCustomer(..) completed in 459 ms
-2025-03-31 18:26:33 [secure-bank-async-1] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: EmailService.sendRegistrationEmail(..) completed in 879 ms
-2025-03-31 18:26:33 [secure-bank-async-1] ERROR o.s.a.i.SimpleAsyncUncaughtExceptionHandler - Unexpected exception occurred invoking async method: public void com.application.secureBank.Services.EmailService.sendRegistrationEmail(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-org.springframework.mail.MailSendException: Mail server connection failed. Failed messages: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: localhost, 1025; timeout -1;
-  nested exception is:
-	java.net.ConnectException: Connection refused: getsockopt
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:410)
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350)
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101)
-	at com.application.secureBank.Services.EmailService.sendEmail(EmailService.java:48)
-	at com.application.secureBank.Services.EmailService.sendRegistrationEmail(EmailService.java:85)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
-	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
-	at com.application.secureBank.Config.PerformanceMonitoringAspect.logExecutionTime(PerformanceMonitoringAspect.java:30)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:641)
-	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:631)
-	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
-	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:113)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.lang.VirtualThread.run(VirtualThread.java:329)
-Caused by: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: localhost, 1025; timeout -1
-	at org.eclipse.angus.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2243)
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:729)
-	at jakarta.mail.Service.connect(Service.java:345)
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480)
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399)
-	... 25 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: getsockopt
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:598)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:760)
-	at java.base/java.net.Socket.connect(Socket.java:695)
-	at org.eclipse.angus.mail.util.SocketFetcher.createSocket(SocketFetcher.java:368)
-	at org.eclipse.angus.mail.util.SocketFetcher.getSocket(SocketFetcher.java:243)
-	at org.eclipse.angus.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2193)
-	... 29 common frames omitted
-2025-03-31 18:26:54 [tomcat-handler-2] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 139 ms
-2025-03-31 18:26:54 [tomcat-handler-2] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 40 ms
-2025-03-31 18:26:54 [tomcat-handler-2] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: JwtService.authenticateCustomer(..) completed in 647 ms
-2025-03-31 18:32:02 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-03-31 18:32:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-03-31 18:32:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-03-31 18:50:55 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 17772 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
-2025-03-31 18:50:55 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
-2025-03-31 18:50:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-31 18:50:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 3 JPA repository interfaces.
-2025-03-31 18:50:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-03-31 18:50:59 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-03-31 18:50:59 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-31 18:50:59 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-03-31 18:50:59 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4623 ms
-2025-03-31 18:51:00 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-31 18:51:00 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@708dfe10
-2025-03-31 18:51:00 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-03-31 18:51:00 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-03-31 18:51:00 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-03-31 18:51:00 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-03-31 18:51:00 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
-2025-03-31 18:51:00 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-2025-03-31 18:51:00 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.045s)
-2025-03-31 18:51:00 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
-2025-03-31 18:51:00 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2025-03-31 18:51:01 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-31 18:51:01 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-03-31 18:51:01 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-03-31 18:51:02 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-31 18:51:02 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-03-31 18:51:04 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-31 18:51:04 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2a728076] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2025-03-31 18:51:04 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-31 18:51:05 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-03-31 18:51:06 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-03-31 18:51:06 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2025-03-31 18:51:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-03-31 18:51:08 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 14.873 seconds (process running for 17.473)
-2025-03-31 18:53:52 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-03-31 18:53:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-03-31 18:53:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-03-31 19:11:57 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 23.0.1 with PID 3284 (C:\Users\user\Desktop\SecureBank\target\classes started by user in C:\Users\user\Desktop\SecureBank)
-2025-03-31 19:11:57 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
-2025-03-31 19:11:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-31 19:11:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 3 JPA repository interfaces.
-2025-03-31 19:12:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-03-31 19:12:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-03-31 19:12:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-31 19:12:01 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-03-31 19:12:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4044 ms
-2025-03-31 19:12:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-31 19:12:01 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@786ff0ea
-2025-03-31 19:12:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-03-31 19:12:02 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-03-31 19:12:02 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-03-31 19:12:02 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-03-31 19:12:02 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
-2025-03-31 19:12:02 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-2025-03-31 19:12:02 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.046s)
-2025-03-31 19:12:02 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
-2025-03-31 19:12:02 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2025-03-31 19:12:02 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-31 19:12:02 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-03-31 19:12:02 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-03-31 19:12:03 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-31 19:12:03 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-03-31 19:12:05 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-31 19:12:05 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@85104d6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2025-03-31 19:12:05 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-31 19:12:06 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-03-31 19:12:07 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-03-31 19:12:07 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2025-03-31 19:12:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-03-31 19:12:09 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 13.515 seconds (process running for 14.994)
-2025-03-31 19:12:17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-03-31 19:12:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-03-31 19:12:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'jwt.refresh-expiration' in value "${jwt.refresh-expiration}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:964)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1379)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 17 common frames omitted
+2025-04-18 13:04:51 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 21.0.2 with PID 13932 (C:\Users\user\Desktop\Projects\SecureBank\target\classes started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-18 13:04:51 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-04-18 13:04:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-18 13:04:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 132 ms. Found 4 JPA repository interfaces.
+2025-04-18 13:04:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-18 13:04:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-18 13:04:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-18 13:04:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-18 13:04:55 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3653 ms
+2025-04-18 13:04:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-18 13:04:55 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b458cd6
+2025-04-18 13:04:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-18 13:04:56 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-18 13:04:56 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-18 13:04:56 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-18 13:04:56 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-18 13:04:56 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-18 13:04:56 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.049s)
+2025-04-18 13:04:56 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-18 13:04:56 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-18 13:04:56 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-18 13:04:56 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-18 13:04:56 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-18 13:04:57 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-18 13:04:57 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-18 13:04:58 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-18 13:04:58 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4cb87009] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-18 13:04:59 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-18 13:05:00 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-18 13:05:01 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-18 13:05:01 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 3 ms
+2025-04-18 13:05:01 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-18 13:05:01 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-18 13:05:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-18 13:05:04 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 13.429 seconds (process running for 15.044)
+2025-04-18 13:05:04 [main] INFO  c.a.s.Config.AppStartupConfig - Initializing file storage directories...
+2025-04-18 13:05:04 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-18 13:05:04 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 0 ms
+2025-04-18 13:06:52 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-18 13:06:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-18 13:06:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-18 13:24:24 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 21.0.2 with PID 11484 (C:\Users\user\Desktop\Projects\SecureBank\target\classes started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-18 13:24:24 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-04-18 13:24:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-18 13:24:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 171 ms. Found 4 JPA repository interfaces.
+2025-04-18 13:24:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-18 13:24:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-18 13:24:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-18 13:24:28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-18 13:24:28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4050 ms
+2025-04-18 13:24:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-18 13:24:29 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6723cce7
+2025-04-18 13:24:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-18 13:24:29 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-18 13:24:29 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-18 13:24:29 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-18 13:24:29 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-18 13:24:29 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-18 13:24:29 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.078s)
+2025-04-18 13:24:29 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-18 13:24:29 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-18 13:24:29 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-18 13:24:29 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-18 13:24:29 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-18 13:24:30 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-18 13:24:30 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-18 13:24:32 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-18 13:24:32 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@344f4a82] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-18 13:24:33 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-18 13:24:33 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-18 13:24:34 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-18 13:24:34 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 5 ms
+2025-04-18 13:24:34 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-18 13:24:34 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-18 13:24:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-18 13:24:37 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 13.571 seconds (process running for 14.948)
+2025-04-18 13:24:37 [main] INFO  c.a.s.Config.AppStartupConfig - Initializing file storage directories...
+2025-04-18 13:24:37 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-18 13:24:37 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 0 ms
+2025-04-18 13:24:56 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-18 13:24:56 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-18 13:24:56 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-04-18 13:24:57 [tomcat-handler-0] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 308 ms
+2025-04-18 13:25:27 [tomcat-handler-3] INFO  c.a.secureBank.Services.JwtService - Authenticating customer: RD6980
+2025-04-18 13:25:27 [tomcat-handler-3] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 9 ms
+2025-04-18 13:25:28 [tomcat-handler-3] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 52 ms
+2025-04-18 13:25:28 [tomcat-handler-3] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: JwtService.authenticateCustomer(..) completed in 537 ms
+2025-04-18 13:25:28 [tomcat-handler-5] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 6 ms
+2025-04-18 13:25:28 [tomcat-handler-5] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.findByCustomerId(..) completed in 6 ms
+2025-04-18 13:25:28 [tomcat-handler-5] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 1 ms
+2025-04-18 13:25:28 [tomcat-handler-5] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 16 ms
+2025-04-18 13:25:28 [tomcat-handler-7] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD6980
+2025-04-18 13:25:28 [tomcat-handler-7] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:25:28 [tomcat-handler-7] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 7 ms
+2025-04-18 13:25:28 [tomcat-handler-8] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:25:28 [tomcat-handler-8] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 10 ms
+2025-04-18 13:25:28 [tomcat-handler-10] DEBUG c.a.s.C.PerformanceMonitoringAspect - AccountService.getAccountsByCustomerId(..) completed in 39 ms
+2025-04-18 13:25:28 [tomcat-handler-11] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD6980
+2025-04-18 13:25:28 [tomcat-handler-11] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:25:28 [tomcat-handler-11] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 6 ms
+2025-04-18 13:25:28 [tomcat-handler-13] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFile(..) completed in 4 ms
+2025-04-18 13:25:28 [tomcat-handler-14] DEBUG c.a.s.C.PerformanceMonitoringAspect - TransactionService.getLastTenTransactions(..) completed in 210 ms
+2025-04-18 13:25:58 [tomcat-handler-23] INFO  c.a.secureBank.Services.JwtService - Authenticating customer: RD1833
+2025-04-18 13:25:58 [tomcat-handler-23] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 6 ms
+2025-04-18 13:25:58 [tomcat-handler-23] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 5 ms
+2025-04-18 13:25:58 [tomcat-handler-23] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.authenticateCustomer(..) completed in 131 ms
+2025-04-18 13:25:58 [tomcat-handler-25] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 10 ms
+2025-04-18 13:25:58 [tomcat-handler-25] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.findByCustomerId(..) completed in 5 ms
+2025-04-18 13:25:58 [tomcat-handler-26] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFile(..) completed in 1 ms
+2025-04-18 13:25:58 [tomcat-handler-25] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:25:58 [tomcat-handler-25] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 8 ms
+2025-04-18 13:25:58 [tomcat-handler-28] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD1833
+2025-04-18 13:25:58 [tomcat-handler-28] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:25:58 [tomcat-handler-28] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 6 ms
+2025-04-18 13:25:58 [tomcat-handler-30] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:25:58 [tomcat-handler-30] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 6 ms
+2025-04-18 13:25:58 [tomcat-handler-31] DEBUG c.a.s.C.PerformanceMonitoringAspect - AccountService.getAccountsByCustomerId(..) completed in 8 ms
+2025-04-18 13:25:58 [tomcat-handler-32] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD1833
+2025-04-18 13:25:58 [tomcat-handler-32] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:25:58 [tomcat-handler-32] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 7 ms
+2025-04-18 13:25:58 [tomcat-handler-33] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFile(..) completed in 7 ms
+2025-04-18 13:25:58 [tomcat-handler-35] DEBUG c.a.s.C.PerformanceMonitoringAspect - TransactionService.getLastTenTransactions(..) completed in 23 ms
+2025-04-18 13:26:05 [tomcat-handler-42] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:26:05 [tomcat-handler-42] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 6 ms
+2025-04-18 13:26:06 [tomcat-handler-44] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD1833
+2025-04-18 13:26:06 [tomcat-handler-44] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:26:06 [tomcat-handler-44] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 4 ms
+2025-04-18 13:26:06 [tomcat-handler-45] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:26:06 [tomcat-handler-45] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 5 ms
+2025-04-18 13:26:06 [tomcat-handler-48] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD1833
+2025-04-18 13:26:06 [tomcat-handler-48] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-18 13:26:06 [tomcat-handler-48] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 4 ms
+2025-04-18 13:26:06 [tomcat-handler-49] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFile(..) completed in 1 ms
+2025-04-18 13:26:23 [tomcat-handler-60] INFO  c.a.secureBank.Services.JwtService - Authenticating customer: RD4090
+2025-04-18 13:26:23 [tomcat-handler-60] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 7 ms
+2025-04-18 13:26:23 [tomcat-handler-60] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 3 ms
+2025-04-18 13:26:23 [tomcat-handler-60] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.authenticateCustomer(..) completed in 142 ms
+2025-04-18 13:26:23 [tomcat-handler-62] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 18 ms
+2025-04-18 13:26:23 [tomcat-handler-62] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.findByCustomerId(..) completed in 7 ms
+2025-04-18 13:26:23 [tomcat-handler-62] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 13:26:23 [tomcat-handler-62] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 5 ms
+2025-04-18 13:26:23 [tomcat-handler-64] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-18 13:26:23 [tomcat-handler-64] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 13:26:23 [tomcat-handler-64] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 4 ms
+2025-04-18 13:26:23 [tomcat-handler-65] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 13:26:23 [tomcat-handler-65] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 4 ms
+2025-04-18 13:26:23 [tomcat-handler-67] DEBUG c.a.s.C.PerformanceMonitoringAspect - AccountService.getAccountsByCustomerId(..) completed in 10 ms
+2025-04-18 13:26:23 [tomcat-handler-68] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-18 13:26:23 [tomcat-handler-68] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
+2025-04-18 13:26:23 [tomcat-handler-68] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 4 ms
+2025-04-18 13:26:23 [tomcat-handler-71] DEBUG c.a.s.C.PerformanceMonitoringAspect - TransactionService.getLastTenTransactions(..) completed in 14 ms
+2025-04-18 13:27:16 [tomcat-handler-79] DEBUG c.a.s.C.PerformanceMonitoringAspect - PhoneNumberService.formatKenyanPhoneNumber(..) completed in 0 ms
+2025-04-18 13:27:16 [tomcat-handler-79] DEBUG c.a.s.C.PerformanceMonitoringAspect - PhoneNumberService.extractSignificantDigits(..) completed in 0 ms
+2025-04-18 13:27:16 [tomcat-handler-79] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.registerCustomer(..) completed in 237 ms
+2025-04-18 13:27:27 [secure-bank-async-1] INFO  c.a.secureBank.Services.EmailService - Email sent successfully to lowell@mail.com
+2025-04-18 13:27:27 [secure-bank-async-1] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: EmailService.sendRegistrationEmail(..) completed in 11198 ms
+2025-04-18 13:27:43 [tomcat-handler-81] INFO  c.a.secureBank.Services.JwtService - Authenticating customer:  RD4179
+2025-04-18 13:27:43 [tomcat-handler-81] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 5 ms
+2025-04-18 13:27:43 [tomcat-handler-81] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 3 ms
+2025-04-18 13:27:43 [tomcat-handler-81] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.authenticateCustomer(..) completed in 146 ms
+2025-04-18 13:27:43 [tomcat-handler-83] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 5 ms
+2025-04-18 13:27:56 [tomcat-handler-91] INFO  c.a.secureBank.Services.JwtService - Authenticating customer:  RD4179
+2025-04-18 13:27:56 [tomcat-handler-91] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 5 ms
+2025-04-18 13:27:56 [tomcat-handler-91] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.authenticateCustomer(..) completed in 160 ms
+2025-04-18 13:27:56 [tomcat-handler-93] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 4 ms
+2025-04-18 13:28:41 [tomcat-handler-104] INFO  c.a.secureBank.Services.JwtService - Authenticating customer:  RD4179
+2025-04-18 13:28:42 [tomcat-handler-104] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 10 ms
+2025-04-18 13:28:42 [tomcat-handler-104] DEBUG c.a.s.C.PerformanceMonitoringAspect - JwtService.authenticateCustomer(..) completed in 163 ms
+2025-04-18 13:28:42 [tomcat-handler-106] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 4 ms
+2025-04-18 13:38:19 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-18 13:38:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-18 13:38:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

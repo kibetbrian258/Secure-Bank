@@ -1,8 +1,10 @@
 package com.application.secureBank.Controllers;
 
 import com.application.secureBank.DTOs.CustomerProfileResponse;
+import com.application.secureBank.DTOs.ProfileImageResponse;
 import com.application.secureBank.DTOs.UpdateProfileRequest;
 import com.application.secureBank.Services.CustomerService;
+import com.application.secureBank.Services.ProfileImageService;
 import com.application.secureBank.models.Customer;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -28,6 +30,7 @@ import java.time.LocalDate;
 @SecurityRequirement(name = "BearerAuth")
 public class CustomerController {
     private final CustomerService customerService;
+    private final ProfileImageService profileImageService;
 
     @GetMapping("/profile")
     @Operation(
@@ -73,6 +76,15 @@ public class CustomerController {
                 .registrationDate(customer.getRegistrationDate())
                 .lastLogin(customer.getLastLogin())
                 .build();
+
+        // Get profile image
+        try {
+            ProfileImageResponse imageResponse = profileImageService.getProfileImage(customerId);
+            profileResponse.setProfileImage(imageResponse.getImageData());
+        } catch (Exception e) {
+            // if no profile image is found, set a default or leave as null
+            profileResponse.setProfileImage(null);
+        }
 
         return ResponseEntity.ok(profileResponse);
     }

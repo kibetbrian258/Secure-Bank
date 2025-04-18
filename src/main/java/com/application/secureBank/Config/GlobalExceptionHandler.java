@@ -1,7 +1,12 @@
 package com.application.secureBank.Config;
 
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.UnsupportedJwtException;
+import io.jsonwebtoken.security.SignatureException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -29,6 +34,36 @@ public class GlobalExceptionHandler {
             errors.put(fieldName, errorMessage);
         });
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<Map<String, String>> handleBadCredentialsException(BadCredentialsException ex) {
+        Map<String, String> errors = new HashMap<>();
+        errors.put("error", "Authentication failed");
+        errors.put("message", "Invalid credentials");
+        return new ResponseEntity<>(errors, HttpStatus.UNAUTHORIZED);
+    }
+
+    @ExceptionHandler({
+            ExpiredJwtException.class,
+            MalformedJwtException.class,
+            UnsupportedJwtException.class,
+            SignatureException.class
+    })
+    public ResponseEntity<Map<String, String>> handleJwtExceptions(Exception ex) {
+        Map<String, String> errors = new HashMap<>();
+
+        if (ex instanceof ExpiredJwtException) {
+            errors.put("error", "JWT token has expired");
+        } else if (ex instanceof MalformedJwtException) {
+            errors.put("error", "Invalid JWT token");
+        } else if (ex instanceof UnsupportedJwtException) {
+            errors.put("error", "Unsupported JWT token");
+        } else if (ex instanceof SignatureException) {
+            errors.put("error", "Invalid JWT signature");
+        }
+
+        return new ResponseEntity<>(errors, HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(Exception.class)

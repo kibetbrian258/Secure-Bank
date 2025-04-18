@@ -28,6 +28,26 @@ spring:
         max-size: 16
         queue-capacity: 100
       thread-name-prefix: secure-bank-async-
+  # Configure file uploads
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      enabled: true
+      file-size-threshold: 2KB
+
+# File storage configuration (can be overridden in environment-specific configs)
+file:
+  upload:
+    dir: ./uploads/images
+  base:
+    url: http://localhost:8080/api/files
+
+# Profile image settings
+profile:
+  image:
+    default:
+      url: http://localhost:8080/api/static/default-profile.png
 
 # Global SpringDoc configuration for all environments
 springdoc:
@@ -47,6 +67,7 @@ springdoc:
 jwt:
   secret: b2sBUh1/GpSZrRfvxsZY0od6YrqW/iNVYEKylFIQhEtDJ0hgxjGAc5eU48k3ZomX
   expiration: 86400
+  issuer: secure-bank-api
 
 server:
   port: 8080

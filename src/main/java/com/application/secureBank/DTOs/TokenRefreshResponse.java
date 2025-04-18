@@ -1,3 +1,4 @@
+// TokenRefreshResponse.java
 package com.application.secureBank.DTOs;
 
 import lombok.AllArgsConstructor;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class JwtResponse {
-    private String token;
-    private String customerId;
+public class TokenRefreshResponse {
+    private String accessToken;
+    private String refreshToken;
 }
