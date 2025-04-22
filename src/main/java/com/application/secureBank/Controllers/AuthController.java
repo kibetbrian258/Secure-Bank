@@ -92,7 +92,7 @@ public class AuthController {
         return ResponseEntity.ok(jwtResponse);
     }
 
-    // Removed refresh token endpoint
+    // Refresh token removed
 
     @PostMapping("/logout")
     @Operation(

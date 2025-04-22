@@ -144,7 +144,7 @@ public class CustomerService implements UserDetailsService {
                     .address(request.getAddress())
                     .build();
 
-            // Send email AFTER transaction completion (this remains unchanged)
+            // Send email AFTER transaction completion
             CompletableFuture.runAsync(() -> {
                 try {
                     emailService.sendRegistrationEmail(

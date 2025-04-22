@@ -34,10 +34,12 @@ public class JwtTokenProvider {
 
         Key key = Keys.hmacShaKeyFor(secret.getBytes());
 
+        // Add customerID to claims
+        claims.put("sub", subject);
+
         return Jwts.builder()
                 .setHeader(Map.of("typ", "JWT"))
                 .setClaims(claims)
-                .setSubject(subject)
                 .setIssuedAt(now)
                 .setExpiration(expirationDate)
                 .signWith(key, SignatureAlgorithm.HS512)
