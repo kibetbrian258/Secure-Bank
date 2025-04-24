@@ -19,7 +19,7 @@ COPY --from=build /app/target/securebank.war app.war
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -qO- http://localhost:8080/actuator/health || exit 1
 
 # Define entrypoint
-ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-jar", "app.war"]
 
 # Expose port 8080
 EXPOSE 8080
