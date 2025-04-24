@@ -1,90 +1,331 @@
-2025-04-23 13:23:01 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 21.0.2 with PID 21196 (C:\Users\user\Desktop\Projects\SecureBank\target\classes started by user in C:\Users\user\Desktop\Projects\SecureBank)
-2025-04-23 13:23:01 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
-2025-04-23 13:23:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23 13:23:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 4 JPA repository interfaces.
-2025-04-23 13:23:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-23 13:23:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-04-23 13:23:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-04-23 13:23:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-04-23 13:23:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3382 ms
-2025-04-23 13:23:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-04-23 13:23:05 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1f71e024
-2025-04-23 13:23:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-04-23 13:23:06 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-04-23 13:23:06 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-04-23 13:23:06 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-04-23 13:23:06 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
-2025-04-23 13:23:06 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-2025-04-23 13:23:06 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.046s)
-2025-04-23 13:23:06 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
-2025-04-23 13:23:06 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2025-04-23 13:23:06 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23 13:23:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-23 13:23:06 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-04-23 13:23:07 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23 13:23:07 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23 13:23:08 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23 13:23:08 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@33f3ebfc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2025-04-23 13:23:09 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23 13:23:10 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-04-23 13:23:10 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
-2025-04-23 13:23:10 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 5 ms
-2025-04-23 13:23:11 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-04-23 13:23:11 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2025-04-23 13:23:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-04-23 13:23:13 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 12.498 seconds (process running for 13.768)
-2025-04-23 13:23:13 [main] INFO  c.a.s.Config.AppStartupConfig - Initializing file storage directories...
-2025-04-23 13:23:13 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
-2025-04-23 13:23:13 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 0 ms
-2025-04-23 13:23:24 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-23 13:23:24 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-04-23 13:23:24 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-2025-04-23 13:23:24 [tomcat-handler-0] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 259 ms
-2025-04-23 13:23:24 [tomcat-handler-0] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.findByCustomerId(..) completed in 8 ms
-2025-04-23 13:23:24 [tomcat-handler-0] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD7860, returning default response
-2025-04-23 13:23:24 [tomcat-handler-0] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 13 ms
-2025-04-23 13:23:42 [tomcat-handler-3] INFO  c.a.secureBank.Services.JwtService - Authenticating customer: RD4090
-2025-04-23 13:23:43 [tomcat-handler-3] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 10 ms
-2025-04-23 13:23:43 [tomcat-handler-3] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 51 ms
-2025-04-23 13:23:43 [tomcat-handler-3] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: JwtService.authenticateCustomer(..) completed in 508 ms
-2025-04-23 13:23:43 [tomcat-handler-5] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 5 ms
-2025-04-23 13:23:43 [tomcat-handler-5] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
-2025-04-23 13:23:43 [tomcat-handler-5] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
-2025-04-23 13:23:43 [tomcat-handler-5] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 5 ms
-2025-04-23 13:23:43 [tomcat-handler-9] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.findByCustomerId(..) completed in 6 ms
-2025-04-23 13:23:43 [tomcat-handler-9] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
-2025-04-23 13:23:43 [tomcat-handler-9] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 5 ms
-2025-04-23 13:23:43 [tomcat-handler-8] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.findByCustomerId(..) completed in 12 ms
-2025-04-23 13:23:43 [tomcat-handler-10] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
-2025-04-23 13:23:43 [tomcat-handler-10] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
-2025-04-23 13:23:43 [tomcat-handler-10] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 5 ms
-2025-04-23 13:23:43 [tomcat-handler-8] DEBUG c.a.s.C.PerformanceMonitoringAspect - AccountService.getAccountsByCustomerId(..) completed in 55 ms
-2025-04-23 13:23:44 [tomcat-handler-13] DEBUG c.a.s.C.PerformanceMonitoringAspect - TransactionService.getLastTenTransactions(..) completed in 200 ms
-2025-04-23 13:23:47 [tomcat-handler-14] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
-2025-04-23 13:23:47 [tomcat-handler-14] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 7 ms
-2025-04-23 13:23:47 [tomcat-handler-15] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
-2025-04-23 13:23:47 [tomcat-handler-15] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
-2025-04-23 13:23:47 [tomcat-handler-15] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 6 ms
-2025-04-23 13:23:47 [tomcat-handler-16] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
-2025-04-23 13:23:47 [tomcat-handler-16] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 6 ms
-2025-04-23 13:23:47 [tomcat-handler-18] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
-2025-04-23 13:23:47 [tomcat-handler-18] INFO  c.a.s.Services.ProfileImageService - No profile image found for customer ID: RD4090, returning default response
-2025-04-23 13:23:47 [tomcat-handler-18] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 4 ms
-2025-04-23 13:24:53 [tomcat-handler-25] INFO  c.a.s.C.ProfileImageController - Processing profile image upload for customer ID: RD4090
-2025-04-23 13:24:53 [tomcat-handler-25] INFO  c.a.s.Services.FileStorageService - Stored file RD4090_616cd753-e3e0-4a4c-89a9-4fd63b2fe187.jpg for customer RD4090
-2025-04-23 13:24:53 [tomcat-handler-25] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.storeFile(..) completed in 11 ms
-2025-04-23 13:24:53 [tomcat-handler-25] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
-2025-04-23 13:24:53 [tomcat-handler-25] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.saveProfileImage(..) completed in 118 ms
-2025-04-23 13:24:53 [tomcat-handler-26] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
-2025-04-23 13:24:53 [tomcat-handler-26] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 1 ms
-2025-04-23 13:24:53 [tomcat-handler-26] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 10 ms
-2025-04-23 13:24:53 [tomcat-handler-27] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFile(..) completed in 2 ms
-2025-04-23 13:25:01 [tomcat-handler-31] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
-2025-04-23 13:25:01 [tomcat-handler-31] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 11 ms
-2025-04-23 13:25:05 [tomcat-handler-34] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
-2025-04-23 13:25:05 [tomcat-handler-34] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 7 ms
-2025-04-23 13:25:19 [tomcat-handler-42] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
-2025-04-23 13:25:19 [tomcat-handler-42] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 9 ms
-2025-04-23 13:41:16 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23 13:41:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-04-23 13:41:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-24 00:15:04 [main] INFO  c.a.s.SecureBankApplicationTests - Starting SecureBankApplicationTests using Java 21.0.2 with PID 6744 (started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-24 00:15:04 [main] INFO  c.a.s.SecureBankApplicationTests - The following 1 profile is active: "dev"
+2025-04-24 00:15:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24 00:15:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 108 ms. Found 4 JPA repository interfaces.
+2025-04-24 00:15:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-24 00:15:08 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@32b112a1
+2025-04-24 00:15:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-24 00:15:08 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-24 00:15:08 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-24 00:15:08 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-24 00:15:08 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-24 00:15:08 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-24 00:15:09 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.055s)
+2025-04-24 00:15:09 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-24 00:15:09 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-24 00:15:09 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24 00:15:09 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24 00:15:09 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-24 00:15:10 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24 00:15:10 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24 00:15:11 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24 00:15:11 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7057d9f4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-24 00:15:12 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 00:15:13 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-24 00:15:15 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 00:15:15 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 10 ms
+2025-04-24 00:15:15 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-24 00:15:15 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-24 00:15:17 [main] INFO  c.a.s.SecureBankApplicationTests - Started SecureBankApplicationTests in 13.891 seconds (process running for 15.775)
+2025-04-24 00:15:17 [main] INFO  c.a.s.Config.AppStartupConfig - Initializing file storage directories...
+2025-04-24 00:15:17 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 00:15:17 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 1 ms
+2025-04-24 00:15:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 00:15:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-24 00:15:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-24 00:40:57 [main] INFO  c.a.s.SecureBankApplicationTests - Starting SecureBankApplicationTests using Java 21.0.2 with PID 19908 (started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-24 00:40:57 [main] INFO  c.a.s.SecureBankApplicationTests - The following 1 profile is active: "dev"
+2025-04-24 00:40:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24 00:40:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 125 ms. Found 4 JPA repository interfaces.
+2025-04-24 00:41:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-24 00:41:01 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6d420cdd
+2025-04-24 00:41:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-24 00:41:01 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-24 00:41:01 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-24 00:41:01 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-24 00:41:01 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-24 00:41:01 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-24 00:41:01 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.048s)
+2025-04-24 00:41:01 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-24 00:41:01 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-24 00:41:02 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24 00:41:02 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24 00:41:02 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-24 00:41:03 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24 00:41:03 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24 00:41:05 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24 00:41:05 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1e14ed59] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-24 00:41:05 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 00:41:06 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-24 00:41:07 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 00:41:07 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 3 ms
+2025-04-24 00:41:07 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-24 00:41:07 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-24 00:41:09 [main] INFO  c.a.s.SecureBankApplicationTests - Started SecureBankApplicationTests in 13.017 seconds (process running for 15.048)
+2025-04-24 00:41:09 [main] INFO  c.a.s.Config.AppStartupConfig - Initializing file storage directories...
+2025-04-24 00:41:09 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 00:41:09 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 1 ms
+2025-04-24 00:41:10 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 00:41:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-24 00:41:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-24 01:25:44 [main] INFO  c.a.s.SecureBankApplicationTests - Starting SecureBankApplicationTests using Java 21.0.2 with PID 18788 (started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-24 01:25:44 [main] INFO  c.a.s.SecureBankApplicationTests - The following 1 profile is active: "dev"
+2025-04-24 01:25:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24 01:25:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 118 ms. Found 4 JPA repository interfaces.
+2025-04-24 01:25:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-24 01:25:49 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77e9dca8
+2025-04-24 01:25:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-24 01:25:49 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-24 01:25:49 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-24 01:25:49 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-24 01:25:49 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-24 01:25:49 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-24 01:25:50 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.053s)
+2025-04-24 01:25:50 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-24 01:25:50 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-24 01:25:50 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24 01:25:50 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24 01:25:50 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-24 01:25:51 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24 01:25:51 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24 01:25:53 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24 01:25:53 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@66e44f9f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-24 01:25:54 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 01:25:54 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-24 01:25:55 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 01:25:55 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 4 ms
+2025-04-24 01:25:56 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-24 01:25:56 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-24 01:25:58 [main] INFO  c.a.s.SecureBankApplicationTests - Started SecureBankApplicationTests in 14.79 seconds (process running for 17.314)
+2025-04-24 01:25:58 [main] INFO  c.a.s.Config.AppStartupConfig - Initializing file storage directories...
+2025-04-24 01:25:58 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 01:25:58 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 0 ms
+2025-04-24 01:25:59 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 01:25:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-24 01:25:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-24 01:29:05 [main] INFO  c.a.s.SecureBankApplicationTests - Starting SecureBankApplicationTests using Java 21.0.2 with PID 21244 (started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-24 01:29:05 [main] INFO  c.a.s.SecureBankApplicationTests - The following 1 profile is active: "dev"
+2025-04-24 01:29:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24 01:29:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 122 ms. Found 4 JPA repository interfaces.
+2025-04-24 01:29:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-24 01:29:09 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78128dd0
+2025-04-24 01:29:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-24 01:29:09 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-24 01:29:09 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-24 01:29:09 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-24 01:29:09 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-24 01:29:09 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-24 01:29:09 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.045s)
+2025-04-24 01:29:10 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-24 01:29:10 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-24 01:29:10 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24 01:29:10 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24 01:29:10 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-24 01:29:10 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24 01:29:11 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24 01:29:12 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24 01:29:12 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2d21d12b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-24 01:29:13 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 01:29:13 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-24 01:29:14 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 01:29:14 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 2 ms
+2025-04-24 01:29:14 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-24 01:29:14 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-24 01:29:17 [main] INFO  c.a.s.SecureBankApplicationTests - Started SecureBankApplicationTests in 12.095 seconds (process running for 14.069)
+2025-04-24 01:29:17 [main] INFO  c.a.s.Config.AppStartupConfig - Initializing file storage directories...
+2025-04-24 01:29:17 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 01:29:17 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 1 ms
+2025-04-24 01:29:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 01:29:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-24 01:29:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-24 02:58:31 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 21.0.2 with PID 19832 (C:\Users\user\Desktop\Projects\SecureBank\target\classes started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-24 02:58:31 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-04-24 02:58:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24 02:58:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 4 JPA repository interfaces.
+2025-04-24 02:58:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-24 02:58:34 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2025-04-24 02:58:34 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-04-24 02:58:34 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-24 02:58:34 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-24 02:58:34 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-24 02:58:34 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2864 ms
+2025-04-24 02:58:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-24 02:58:34 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@36525ab
+2025-04-24 02:58:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-24 02:58:35 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-24 02:58:35 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-24 02:58:35 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-24 02:58:35 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-24 02:58:35 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-24 02:58:35 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.040s)
+2025-04-24 02:58:35 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-24 02:58:35 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-24 02:58:35 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24 02:58:35 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24 02:58:35 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-24 02:58:35 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24 02:58:35 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24 02:58:37 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24 02:58:37 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2e778abb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-24 02:58:37 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 02:58:37 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-24 02:58:38 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 02:58:38 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 2 ms
+2025-04-24 02:58:38 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-24 02:58:38 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-24 02:58:40 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-04-24 02:58:40 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 02:58:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-24 02:58:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-24 02:58:40 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-24 02:58:40 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-04-24 02:59:24 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 21.0.2 with PID 10392 (C:\Users\user\Desktop\Projects\SecureBank\target\classes started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-24 02:59:24 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-04-24 02:59:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24 02:59:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 4 JPA repository interfaces.
+2025-04-24 02:59:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-24 02:59:26 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2025-04-24 02:59:26 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-04-24 02:59:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-24 02:59:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-24 02:59:26 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-24 02:59:26 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2593 ms
+2025-04-24 02:59:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-24 02:59:27 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77ccded4
+2025-04-24 02:59:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-24 02:59:27 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-24 02:59:27 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-24 02:59:27 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-24 02:59:27 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-24 02:59:27 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-24 02:59:27 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.033s)
+2025-04-24 02:59:27 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-24 02:59:27 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-24 02:59:27 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24 02:59:27 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24 02:59:27 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-24 02:59:28 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24 02:59:28 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24 02:59:29 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24 02:59:29 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@230dd372] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-24 02:59:30 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 02:59:30 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-24 02:59:31 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 02:59:31 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 2 ms
+2025-04-24 02:59:31 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-24 02:59:31 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-24 02:59:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-24 02:59:32 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 9.408 seconds (process running for 10.872)
+2025-04-24 02:59:33 [main] INFO  c.a.s.Config.AppStartupConfig - Initializing file storage directories...
+2025-04-24 02:59:33 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 02:59:33 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 1 ms
+2025-04-24 02:59:40 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24 02:59:40 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-24 02:59:40 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-24 03:14:17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 03:14:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-24 03:14:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-24 03:14:27 [main] INFO  c.a.secureBank.SecureBankApplication - Starting SecureBankApplication using Java 21.0.2 with PID 11072 (C:\Users\user\Desktop\Projects\SecureBank\target\classes started by user in C:\Users\user\Desktop\Projects\SecureBank)
+2025-04-24 03:14:27 [main] INFO  c.a.secureBank.SecureBankApplication - The following 1 profile is active: "dev"
+2025-04-24 03:14:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24 03:14:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 4 JPA repository interfaces.
+2025-04-24 03:14:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-24 03:14:29 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2025-04-24 03:14:29 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-04-24 03:14:29 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-24 03:14:29 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-24 03:14:29 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-24 03:14:29 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2517 ms
+2025-04-24 03:14:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-24 03:14:30 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7ed8b44
+2025-04-24 03:14:30 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-24 03:14:30 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-04-24 03:14:30 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-04-24 03:14:30 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-04-24 03:14:30 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/securebankdb (PostgreSQL 17.0)
+2025-04-24 03:14:30 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-04-24 03:14:30 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.050s)
+2025-04-24 03:14:30 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-04-24 03:14:30 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-04-24 03:14:30 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24 03:14:30 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24 03:14:30 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-24 03:14:31 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24 03:14:31 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24 03:14:32 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24 03:14:32 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1e8b0ab5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-24 03:14:32 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 03:14:33 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-24 03:14:34 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 03:14:34 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 2 ms
+2025-04-24 03:14:34 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-24 03:14:34 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-04-24 03:14:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-24 03:14:35 [main] INFO  c.a.secureBank.SecureBankApplication - Started SecureBankApplication in 9.263 seconds (process running for 11.157)
+2025-04-24 03:14:35 [main] INFO  c.a.s.Config.AppStartupConfig - Initializing file storage directories...
+2025-04-24 03:14:35 [main] INFO  c.a.s.Services.FileStorageService - Created file upload directory: ./uploads/dev/images
+2025-04-24 03:14:35 [main] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.init() completed in 0 ms
+2025-04-24 03:14:49 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24 03:14:49 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-24 03:14:49 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-04-24 04:35:34 [tomcat-handler-28] INFO  c.a.secureBank.Services.JwtService - Authenticating customer: RD4090
+2025-04-24 04:35:35 [tomcat-handler-28] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: CustomerService.loadUserByUsername(..) completed in 917 ms
+2025-04-24 04:35:36 [tomcat-handler-28] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.updateLastLogin(..) completed in 177 ms
+2025-04-24 04:35:36 [tomcat-handler-28] WARN  c.a.s.C.PerformanceMonitoringAspect - SLOW EXECUTION: JwtService.authenticateCustomer(..) completed in 1870 ms
+2025-04-24 04:35:36 [tomcat-handler-32] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 7 ms
+2025-04-24 04:35:36 [tomcat-handler-30] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 12 ms
+2025-04-24 04:35:36 [tomcat-handler-34] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.loadUserByUsername(..) completed in 16 ms
+2025-04-24 04:35:36 [tomcat-handler-34] DEBUG c.a.s.C.PerformanceMonitoringAspect - CustomerService.findByCustomerId(..) completed in 22 ms
+2025-04-24 04:35:36 [tomcat-handler-32] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-24 04:35:36 [tomcat-handler-30] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 12 ms
+2025-04-24 04:35:36 [tomcat-handler-32] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 18 ms
+2025-04-24 04:35:36 [tomcat-handler-32] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 36 ms
+2025-04-24 04:35:36 [tomcat-handler-30] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 53 ms
+2025-04-24 04:35:36 [tomcat-handler-35] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-24 04:35:36 [tomcat-handler-35] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-24 04:35:36 [tomcat-handler-35] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 8 ms
+2025-04-24 04:35:36 [tomcat-handler-36] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-24 04:35:36 [tomcat-handler-36] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 10 ms
+2025-04-24 04:35:36 [tomcat-handler-34] DEBUG c.a.s.C.PerformanceMonitoringAspect - AccountService.getAccountsByCustomerId(..) completed in 179 ms
+2025-04-24 04:35:36 [tomcat-handler-37] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFile(..) completed in 13 ms
+2025-04-24 04:35:37 [tomcat-handler-39] DEBUG c.a.s.C.PerformanceMonitoringAspect - TransactionService.getLastTenTransactions(..) completed in 329 ms
+2025-04-24 04:35:48 [tomcat-handler-45] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-24 04:35:48 [tomcat-handler-45] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 9 ms
+2025-04-24 04:35:48 [tomcat-handler-47] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-24 04:35:48 [tomcat-handler-47] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-24 04:35:48 [tomcat-handler-47] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 5 ms
+2025-04-24 04:35:48 [tomcat-handler-48] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-24 04:35:48 [tomcat-handler-48] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 9 ms
+2025-04-24 04:35:48 [tomcat-handler-51] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-24 04:35:48 [tomcat-handler-51] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-24 04:35:48 [tomcat-handler-51] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 4 ms
+2025-04-24 04:35:48 [tomcat-handler-52] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFile(..) completed in 1 ms
+2025-04-24 04:36:03 [tomcat-handler-60] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-24 04:36:03 [tomcat-handler-60] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 6 ms
+2025-04-24 04:36:03 [tomcat-handler-62] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-24 04:36:03 [tomcat-handler-62] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-24 04:36:03 [tomcat-handler-62] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 5 ms
+2025-04-24 04:36:04 [tomcat-handler-63] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-24 04:36:04 [tomcat-handler-63] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 6 ms
+2025-04-24 04:36:04 [tomcat-handler-66] INFO  c.a.s.C.ProfileImageController - Retrieving profile image for customer ID: RD4090
+2025-04-24 04:36:04 [tomcat-handler-66] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFileUrl(..) completed in 0 ms
+2025-04-24 04:36:04 [tomcat-handler-66] DEBUG c.a.s.C.PerformanceMonitoringAspect - ProfileImageService.getProfileImage(..) completed in 5 ms
+2025-04-24 04:36:04 [tomcat-handler-67] DEBUG c.a.s.C.PerformanceMonitoringAspect - FileStorageService.getFile(..) completed in 1 ms
+2025-04-24 04:43:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24 04:43:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-24 04:43:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
