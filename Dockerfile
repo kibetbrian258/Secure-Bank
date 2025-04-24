@@ -13,7 +13,7 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
 # Copy the built jar from build stage
-COPY --from=build /app/target/SecureBank-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/securebank.war app.war
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -qO- http://localhost:8080/actuator/health || exit 1
