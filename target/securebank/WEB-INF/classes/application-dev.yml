@@ -1,0 +1,99 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/securebankdb
+    username: postgres
+    password: kibetbrian258
+    driver-class-name: org.postgresql.Driver
+    # Connection pool settings for dev
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 2
+      idle-timeout: 300000
+      connection-timeout: 20000
+      max-lifetime: 1200000
+      auto-commit: false
+
+  mail:
+    host: localhost
+    port: 1025
+    username: noreply@securebank.com
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Flyway configuration for dev environment
+  flyway:
+    enabled: true
+    baseline-on-migrate: true  # This enables baselining for existing schemas
+    locations: classpath:db/migration
+
+  sql:
+    init:
+      mode: always
+
+  # Caching configuration for dev
+  cache:
+    type: simple
+
+  # Spring Boot 3.4.3 specific features
+  devtools:
+    restart:
+      enabled: true
+      additional-exclude: static/**,public/**
+    livereload:
+      enabled: true
+
+# Dev-specific file storage configuration
+file:
+  upload:
+    dir: ./uploads/dev/images
+  base:
+    url: http://localhost:8080/api/files
+
+# Profile image settings for dev
+profile:
+  image:
+    default:
+      url: http://localhost:8080/api/static/default-profile.png
+
+# Dev-specific SpringDoc configuration
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    doc-expansion: none
+    display-request-duration: true
+    syntax-highlight:
+      activated: true
+  default-produces-media-type: application/json
+  default-consumes-media-type: application/json
+
+# Enhanced security settings for development
+server:
+  error:
+    include-stacktrace: never
+    include-message: always
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: logs
+      pattern: "%t %a \"%r\" %s (%D ms)"
+
+# CORS configuration
+cors:
+  allowed-origins: http://localhost:4200
+  allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+  allowed-headers: Authorization,Content-Type,X-Requested-With
+  allow-credentials: true

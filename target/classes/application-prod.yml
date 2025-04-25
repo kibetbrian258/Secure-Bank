@@ -1,0 +1,166 @@
+spring:
+  # Database configuration
+  datasource:
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+      idle-timeout: 300000
+      connection-timeout: 30000
+      max-lifetime: 1800000
+      validation-timeout: 5000
+      leak-detection-threshold: 60000
+      connection-test-query: SELECT 1
+      auto-commit: false
+    tomcat:
+      test-on-borrow: true
+      validation-query: SELECT 1
+      validation-interval: 30000
+
+  # Mail configuration for production
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          timeout: 15000
+          connection-timeout: 15000
+          write-timeout: 15000
+    default-encoding: UTF-8
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+        show_sql: false
+        # Performance optimizations for production
+        jdbc.batch_size: 30
+        order_inserts: true
+        order_updates: true
+        jdbc.batch_versioned_data: true
+        connection.provider_disables_autocommit: true
+    open-in-view: false              # Explicitly disable OSIV
+
+  # Flyway configuration
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  # Disable SQL initialization
+  sql:
+    init:
+      mode: never
+
+  # Enhanced async task execution configuration
+  task:
+    execution:
+      pool:
+        core-size: 5                # Reduced from 10
+        max-size: 10                # Reduced from 20
+        queue-capacity: 100         # Reduced from 200
+      thread-name-prefix: secure-bank-prod-
+
+  # Caching configuration for production
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=5000,expireAfterWrite=3600s  # Reduced from 10000
+
+# File storage configuration for production
+file:
+  upload:
+    dir: ${FILE_UPLOAD_DIR:/tmp/securebank/uploads/images}
+  base:
+    url: ${FILE_BASE_URL:https://secure-bank-sb.vercel.app/api/files}
+
+# Profile image settings for production
+profile:
+  image:
+    default:
+      url: ${DEFAULT_PROFILE_IMG_URL:https://secure-bank-sb.vercel.app/assets/default-profile.png}
+
+# JWT configuration
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400
+  issuer: ${JWT_ISSUER:secure-bank-api}
+
+# Server configuration
+server:
+  port: ${PORT:8080}
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,text/css,application/javascript
+    min-response-size: 2048
+  error:
+    include-stacktrace: never
+    whitelabel:
+      enabled: false
+  # Tomcat tuning for production
+  tomcat:
+    max-threads: 100                # Reduced from 200
+    max-connections: 5000           # Reduced from 10000
+    accept-count: 50                # Reduced from 100
+    min-spare-threads: 10           # Reduced from 20
+    max-keep-alive-requests: 50     # Reduced from 100
+    connection-timeout: 30000       # Increased to 30 seconds
+    accesslog:
+      enabled: true
+      directory: /tmp
+      pattern: "%t %a \"%r\" %s (%D ms)"
+
+# Actuator endpoints for monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always          # Changed from when-authorized
+      probes:
+        enabled: true
+  health:
+    db:
+      enabled: true
+    diskspace:
+      enabled: true
+
+# Logging configuration optimized for production
+logging:
+  level:
+    root: INFO
+    com.application.secureBank: DEBUG
+    org.springframework.transaction: DEBUG
+    org.springframework.orm.jpa: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE
+    com.zaxxer.hikari: DEBUG
+    org.springframework.jdbc: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: /tmp/securebank.log
+    max-size: 10MB
+    max-history: 7
+
+# CORS configuration
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:https://secure-bank-sb.vercel.app, http://localhost:4200}
+  allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+  allowed-headers: Authorization,Content-Type,X-Requested-With
+  allow-credentials: true

@@ -1,0 +1,55 @@
+services:
+  # Web service (Spring Boot application)
+  - type: web
+    name: securebank-api
+    plan: standard
+    runtime: docker
+    healthCheckPath: /actuator/health
+    disk:
+      name: securebank-files
+      mountPath: /app/uploads
+      sizeGB: 10
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: JDBC_DATABASE_URL
+        fromDatabase:
+          name: securebank-db
+          property: connectionString
+      - key: JDBC_DATABASE_USERNAME
+        fromDatabase:
+          name: securebank-db
+          property: user
+      - key: JDBC_DATABASE_PASSWORD
+        fromDatabase:
+          name: securebank-db
+          property: password
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_ISSUER
+        value: secure-bank-api-prod
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: 587
+      - key: MAIL_USERNAME
+        value: kibetbrian258@gmail.com
+        sync: false
+      - key: MAIL_PASSWORD
+        sync: false
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://secure-bank-sb.vercel.app, http://localhost:4200
+      # Add file storage settings
+      - key: FILE_UPLOAD_DIR
+        value: /app/uploads/images
+      - key: FILE_BASE_URL
+        value: https://securebank-api.onrender.com/api/files
+      - key: DEFAULT_PROFILE_IMG_URL
+        value: https://securebank-api.onrender.com/api/static/default-profile.png
+
+# PostgreSQL Database
+databases:
+  - name: securebank-db
+    plan: standard
+    databaseName: securebankdb
+    postgresMajorVersion: 15
